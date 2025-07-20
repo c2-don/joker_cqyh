@@ -1,0 +1,155 @@
+[@MAIN]
+#IF
+CHECKSKILLLV 4004 == 5
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0>这位勇士，老朽擅长把草药炼化为各种有用之物，若你对此有兴趣，可以随时来找我。<#PC:1><#UI:OpenLifeCompose>炼药<#UI/>
+
+#IF
+CHECKQUEST 2012 COMPLETED
+CHECKSKILL 4004
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0>这位勇士，老朽擅长把草药炼化为各种有用之物，若你对此有兴趣，可以随时来找我。<#PC:1><#UI:OpenLifeCompose>炼药<#UI/><#SO:2>升级技能：炼药<#SO/>
+
+#IF
+CHECKQUEST 2012 COMPLETED
+#ACT
+Break
+#SAY
+<#P0:0><#P1:0>这位勇士，老朽擅长把草药炼化为各种有用之物，若你对此有兴趣，可以随时来找我。<#PC:1><#UI:OpenLifeCompose>炼药<#UI/><#SO:1>学习技能：炼药<#SO/>
+
+#IF
+#ACT
+#SAY
+最近刚搬到此地，万事开头慢，看来还得张罗一阵子才能开张。<#SO:3>知道了<#SO/>
+
+[@1]
+#IF
+CHECKSKILL 4004
+#ACT
+Break
+#SAY
+你已经学会炼药了，无需重复学习。<#SO:3>知道了<#SO/>
+
+#IF
+#ACT
+AddSkill 4004 1
+#IF
+CHECKDOUBLEEXP
+#ACT
+ChangeSevenCarnival 62 + 1
+#SAY
+恭喜你，成功学会了炼药技能！<#SO:3>有劳了<#SO/>
+
+[@2]
+#IF
+CHECKSKILLLV 4004 == 5
+#ACT
+Break
+#SAY
+阁下的炼药技能已达到最高等级，无需再升级！<#SO:3>我再想想<#SO/>
+
+#IF
+CHECKSKILLLV 4004 == 4
+#ACT
+Break
+#SAY
+阁下若想提升炼药技能到5级，需要交付特效金创药包x5，特效魔法药包x5，金币x3000万<#SO:4>升级技能<#SO/><#SO:3>我再想想<#SO/>
+
+#IF
+CHECKSKILLLV 4004 == 3
+#ACT
+Break
+#SAY
+阁下若想提升炼药技能到4级，需要交付强效太阳水包x5，金币x1500万<#SO:3>升级技能<#SO/><#SO:3>我再想想<#SO/>
+
+#IF
+CHECKSKILLLV 4004 == 2
+#ACT
+Break
+#SAY
+阁下若想提升炼药技能到3级，需要交付超级金创药x5，超级魔法药x5，金币x200万<#SO:2>升级技能<#SO/><#SO:3>我再想想<#SO/>
+
+#IF
+CHECKSKILLLV 4004 == 1
+#ACT
+Break
+#SAY
+阁下若想提升炼药技能到2级，需要交付太阳水包x5，金币x10万<#SO:1>升级技能<#SO/><#SO:3>我再想想<#SO/>
+
+[@2_1]
+#IF
+CHECKSKILLLV 4004 == 1
+CHECKITEM 太阳水包 5
+CHECKGOLD >= 100000
+#ACT
+TAKEGOLD 100000
+TAKEITEM 太阳水包 5
+SKILLLEVEL 4004 2
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料似乎不足，无法升级<#SO:1>知道了<#SO/>
+
+[@2_2]
+#IF
+CHECKSKILLLV 4004 == 2
+CHECKITEM 超级金创药 5
+CHECKITEM 超级魔法药 5
+CHECKGOLD >= 2000000
+#ACT
+TAKEGOLD 2000000
+TAKEITEM 超级金创药 5
+TAKEITEM 超级魔法药 5
+SKILLLEVEL 4004 3
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料似乎不足，无法升级<#SO:1>知道了<#SO/>
+
+[@2_3]
+#IF
+CHECKSKILLLV 4004 == 3
+CHECKITEM 强效太阳水包 10
+CHECKGOLD >= 15000000
+#ACT
+TAKEGOLD 15000000
+TAKEITEM 强效太阳水包 10
+SKILLLEVEL 4004 4
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料似乎不足，无法升级<#SO:1>知道了<#SO/>
+
+[@2_4]
+#IF
+CHECKSKILLLV 4004 == 4
+CHECKITEM 特效金创药包 5
+CHECKITEM 特效魔法药包 5
+CHECKGOLD >= 30000000
+#ACT
+TAKEGOLD 30000000
+TAKEITEM 特效金创药包 5
+TAKEITEM 特效魔法药包 5
+SKILLLEVEL 4004 5
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料似乎不足，无法升级<#SO:1>知道了<#SO/>
+
+[@3]
+#ACT
+CLOSE
+
+[@检测七天乐]
+#IF
+CHECKDOUBLEEXP
+#ACT
+ChangeSevenCarnival 67 + 1

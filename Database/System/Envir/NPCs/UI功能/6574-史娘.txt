@@ -1,0 +1,150 @@
+[@MAIN]
+#IF
+CHECKSKILLLV 4005 == 5
+#ACT
+#SAY
+<#P0:0><#P1:0>这位勇士的手头若有矿物想要加工成品，那算你走运了！老婆子我的加工手艺可是玛法大陆独此一家。<#PC:0><#UI:OpenLifeCompose>锻石<#UI/>
+#ACT
+Break
+
+#IF
+CHECKQUEST 2011 COMPLETED
+CHECKSKILL 4005
+CHECKSKILLLV 4005 <= 5
+#ACT
+#SAY
+<#P0:0><#P1:0>这位勇士的手头若有矿物想要加工成品，那算你走运了！老婆子我的加工手艺可是玛法大陆独此一家。<#PC:0><#UI:OpenLifeCompose>锻石<#UI/><#SO:2>升级技能：锻石<#SO/>
+#ACT
+Break
+
+#IF
+CHECKQUEST 2011 COMPLETED
+#ACT
+#SAY
+<#P0:0><#P1:0>这位勇士的手头若有矿物想要加工成品，那算你走运了！老婆子我的加工手艺可是玛法大陆独此一家。<#PC:0><#UI:OpenLifeCompose>锻石<#UI/><#SO:1>学习技能：锻石<#SO/>
+#ACT
+Break
+
+#IF
+#ACT
+#SAY
+最近刚搬到此地，万事开头慢，看来还得张罗一阵子才能开张。<#SO:3>知道了<#SO/>
+
+[@1]
+#IF
+CHECKSKILL 4005
+#ACT
+Break
+#SAY
+你已经学会锻石了，无需重复学习。<#SO:1>知道了<#SO/>
+
+#IF
+#ACT
+AddSkill 4005 1
+
+#IF
+CHECKDOUBLEEXP
+#ACT
+ChangeSevenCarnival 62 + 1
+
+[@2]
+#IF
+CHECKSKILLLV 4005 == 5
+#ACT
+Break
+#SAY
+阁下的锻石技能已达到最高等级，无需再升级！<#SO:5>我再想想<#SO/>
+#IF
+CHECKSKILLLV 4005 == 4
+#ACT
+Break
+#SAY
+阁下若想提升锻石技能到5级，需要交付特级护甲片x10，金币x3000万<#SO:4>升级技能<#SO/><#SO:5>我再想想<#SO/>
+#IF
+CHECKSKILLLV 4005 == 3
+#ACT
+Break
+#SAY
+阁下若想提升锻石技能到4级，需要交付高级护甲片x10，金币x1500万<#SO:3>升级技能<#SO/><#SO:5>我再想想<#SO/>
+#IF
+CHECKSKILLLV 4005 == 2
+#ACT
+Break
+#SAY
+阁下若想提升锻石技能到3级，需要交付中级护甲片x5，金币x200万<#SO:2>升级技能<#SO/><#SO:5>我再想想<#SO/>
+#IF
+CHECKSKILLLV 4005 == 1
+#ACT
+Break
+#SAY
+阁下若想提升锻石技能到2级，需要交付初级护甲片x5，金币x10万<#SO:1>升级技能<#SO/><#SO:5>我再想想<#SO/>
+
+[@2_1]
+#IF
+CHECKSKILLLV 4005 == 1
+CHECKITEM 初级护甲片 5
+CHECKGOLD >= 100000
+#ACT
+TAKEGOLD 100000
+TAKEITEM 初级护甲片 5
+SKILLLEVEL 4005 2
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料或金币不足，无法升级。<#SO:1>知道了<#SO/>
+
+[@2_2]
+#IF
+CHECKSKILLLV 4005 == 2
+CHECKITEM 中级护甲片 5
+CHECKGOLD >= 2000000
+#ACT
+TAKEGOLD 2000000
+TAKEITEM 中级护甲片 5
+SKILLLEVEL 4005 3
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料或金币不足，无法升级。<#SO:1>知道了<#SO/>
+
+[@2_3]
+#IF
+CHECKSKILLLV 4005 == 3
+CHECKITEM 高级护甲片 10
+CHECKGOLD >= 15000000
+#ACT
+TAKEGOLD 15000000
+TAKEITEM 高级护甲片 10
+SKILLLEVEL 4005 4
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料或金币不足，无法升级。<#SO:1>知道了<#SO/>
+
+[@2_4]
+#IF
+CHECKSKILLLV 4005 == 4
+CHECKITEM 特级护甲片 10
+CHECKGOLD >= 30000000
+#ACT
+TAKEGOLD 30000000
+TAKEITEM 特级护甲片 10
+SKILLLEVEL 4005 5
+GOTO @检测七天乐
+#SAY
+升级成功！<#SO:1>有劳啦<#SO/>
+#ELSESAY
+升级所需的材料或金币不足，无法升级。<#SO:1>知道了<#SO/>
+
+[@检测七天乐]
+#IF
+CHECKDOUBLEEXP
+#ACT
+ChangeSevenCarnival 67 + 1
+
+[@5]
+#ACT
+CLOSE
