@@ -110,6 +110,7 @@ g2c_sync_npc_shop_data	142	0
 g2c_equip_dur_change	143	8
 g2c_activate_mount	144	7
 玩家骑乘上马	145	6
+g2c_char_off_mount	146	6
 g2c_sync_money_ex	148	0
 g2c_money_change	149	30
 g2c_generate_drop_from_object	150	0
