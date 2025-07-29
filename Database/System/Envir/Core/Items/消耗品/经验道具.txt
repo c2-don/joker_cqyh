@@ -1,0 +1,662 @@
+;==============================================================================
+; 经验道具.txt - 经验类物品使用处理器（已优化合并）
+; 包含：经验丹、经验包、传永宝典、名俊灵丹、豪杰灵丹等所有经验相关道具
+; 脚本数量：36个
+; 最后更新：2025-07-28
+; 合并来源：经验容器.txt + 经验道具.txt + 经验包类.txt
+;==============================================================================
+
+;==============================================================================
+; 基础经验丹类 - 直接给予经验值
+;==============================================================================
+
+;初级经验丹 - ID: 1601201
+[@_USEITEM(1601201)]
+#IF
+CheckItemidx 1601201 1
+#ACT
+TakeItem 初级经验丹 1
+GiveExp 20000
+
+;中级经验丹 - ID: 1601202 
+[@_USEITEM(1601202)]
+#IF
+CheckItemidx 1601202 1
+#ACT
+TakeItem 中级经验丹 1
+GiveExp 200000
+
+;名俊灵丹 - ID: 90300 - 可用杂物(34)
+[@_USEITEM(90300)]
+#IF
+CheckItemidx 90300 1
+#ACT
+TakeItemIdx 90300 1
+GiveBuff 2536
+BREAK
+
+;豪杰灵丹 - ID: 90301 - 可用杂物(34)
+[@_USEITEM(90301)]
+#IF
+CheckItemidx 90301 1
+#ACT
+TakeItemIdx 90301 1
+GiveBuff 2537
+BREAK
+
+;==============================================================================
+; 经验包系列 - 1万到200万经验包
+;==============================================================================
+
+;龙卫之乡经验包 - ID: 1370001 - 可用礼包(18)
+[@_USEITEM(1370001)]
+#IF
+CheckItemidx 1370001 1
+#ACT
+TakeItemIdx 1370001 1
+GiveExp 3300
+BREAK
+
+
+;巨木之森经验包 - ID: 1370002 - 可用礼包(18)
+[@_USEITEM(1370002)]
+#IF
+CheckItemidx 1370002 1
+#ACT
+TakeItemIdx 1370002 1
+GiveExp 3300
+BREAK
+
+
+;英雄土城经验包 - ID: 1370003 - 可用礼包(18)
+[@_USEITEM(1370003)]
+#IF
+CheckItemidx 1370003 1
+#ACT
+TakeItemIdx 1370003 1
+GiveExp 66000
+BREAK
+
+
+;昔日龙脉经验包 - ID: 1370004 - 可用礼包(18)
+[@_USEITEM(1370004)]
+#IF
+CheckItemidx 1370004 1
+#ACT
+TakeItemIdx 1370004 1
+GiveExp 99000
+BREAK
+
+
+;沃玛珍宝经验包 - ID: 1370005 - 可用礼包(18)
+[@_USEITEM(1370005)]
+#IF
+CheckItemidx 1370005 1
+#ACT
+TakeItemIdx 1370005 1
+GiveExp 132000
+BREAK
+
+
+;毒虫迷宫经验包 - ID: 1370006 - 可用礼包(18)
+[@_USEITEM(1370006)]
+#IF
+CheckItemidx 1370006 1
+#ACT
+TakeItemIdx 1370006 1
+GiveExp 165000
+BREAK
+
+
+;猪妖秘宝经验包 - ID: 1370007 - 可用礼包(18)
+[@_USEITEM(1370007)]
+#IF
+CheckItemidx 1370007 1
+#ACT
+TakeItemIdx 1370007 1
+GiveExp 198000
+BREAK
+
+
+;祖玛旧梦经验包 - ID: 1370008 - 可用礼包(18)
+[@_USEITEM(1370008)]
+#IF
+CheckItemidx 1370008 1
+#ACT
+TakeItemIdx 1370008 1
+GiveExp 231000
+BREAK
+
+
+;30万经验包 - ID: 1370009 - 可用礼包(18)
+[@_USEITEM(1370009)]
+#IF
+CheckItemidx 1370009 1
+#ACT
+TakeItemIdx 1370009 1
+GiveExp 450000
+BREAK
+
+
+;魔龙谷经验包 - ID: 1370010 - 可用礼包(18)
+[@_USEITEM(1370010)]
+#IF
+CheckItemidx 1370010 1
+#ACT
+TakeItemIdx 1370010 1
+GiveExp 600000
+BREAK
+
+
+;苍月岛经验包 - ID: 1370011 - 可用礼包(18)
+[@_USEITEM(1370011)]
+#IF
+CheckItemidx 1370011 1
+#ACT
+TakeItemIdx 1370011 1
+GiveExp 900000
+BREAK
+
+
+;白日围城经验包 - ID: 1370012 - 可用礼包(18)
+[@_USEITEM(1370012)]
+#IF
+CheckItemidx 1370012 1
+#ACT
+TakeItemIdx 1370012 1
+GiveExp 300000
+BREAK
+
+
+;踏雪屠龙经验包 - ID: 1370013 - 可用礼包(18)
+[@_USEITEM(1370013)]
+#IF
+CheckItemidx 1370013 1
+#ACT
+TakeItemIdx 1370013 1
+GiveExp 1050000
+BREAK
+
+
+;赤月群岛经验包 - ID: 1370014 - 可用礼包(18)
+[@_USEITEM(1370014)]
+#IF
+CheckItemidx 1370014 1
+#ACT
+TakeItemIdx 1370014 1
+GiveExp 750000
+BREAK
+
+
+;==============================================================================
+; 传永宝典系列 - 等级递进奖励系统
+;==============================================================================
+
+;传永宝典(13级) - ID: 1500501 - 可用礼包(18)
+[@_USEITEM(1500501)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500501 1
+#ACT
+TakeItemIdx 1500501 1
+GiveItemIdx 1500502 1
+GiveItem 修为丹 1 TRUE
+
+;传永宝典(15级) - ID: 1500502 - 可用礼包(18)
+[@_USEITEM(1500502)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500502 1
+#ACT
+TakeItemIdx 1500502 1
+GiveItemIdx 1500503 1
+GiveItem 修为丹 3 TRUE
+
+;传永宝典(21级) - ID: 1500503 - 可用礼包(18)
+[@_USEITEM(1500503)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500503 1
+#ACT
+TakeItemIdx 1500503 1
+GiveItemIdx 1500504 1
+GiveTitle 106
+
+;传永宝典(25级) - ID: 1500504 - 可用礼包(18)
+[@_USEITEM(1500504)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500504 1
+#ACT
+TakeItemIdx 1500504 1
+GiveItemIdx 1500505 1
+GiveItem 修为丹 5 TRUE
+
+;传永宝典(29级) - ID: 1500505 - 可用礼包(18) - 按职业给予铭文石
+[@_USEITEM(1500505)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500505 1
+#ACT
+TakeItemIdx 1500505 1
+GiveItemIdx 1500506 1
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+;传永宝典(33级) - ID: 1500506 - 可用礼包(18)
+[@_USEITEM(1500506)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 战士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 法师铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 刺客铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 道士铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 弓手铭文石 2 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500506 1
+#ACT
+TakeItemIdx 1500506 1
+GiveItemIdx 1500507 1
+GiveItem 龙枪铭文石 2 TRUE
+BREAK
+
+;传永宝典(35级) - ID: 1500507 - 可用礼包(18)
+[@_USEITEM(1500507)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500507 1
+#ACT
+TakeItemIdx 1500507 1
+GiveItemIdx 1500508 1
+GiveItem 祝福油 1 TRUE
+
+;传永宝典(37级) - ID: 1500508 - 可用礼包(18)
+[@_USEITEM(1500508)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500508 1
+#ACT
+TakeItemIdx 1500508 1
+GiveItemIdx 1500509 1
+GiveItem 兽皮腰带 1 TRUE
+BREAK
+
+;传永宝典(39级) - ID: 1500509 - 可用礼包(18)
+[@_USEITEM(1500509)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500509 1
+#ACT
+TakeItemId 1500509 1
+GiveItemIdx 1500510 1
+GiveItemIdx 99990317 1 TRUE
+BREAK
+
+;传永宝典(41级) - ID: 1500510 - 可用礼包(18)
+[@_USEITEM(1500510)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 红宝石戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 闪影戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 铂金戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 狼首戒指 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500510 1
+#ACT
+TakeItemIdx 1500510 1
+GiveItemIdx 1500511 1
+GiveItem 龙之戒指 1 TRUE
+BREAK
+
+;传永宝典(42级) - ID: 1500511 - 可用礼包(18)
+[@_USEITEM(1500511)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之刃 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之杖 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之刺 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之幡 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之弓 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500511 1
+#ACT
+TakeItemIdx 1500511 1
+GiveItem 命运之矛 1 TRUE
+BREAK
+
+;==============================================================================
+; 特殊经验道具 - 双倍经验等
+;==============================================================================
+
+;双倍经验丹50 - ID: 1700029 - 可用礼包(18)
+[@_USEITEM(1700029)]
+#IF
+CheckItemidx 1700029 1
+#ACT
+TakeItemIdx 1700029 1
+GiveDoubleExp 500000
+BREAK
+
+;==============================================================================
+; 修为丹系列 - 基础修为道具
+;==============================================================================
+
+;修为丹 - ID: 91125 - 可用杂物(34)
+[@_USEITEM(91125)]
+#IF
+CheckItemidx 91125 1
+#ACT
+TakeItem 修为丹 1
+GiveExp 10000
+BREAK
+
+;精进修为丹 - ID: 91189 - 可用杂物(34)
+[@_USEITEM(91189)]
+#IF
+CheckItemidx 91189 1
+#ACT
+TakeItemIdx 91189 1
+GiveExp 200000
+BREAK
+
+;双倍经验道具 - ID: 1501014 - 可用礼包(18)
+[@_USEITEM(1501014)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501014 1
+#ACT
+TakeItemIdx 1501014 1
+GiveItemIdx 80003 10 TRUE
+BREAK
+
+;镇魔重宝(秘境) - ID: 1500800 - 可用礼包(18)
+[@_USEITEM(1500800)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500800 1
+#ACT
+TakeItemIdx 1500800 1
+RandomGiveItemIdx 383,21001,21002,21003,21004,21005,21006,111061,111062,90504,90506 1 FALSE
+
+;新人出征礼包 - ID: 1505008 - 可用礼包(18)
+[@_USEITEM(1505008)]
+#IF
+checkcalc <$MAP> == 92
+#ACT
+TopMessage "当前地图不可使用此礼包" FALSE
+Break
+
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包空格不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1505008 1
+#ACT
+TakeItemIdx 1505008 1
+GiveItem 初级经验丹 10 TRUE
+GiveItem 随机传送石(大) 1 TRUE
+GiveItem 盟重回城石 1 TRUE
+GiveItem 比奇回城石 1 TRUE
+GiveBindGold 1000000
+
+;==============================================================================
+; 批量迁移脚本 - 经验道具 (3个)
+;==============================================================================
+
+;高级修为丹 - ID: 1501120 - 可用杂物(34)
+[@_USEITEM(1501120)]
+#IF
+CheckItemidx 1501120 1
+#ACT
+TakeItem 高级修为丹 1
+GiveExp 50000
+BREAK
+
+;特级修为丹 - ID: 1501121 - 可用杂物(34)
+[@_USEITEM(1501121)]
+#IF
+CheckItemidx 1501121 1
+#ACT
+TakeItemIdx 1501121 1
+GiveExp 100000
+BREAK
+
+;庆典修为丹 - ID: 1501152 - 可用杂物(34)
+[@_USEITEM(1501152)]
+#IF
+CheckItemidx 1501152 1
+#ACT
+TakeItemIdx 1501152 1
+GiveExp 666666
+BREAK
+

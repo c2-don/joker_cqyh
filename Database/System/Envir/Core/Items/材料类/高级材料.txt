@@ -1,0 +1,751 @@
+;==============================================================================
+; 高级材料.txt - 高级材料类物品使用处理器（已优化合并）
+; 包含：高级材料包、装备强化材料、铭文石等高级制作材料
+; 脚本数量：26个
+; 最后更新：2025-07-28
+; 合并来源：高级材料包.txt + 装备强化材料.txt + 铭文石类.txt + 备份迁移
+;==============================================================================
+
+; 打孔石限定福袋 - 可用杂物(18)
+[@_USEITEM(1501220)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501220 1
+#ACT
+TakeItemIdx 1501220 1
+GiveItemIdx 91115 11
+GiveItemIdx 1501086 200
+TopMessage 恭喜你获得了高级材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 雕色石限定福袋 - 可用杂物(18)
+[@_USEITEM(1501221)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501221 1
+#ACT
+TakeItemIdx 1501221 1
+GiveItemIdx 91116 11
+GiveItemIdx 1501086 200
+TopMessage 恭喜你获得了高级材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+; 打孔石限定锦盒 - 可用杂物(18)
+[@_USEITEM(1501222)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501222 1
+#ACT
+TakeItemIdx 1501222 1
+GiveItemIdx 91115 23
+GiveItemIdx 1501086 400
+TopMessage 恭喜你获得了高级材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+; 雕色石限定锦盒 - 可用杂物(18)
+[@_USEITEM(1501223)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501223 1
+#ACT
+TakeItemIdx 1501223 1
+GiveItemIdx 91116 23
+GiveItemIdx 1501086 400
+TopMessage 恭喜你获得了高级材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 精炼石福袋 - 可用杂物(18)
+[@_USEITEM(1501211)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501211 1
+#ACT
+TakeItemIdx 1501211 1
+GiveItemIdx 41002 10
+GiveItemIdx 1501086 10
+TopMessage 恭喜你获得了精粹材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 精炼精华福袋 - 可用杂物(18)
+[@_USEITEM(1501212)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501212 1
+#ACT
+TakeItemIdx 1501212 1
+GiveItemIdx 41001 10
+GiveItemIdx 1501086 20
+TopMessage 恭喜你获得了精粹材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 圣战装备精粹宝匣 - 可用杂物(18)
+[@_USEITEM(1501062)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501062 1
+#ACT
+TakeItemIdx 1501062 1
+GiveItemIdx 110006 40
+GiveItemIdx 1501086 160
+TopMessage 恭喜你获得了宝石材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 法神装备精粹宝匣 - 可用杂物(18)
+[@_USEITEM(1501063)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501063 1
+#ACT
+TakeItemIdx 1501063 1
+GiveItemIdx 110007 40
+GiveItemIdx 1501086 160
+TopMessage 恭喜你获得了宝石材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 天尊装备精粹宝匣 - 可用杂物(18)
+[@_USEITEM(1501064)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501064 1
+#ACT
+TakeItemIdx 1501064 1
+GiveItemIdx 110008 40
+GiveItemIdx 1501086 160
+TopMessage 恭喜你获得了宝石材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 影刺装备精粹宝匣 - 可用杂物(18)
+[@_USEITEM(1501065)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501065 1
+#ACT
+TakeItemIdx 1501065 1
+GiveItemIdx 110009 40
+GiveItemIdx 1501086 160
+TopMessage 恭喜你获得了宝石材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 箭灵装备精粹宝匣 - 可用杂物(18)
+[@_USEITEM(1501066)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501066 1
+#ACT
+TakeItemIdx 1501066 1
+GiveItemIdx 110010 40
+GiveItemIdx 1501086 160
+TopMessage 恭喜你获得了宝石材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+; 龙枪装备精粹宝匣 - 可用杂物(18)
+[@_USEITEM(1501067)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501067 1
+#ACT
+TakeItemIdx 1501067 1
+GiveItemIdx 110013 40
+GiveItemIdx 1501086 160
+TopMessage 恭喜你获得了宝石材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+;==============================================================================
+; 铭文石系列 - 职业铭文石材料
+;==============================================================================
+
+;铭文石礼包（职业相关）
+; 铭文礼包1 - 可用杂物(18)
+[@_USEITEM(1500175)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 战士铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 法师铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 刺客铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 道士铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 弓手铭文石 5 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500175 1
+#ACT
+TakeItemIdx 1500175 1
+GiveItem 龙枪铭文石 5 TRUE
+BREAK
+
+
+;铭文石幸运袋
+; 铭文石福袋 - 可用杂物(18)
+[@_USEITEM(1500066)]
+#IF
+CheckItemidx 1500066 1
+HasBagSpace 1
+CheckClass 战士
+#ACT
+TakeItemIdx 1500066 1
+GiveItemIdx 1700201 1
+TopMessage 恭喜你获得了战士铭文石！
+
+#IF
+CheckItemidx 1500066 1
+HasBagSpace 1
+CheckClass Wizard
+#ACT
+TakeItemIdx 1500066 1
+GiveItemIdx 1700202 1
+TopMessage 恭喜你获得了法师铭文石！
+
+#IF
+CheckItemidx 1500066 1
+HasBagSpace 1
+CheckClass Taoist
+#ACT
+TakeItemIdx 1500066 1
+GiveItemIdx 1700203 1
+TopMessage 恭喜你获得了道士铭文石！
+
+#IF
+CheckItemidx 1500066 1
+HasBagSpace 1
+CheckClass Assassin
+#ACT
+TakeItemIdx 1500066 1
+GiveItemIdx 1700204 1
+TopMessage 恭喜你获得了刺客铭文石！
+
+#IF
+CheckItemidx 1500066 1
+HasBagSpace 1
+CheckClass Archer
+#ACT
+TakeItemIdx 1500066 1
+GiveItemIdx 1700205 1
+TopMessage 恭喜你获得了弓手铭文石！
+
+#IF
+CheckItemidx 1500066 1
+HasBagSpace 1
+CheckClass DragonSpear
+#ACT
+TakeItemIdx 1500066 1
+GiveItemIdx 1700206 1
+TopMessage 恭喜你获得了龙枪铭文石！
+
+
+;职业铭文石
+; 各职业铭文石 - 可用杂物(18)
+[@_USEITEM(1700001)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 战士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 法师铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 刺客铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 道士铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 弓手铭文石 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1700001 1
+#ACT
+TakeItem 各职业铭文石 1
+GiveItem 龙枪铭文石 1 TRUE
+BREAK
+
+;==============================================================================
+; 批量迁移脚本 - 高级材料 (18个)
+;==============================================================================
+
+
+; 祝福油锦盒1 - 可用杂物(18)
+[@_USEITEM(1501051)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501051 1
+#ACT
+TakeItemIdx 1501051 1
+GiveItemIdx 80003 10 TRUE
+GiveItemIdx 1501086 20 TRUE
+BREAK
+
+[
+
+
+; 战士铸魂锦盒1 - 可用杂物(18)
+[@_USEITEM(1501052)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501052 1
+#ACT
+TakeItemIdx 1501052 1
+GiveItemIdx 111105 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[
+
+
+; 法师铸魂锦盒1 - 可用杂物(18)
+[@_USEITEM(1501053)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501053 1
+#ACT
+TakeItemIdx 1501053 1
+GiveItemIdx 111106 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[
+
+
+; 道士铸魂锦盒1 - 可用杂物(18)
+[@_USEITEM(1501054)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501054 1
+#ACT
+TakeItemIdx 1501054 1
+GiveItemIdx 111107 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[
+
+
+; 刺客铸魂锦盒1 - 可用杂物(18)
+[@_USEITEM(1501055)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501055 1
+#ACT
+TakeItemIdx 1501055 1
+GiveItemIdx 111108 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[
+
+
+; 弓手铸魂锦盒1 - 可用杂物(18)
+[@_USEITEM(1501056)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501056 1
+#ACT
+TakeItemIdx 1501056 1
+GiveItemIdx 111116 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[
+
+
+; 龙枪铸魂锦盒1 - 可用杂物(18)
+[@_USEITEM(1501057)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501057 1
+#ACT
+TakeItemIdx 1501057 1
+GiveItemIdx 111306 10 TRUE
+GiveItemIdx 1501086 36 TRUE
+BREAK
+
+[
+
+
+; 幸运符锦盒1 - 可用杂物(18)
+[@_USEITEM(1501058)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501058 1
+#ACT
+TakeItemIdx 1501058 1
+GiveItemIdx 91117 10 TRUE
+GiveItemIdx 1501086 100 TRUE
+BREAK
+
+[
+
+
+; 龙卫传人 - 可用杂物(18)
+[@_USEITEM(1501061)]
+]
+#IF
+CheckItemidx 1501061 1
+#ACT
+TakeItemIdx 1501061 1
+GiveTitle 136
+BREAK
+
+[
+
+
+; 特级装备碎片宝匣 - 可用杂物(18)
+[@_USEITEM(1501068)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501068 1
+#ACT
+TakeItemIdx 1501068 1
+GiveItemIdx 110011 1000 TRUE
+GiveItemIdx 1501086 160 TRUE
+BREAK
+
+[
+
+
+; 神圣石锦盒1 - 可用杂物(18)
+[@_USEITEM(1501140)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501140 1
+#ACT
+TakeItemIdx 1501140 1
+GiveItemIdx 111114 10 TRUE
+GiveItemIdx 1501086 60 TRUE
+
+[
+
+
+; 神圣石锦盒2 - 可用杂物(18)
+[@_USEITEM(1501141)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501141 1
+#ACT
+TakeItemIdx 1501141 1
+GiveItemIdx 111114 10 FALSE
+BREAK
+
+[
+
+
+; 无瑕的无相石红包 - 可用杂物(18)
+[@_USEITEM(1501170)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501170 1
+#ACT
+TakeItemIdx 1501170 1
+GiveItemIdx 140003 50 FALSE
+BREAK
+
+[
+
+
+; 精炼石红包 - 可用杂物(18)
+[@_USEITEM(1501171)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501171 1
+#ACT
+TakeItemIdx 1501171 1
+GiveItemIdx 41002 5 FALSE
+BREAK
+
+[
+
+
+; 幸运符红包 - 可用杂物(18)
+[@_USEITEM(1501173)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501173 1
+#ACT
+TakeItemIdx 1501173 1
+GiveItemIdx 91117 5 FALSE
+BREAK
+
+[
+
+
+; 完整的无相石红包1 - 可用杂物(18)
+[@_USEITEM(1501210)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501210 1
+#ACT
+TakeItemIdx 1501210 1
+GiveItemIdx 140002 50 FALSE
+BREAK
+
+[
+
+
+; 打孔石限定福袋1 - 可用杂物(18)
+[@_USEITEM(1501224)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501224 1
+#ACT
+TakeItemIdx 1501224 1
+GiveItemIdx 91115 23 FALSE
+BREAK
+
+[
+
+
+; 雕色石限定福袋1 - 可用杂物(18)
+[@_USEITEM(1501225)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501225 1
+#ACT
+TakeItemIdx 1501225 1
+GiveItemIdx 91116 23 FALSE
+BREAK
+
+[
+
+
+; 铭文大礼包(战) - 可用杂物(18)
+[@_USEITEM(1510079)]
+]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1510079 1
+#ACT
+TakeItemIdx 1510079 1
+GiveItemIdx 91118 1 FALSE
+BREAK

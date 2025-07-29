@@ -1,0 +1,156 @@
+;==============================================================================
+; 通用材料.txt - 通用材料类物品使用处理器（保持材料道具）
+; 包含：装备碎片礼包、无相石礼包、技能书残卷礼包等通用制作材料
+; 脚本数量：7个
+; 最后更新：2025-07-28
+; 合并来源：材料道具.txt（保持通用材料）
+;==============================================================================
+
+;==============================================================================
+; 装备碎片礼包系列 - 装备重铸材料
+;==============================================================================
+
+;装备碎片礼包
+[@_USEITEM(1510092)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckCalc <$VERSION> < 4
+CheckItemidx 1510092 1
+#ACT
+TakeItemIdx 1510092 1
+GiveItemIdx 111001 500
+Break
+
+#IF
+CheckCalc <$VERSION> > 3
+CheckCalc <$VERSION> < 7
+CheckItemidx 1510092 1
+#ACT
+TakeItemIdx 1510092 1
+GiveItemIdx 111001 999
+Break
+
+#IF
+CheckCalc <$VERSION> > 5
+CheckCalc <$VERSION> == 7
+CheckItemidx 1510092 1
+#ACT
+TakeItemIdx 1510092 1
+GiveItemIdx 111001 1500
+Break
+
+;==============================================================================
+; 无相石礼包系列 - 无相石材料
+;==============================================================================
+
+;无相石礼包
+[@_USEITEM(140006)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格"
+BREAK
+
+#IF
+CheckItemidx 140006 1
+#ACT
+TakeItemIdx 140006 1
+GiveItemIdx 140001 40 TRUE
+
+;==============================================================================
+; 技能书残卷礼包系列 - 技能重铸材料
+;==============================================================================
+
+;技能书残卷礼包
+[@_USEITEM(1510093)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格"
+BREAK
+
+#IF
+CheckItemidx 1510093 1
+#ACT
+TakeItemIdx 1510093 1
+
+#IF
+CheckCalc <$VERSION> < 4
+#ACT
+GiveItem 技能书残卷 500
+#ELSEACT
+GiveItem 技能书残卷 999
+BREAK
+
+;==============================================================================
+; 灵石礼包系列 - 灵石材料
+;==============================================================================
+
+;灵石礼包103
+[@_USEITEM(1000103)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包格数剩余不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1000103 1
+#ACT
+TakeItem 灵石礼包103 1
+GiveItem 命朱灵石1级 1 TRUE
+GiveItem 守阳灵石1级 1 TRUE
+GiveItem 纯紫灵石1级 1 TRUE
+
+;灵石礼包系列
+[@_USEITEM(1501018)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501018 1
+#ACT
+TakeItemIdx 1501018 1
+GiveItemIdx 111108 10 TRUE
+BREAK
+
+[@_USEITEM(1501016)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501016 1
+#ACT
+TakeItemIdx 1501016 1
+GiveItemIdx 111106 10 TRUE
+BREAK
+
+;==============================================================================
+; 全民提升礼包系列 - 提升材料
+;==============================================================================
+
+;全民提升礼包104
+[@_USEITEM(1000104)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1000104 1
+#ACT
+TakeItem 全民提升礼包104 1
+GiveItem 如意丹 5 TRUE
+GiveItem 如意果 1 TRUE

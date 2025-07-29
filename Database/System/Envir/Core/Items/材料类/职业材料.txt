@@ -1,0 +1,206 @@
+;==============================================================================
+; 职业材料.txt - 职业材料包物品使用处理器（保持不变）
+; 包含：各职业专用材料包系列、经验材料包
+; 脚本数量：12个
+; 最后更新：2025-07-28
+; 合并来源：职业材料包.txt（保持职业材料包）
+;==============================================================================
+
+;==============================================================================
+; 职业材料包系列(100个) - 大包装职业材料
+;==============================================================================
+
+;战士材料包100个
+[@_USEITEM(1501087)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501087 1
+#ACT
+TakeItemIdx 1501087 1
+GiveItemIdx 21001 100
+TopMessage 恭喜你获得了100个战士材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;法师材料包100个
+[@_USEITEM(1501088)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501088 1
+#ACT
+TakeItemIdx 1501088 1
+GiveItemIdx 21002 100
+TopMessage 恭喜你获得了100个法师材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;道士材料包100个
+[@_USEITEM(1501089)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501089 1
+#ACT
+TakeItemIdx 1501089 1
+GiveItemIdx 21003 100
+TopMessage 恭喜你获得了100个道士材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;刺客材料包100个
+[@_USEITEM(1501090)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501090 1
+#ACT
+TakeItemIdx 1501090 1
+GiveItemIdx 21004 100
+TopMessage 恭喜你获得了100个刺客材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;弓手材料包100个
+[@_USEITEM(1501091)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501091 1
+#ACT
+TakeItemIdx 1501091 1
+GiveItemIdx 21005 100
+TopMessage 恭喜你获得了100个弓手材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;龙枪材料包100个
+[@_USEITEM(1501092)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501092 1
+#ACT
+TakeItemIdx 1501092 1
+GiveItemIdx 21006 100
+TopMessage 恭喜你获得了100个龙枪材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;==============================================================================
+; 职业材料包系列(10个) - 小包装职业材料
+;==============================================================================
+
+;战士材料包10个
+[@_USEITEM(1501093)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501093 1
+#ACT
+TakeItemIdx 1501093 1
+GiveItemIdx 21001 10
+TopMessage 恭喜你获得了10个战士材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;法师材料包10个
+[@_USEITEM(1501094)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501094 1
+#ACT
+TakeItemIdx 1501094 1
+GiveItemIdx 21002 10
+TopMessage 恭喜你获得了10个法师材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;道士材料包10个
+[@_USEITEM(1501095)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501095 1
+#ACT
+TakeItemIdx 1501095 1
+GiveItemIdx 21003 10
+TopMessage 恭喜你获得了10个道士材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;刺客材料包10个
+[@_USEITEM(1501096)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501096 1
+#ACT
+TakeItemIdx 1501096 1
+GiveItemIdx 21004 10
+TopMessage 恭喜你获得了10个刺客材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;弓手材料包10个
+[@_USEITEM(1501097)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501097 1
+#ACT
+TakeItemIdx 1501097 1
+GiveItemIdx 21005 10
+TopMessage 恭喜你获得了10个弓手材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;龙枪材料包10个
+[@_USEITEM(1501098)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501098 1
+#ACT
+TakeItemIdx 1501098 1
+GiveItemIdx 21006 10
+TopMessage 恭喜你获得了10个龙枪材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格

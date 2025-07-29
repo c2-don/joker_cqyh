@@ -1,0 +1,588 @@
+;==============================================================================
+; 基础材料.txt - 基础材料类物品使用处理器（已优化合并）
+; 包含：基础材料包、武器升级材料、技能书材料等基础制作材料
+; 脚本数量：22个
+; 最后更新：2025-07-28
+; 合并来源：基础材料包.txt + 武器升级材料.txt + 技能书材料.txt
+;==============================================================================
+
+;==============================================================================
+; 基础材料包系列 - 基础制作材料
+;==============================================================================
+
+;基础材料包1
+[@_USEITEM(1501201)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501201 1
+#ACT
+TakeItemIdx 1501201 1
+GiveItemIdx 140002 100
+GiveItemIdx 1501086 50
+TopMessage 恭喜你获得了100个基础材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+;基础材料包2
+[@_USEITEM(1501169)]
+#IF
+HasBagSpace 2
+CheckItemidx 1501169 1
+#ACT
+TakeItemIdx 1501169 1
+GiveItemIdx 140002 100
+GiveItemIdx 1501086 180
+TopMessage 恭喜你获得了100个基础材料！
+
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage 背包格数剩余不足[2]格
+
+
+;==============================================================================
+; 强化石材料包系列 - 装备强化材料
+;==============================================================================
+
+;强化石材料包1
+[@_USEITEM(1501032)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501032 1
+#ACT
+TakeItemIdx 1501032 1
+GiveItemIdx 111105 10
+TopMessage 恭喜你获得了10个强化石！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;强化石材料包2
+[@_USEITEM(1501077)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501077 1
+#ACT
+TakeItemIdx 1501077 1
+GiveItemIdx 111105 10
+TopMessage 恭喜你获得了10个强化石！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;强化石材料包3
+[@_USEITEM(1501033)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501033 1
+#ACT
+TakeItemIdx 1501033 1
+GiveItemIdx 111106 10
+TopMessage 恭喜你获得了10个强化石！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;强化石材料包4
+[@_USEITEM(1501078)]
+#IF
+HasBagSpace 1
+CheckItemidx 1501078 1
+#ACT
+TakeItemIdx 1501078 1
+GiveItemIdx 111106 10
+TopMessage 恭喜你获得了10个强化石！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;==============================================================================
+; 祝福油材料包系列 - 武器升级材料
+;==============================================================================
+
+;祝福油材料包
+[@_USEITEM(1500076)]
+#IF
+HasBagSpace 1
+CheckItemidx 1500076 1
+#ACT
+TakeItemIdx 1500076 1
+GiveItemIdx 80003 10
+TopMessage 恭喜你获得了10个祝福油！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;==============================================================================
+; 特殊材料包系列 - 特殊制作材料
+;==============================================================================
+
+;特殊材料包1
+[@_USEITEM(1500099)]
+#IF
+HasBagSpace 1
+CheckItemidx 1500099 1
+#ACT
+TakeItemIdx 1500099 1
+GiveItemIdx 80011 10
+TopMessage 恭喜你获得了10个特殊材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;==============================================================================
+; 宝石材料包系列 - 基础宝石材料
+;==============================================================================
+
+;宝石材料包1
+[@_USEITEM(1500138)]
+#IF
+HasBagSpace 1
+CheckItemidx 1500138 1
+#ACT
+TakeItemIdx 1500138 1
+GiveItemIdx 111058 10
+TopMessage 恭喜你获得了10个宝石材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;宝石材料包2
+[@_USEITEM(1500139)]
+#IF
+HasBagSpace 1
+CheckItemidx 1500139 1
+#ACT
+TakeItemIdx 1500139 1
+GiveItemIdx 111059 10
+TopMessage 恭喜你获得了10个宝石材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;宝石材料包3
+[@_USEITEM(1500140)]
+#IF
+HasBagSpace 1
+CheckItemidx 1500140 1
+#ACT
+TakeItemIdx 1500140 1
+GiveItemIdx 111060 10
+TopMessage 恭喜你获得了10个宝石材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;宝石材料包4
+[@_USEITEM(1500141)]
+#IF
+HasBagSpace 1
+CheckItemidx 1500141 1
+#ACT
+TakeItemIdx 1500141 1
+GiveItemIdx 111078 10
+TopMessage 恭喜你获得了10个宝石材料！
+
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage 背包格数剩余不足[1]格
+
+
+;祝福油
+[@_USEITEM(80003)]
+#IF
+CHECKITEMVALUE 0 0 9 >= 7
+#ACT
+LocalMessage "恭喜[<$USERNAME>]将[<$ITEMVALUE(0,0,51)>]幸运提升[7]点"
+LocalMessage "当前武器幸运值已达到[7]点"
+BREAK
+
+#IF
+#ACT
+
+#IF
+CHECKITEMVALUE 0 0 9 == 6
+RANDOMEX 3 100
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+Break
+
+
+#IF
+CHECKITEMVALUE 0 0 9 == 5
+RANDOMEX 10 100
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+Break
+
+#IF
+CHECKITEMVALUE 0 0 9 == 4
+RANDOMEX 20 100
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+Break
+
+#IF
+CHECKITEMVALUE 0 0 9 == 3
+RANDOMEX 50 100
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+Break
+
+#IF
+CHECKITEMVALUE 0 0 9 == 2
+RANDOMEX 70 100
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+Break
+
+#IF
+CHECKITEMVALUE 0 0 9 == 1
+RANDOMEX 90 100
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+Break
+
+#IF
+RANDOM 2
+#ACT
+MOV P2 <$ITEMVALUE(0,0,9)>
+CALC P2 + 1
+CHANGEITEMVALUE 0 0 9 %P2
+LocalMessage "当前武器幸运值已达到[7]点"
+Break
+
+;==============================================================================
+; 技能书碎片材料包系列 - 技能书制作材料
+;==============================================================================
+
+;技能书碎片包1
+[@_USEITEM(1500072)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500072 1
+#ACT
+TakeItemIdx 1500072 1
+GiveItemIdx 21001 10 FALSE
+BREAK
+
+;技能书碎片包2
+[@_USEITEM(1500073)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500073 1
+#ACT
+TakeItemIdx 1500073 1
+GiveItemIdx 21002 10 FALSE
+BREAK
+
+;技能书碎片包3
+[@_USEITEM(1500074)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500074 1
+#ACT
+TakeItemIdx 1500074 1
+GiveItemIdx 21003 10 FALSE
+BREAK
+
+;技能书碎片包4
+[@_USEITEM(1500080)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500080 1
+#ACT
+TakeItemIdx 1500080 1
+GiveItemIdx 21002 100 TRUE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+;技能书碎片包5
+[@_USEITEM(1500081)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500081 1
+#ACT
+TakeItemIdx 1500081 1
+GiveItemIdx 21003 100 TRUE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+;技能书碎片包6
+[@_USEITEM(1500082)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500082 1
+#ACT
+TakeItemIdx 1500082 1
+GiveItemIdx 21001 10 TRUE
+GiveItemIdx 1501086 12 TRUE
+BREAK
+
+;技能书碎片包7
+[@_USEITEM(1500083)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500083 1
+#ACT
+TakeItemIdx 1500083 1
+GiveItemIdx 21002 10 TRUE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+;技能书碎片包8
+[@_USEITEM(1500084)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500084 1
+#ACT
+TakeItemIdx 1500084 1
+GiveItemIdx 21003 10 TRUE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+;技能书碎片包9
+[@_USEITEM(1500087)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500087 1
+#ACT
+TakeItemIdx 1500087 1
+GiveItemIdx 21001 1 FALSE
+BREAK
+
+;==============================================================================
+; 技能书碎片材料包系列2 - 更多技能书制作材料
+;==============================================================================
+
+;技能书碎片包10
+[@_USEITEM(1500145)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500145 1
+#ACT
+TakeItemIdx 1500145 1
+GiveItemIdx 21004 1 FALSE
+BREAK
+
+;技能书碎片包11
+[@_USEITEM(1500146)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500146 1
+#ACT
+TakeItemIdx 1500146 1
+GiveItemIdx 21004 11 FALSE
+BREAK
+
+;技能书碎片包12
+[@_USEITEM(1500147)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500147 1
+#ACT
+TakeItemIdx 1500147 1
+GiveItemIdx 21004 100 FALSE
+GiveItemIdx 1501086 80 TRUE
+BREAK
+
+;技能书碎片包13
+[@_USEITEM(1500148)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500148 1
+#ACT
+TakeItemIdx 1500148 1
+GiveItemIdx 21004 10 FALSE
+GiveItemIdx 1501086 8 TRUE
+BREAK
+
+;技能书碎片包14
+[@_USEITEM(1500149)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包格数剩余不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500149 1
+#ACT
+TakeItemIdx 1500149 1
+GiveItemIdx 10620 11 FALSE
+BREAK
+
+;==============================================================================
+; 批量迁移脚本 - 基础材料 (1个)
+;==============================================================================
+
+;无注释
+[@_USEITEM(1500894)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21001 16 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21002 16 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21003 16 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21004 16 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21005 16 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 1500894 1
+#ACT
+TakeItemIdx 1500894 1
+GiveItemIdx 91184 2
+GiveItemIdx 21006 16 TRUE
+BREAK

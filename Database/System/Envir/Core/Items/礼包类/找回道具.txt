@@ -1,0 +1,316 @@
+;==============================================================================
+; 找回礼盒类物品使用处理器
+; 包含：各种副本找回礼盒、紧急找回礼盒等
+;==============================================================================
+
+;魔龙幻境找回礼盒1
+[@_USEITEM(2360)]
+#IF
+CheckItemidx 2360 1
+#ACT
+TakeItemIdx 2360 1
+GiveExp 900000
+
+;魔龙幻境找回礼盒2
+[@_USEITEM(2361)]
+#IF
+CheckItemidx 2361 1
+#ACT
+TakeItemIdx 2361 1
+GiveExp 900000
+
+;魔龙幻境找回礼盒3
+[@_USEITEM(2362)]
+#IF
+CheckItemidx 2362 1
+#ACT
+TakeItemIdx 2362 1
+GiveExp 1200000
+
+;屠魔找回礼盒3
+[@_USEITEM(2350)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2350 1
+#ACT
+TakeItemIdx 2350 1
+GiveItemIdx 91127 30
+GiveExp 600000
+
+;紧急找回礼盒1
+[@_USEITEM(2319)]
+#IF
+CheckItemidx 2319 1
+#ACT
+TakeItemIdx 2319 1
+
+#IF
+level >= 50
+#ACT
+GiveExp 50000
+BREAK
+
+#IF
+level >= 40
+#ACT
+GiveExp 40000
+BREAK
+
+#IF
+level >= 30
+#ACT
+GiveExp 30000
+BREAK
+
+#IF
+#ACT
+GiveExp 20000
+BREAK
+
+;紧急找回礼盒2
+[@_USEITEM(2351)]
+#IF
+CheckItemidx 2351 1
+#ACT
+TakeItemIdx 2351 1
+
+#IF
+level >= 50
+#ACT
+GiveExp 75000
+BREAK
+
+#IF
+level >= 40
+#ACT
+GiveExp 55000
+BREAK
+
+#IF
+level >= 30
+#ACT
+GiveExp 45000
+BREAK
+
+#IF
+#ACT
+GiveExp 30000
+BREAK
+
+;暗殿找回礼盒
+[@_USEITEM(2327)]
+#IF
+CheckItemidx 2327 1
+#ACT
+TakeItemIdx 2327 1
+GiveExp 350000
+
+;妖塔找回礼盒1
+[@_USEITEM(2316)]
+#IF
+CheckItemidx 2316 1
+#ACT
+TakeItemIdx 2316 1
+GiveExp 250000
+GiveBindGold 30000
+
+;妖塔找回礼盒2
+[@_USEITEM(2337)]
+#IF
+CheckItemidx 2337 1
+#ACT
+TakeItemIdx 2337 1
+GiveExp 350000
+GiveBindGold 30000
+
+;妖塔找回礼盒3
+[@_USEITEM(2338)]
+#IF
+CheckItemidx 2338 1
+#ACT
+TakeItemIdx 2338 1
+GiveExp 450000
+GiveBindGold 30000
+
+;魔塔找回礼盒1
+[@_USEITEM(2317)]
+#IF
+CheckItemidx 2317 1
+#ACT
+TakeItemIdx 2317 1
+GiveExp 1000000
+
+;魔塔找回礼盒2
+[@_USEITEM(2318)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2318 1
+#ACT
+TakeItemIdx 2318 1
+GiveExp 1000000
+GiveItemIdx 90501 2 TRUE
+
+;魔塔找回礼盒3
+[@_USEITEM(2336)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2336 1
+#ACT
+TakeItemIdx 2336 1
+GiveExp 1200000
+GiveItemIdx 90500 2
+
+;白日门找回礼盒1
+[@_USEITEM(2320)]
+#IF
+CheckItemidx 2320 1
+#ACT
+TakeItemIdx 2320 1
+GiveExp 300000
+
+;龙卫找回礼盒1
+[@_USEITEM(2321)]
+#IF
+CheckItemidx 2321 1
+#ACT
+TakeItemIdx 2321 1
+GiveExp 100000
+GiveItemIdx 90501 1 TRUE
+
+;屠魔找回礼盒1
+[@_USEITEM(2322)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2322 1
+#ACT
+TakeItemIdx 2322 1
+GiveExp 400000
+GiveItemIdx 91127 12
+
+;演武场找回礼盒1
+[@_USEITEM(2331)]
+#IF
+CheckItemidx 2331 1
+#ACT
+TakeItemIdx 2331 1
+GiveExp 50000
+
+;武斗场找回礼盒1
+[@_USEITEM(2324)]
+#IF
+CheckItemidx 2324 1
+#ACT
+TakeItemIdx 2324 1
+GiveExp 180000
+
+;武斗场找回礼盒2
+[@_USEITEM(2325)]
+#IF
+CheckItemidx 2325 1
+#ACT
+TakeItemIdx 2325 1
+GiveExp 250000
+
+;武斗场找回礼盒3
+[@_USEITEM(2332)]
+#IF
+CheckItemidx 2332 1
+#ACT
+TakeItemIdx 2332 1
+GiveExp 350000
+
+;屠魔找回礼盒2
+[@_USEITEM(2323)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2323 1
+#ACT
+TakeItemIdx 2323 1
+GiveExp 500000
+GiveItemIdx 91127 24
+
+;蜘蛛长廊找回礼盒1
+[@_USEITEM(2333)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2333 1
+#ACT
+TakeItemIdx 2333 1
+GiveExp 50000
+GiveItemIdx 91184 1
+
+;蜘蛛长廊找回礼盒2
+[@_USEITEM(2334)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2334 1
+#ACT
+TakeItemIdx 2334 1
+GiveExp 80000
+
+#IF
+Random 20
+#ACT
+GiveItemIdx 91184 2
+#ELSEACT
+GiveItemIdx 91184 1
+BREAK
+
+;蜘蛛长廊找回礼盒3
+[@_USEITEM(2335)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 2335 1
+#ACT
+TakeItemIdx 2335 1
+GiveExp 150000
+
+#IF
+Random 20
+#ACT
+GiveItemIdx 91184 2
+#ELSEACT
+GiveItemIdx 91184 1
+BREAK
+
+;注意：所有找回礼盒处理器已完成迁移

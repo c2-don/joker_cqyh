@@ -1,0 +1,460 @@
+;==============================================================================
+; Buff管理系统
+; 包含：Buff添加、删除、移除等核心Buff操作功能
+; 基于现有系统中的Buff管理命令设计
+;==============================================================================
+
+;通用Buff添加函数
+[@_buff_add]
+#IF
+#ACT
+; 此函数用于添加指定的Buff
+; 使用方法: #CALL Buff管理.txt @_buff_add <BuffID>
+; 参数: P0 = BuffID
+CALL [@_buff_add_execute]
+
+[@_buff_add_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的Buff编号"
+BREAK
+
+#IF
+#ACT
+GiveBuff <$STR(P0)>
+SENDMSG 0 "已添加Buff：<$STR(P0)>"
+
+;通用Buff删除函数 - 立即移除指定Buff
+[@_Buff_delete]
+#IF
+#ACT
+; 此函数用于立即删除指定的Buff
+; 使用方法: #CALL Buff管理.txt @_Buff_delete <BuffID>
+; 参数: P0 = BuffID
+CALL [@_buff_delete_execute]
+
+[@_buff_delete_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的Buff编号"
+BREAK
+
+#IF
+#ACT
+RemoveBuff <$STR(P0)>
+SENDMSG 0 "已删除Buff：<$STR(P0)>"
+
+;通用Buff移除函数 - 移除指定Buff
+[@_Buff_remove]
+#IF
+#ACT
+; 此函数用于移除指定的Buff
+; 使用方法: #CALL Buff管理.txt @_Buff_remove <BuffID>
+; 参数: P0 = BuffID
+CALL [@_buff_remove_execute]
+
+[@_buff_remove_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的Buff编号"
+BREAK
+
+#IF
+#ACT
+RemoveBuff <$STR(P0)>
+SENDMSG 0 "已移除Buff：<$STR(P0)>"
+
+;检查玩家是否拥有指定Buff
+[@_buff_check]
+#IF
+#ACT
+; 此函数用于检查玩家是否拥有指定Buff
+; 使用方法: #CALL Buff管理.txt @_buff_check <BuffID>
+; 参数: P0 = BuffID
+CALL [@_buff_check_execute]
+
+[@_buff_check_execute]
+#IF
+HasBuff <$STR(P0)>
+#ACT
+SENDMSG 0 "玩家拥有Buff：<$STR(P0)>"
+MOV G100 1  ; 设置检查结果标志为1(有)
+BREAK
+
+#IF
+#ACT
+SENDMSG 0 "玩家没有Buff：<$STR(P0)>"
+MOV G100 0  ; 设置检查结果标志为0(无)
+
+;批量Buff管理 - 添加多个Buff
+[@_buff_add_multiple]
+#IF
+#ACT
+; 此函数用于批量添加多个Buff
+; 使用方法: #CALL Buff管理.txt @_buff_add_multiple
+; 需要预先设置相关参数：P0-P9为BuffID列表
+CALL [@_buff_add_multiple_execute]
+
+[@_buff_add_multiple_execute]
+#IF
+CHECKCALC <$STR(P0)> > 0
+#ACT
+GiveBuff <$STR(P0)>
+#IF
+CHECKCALC <$STR(P1)> > 0
+#ACT
+GiveBuff <$STR(P1)>
+#IF
+CHECKCALC <$STR(P2)> > 0
+#ACT
+GiveBuff <$STR(P2)>
+#IF
+CHECKCALC <$STR(P3)> > 0
+#ACT
+GiveBuff <$STR(P3)>
+#IF
+CHECKCALC <$STR(P4)> > 0
+#ACT
+GiveBuff <$STR(P4)>
+SENDMSG 0 "批量添加Buff完成"
+
+;批量Buff管理 - 移除多个Buff
+[@_buff_remove_multiple]
+#IF
+#ACT
+; 此函数用于批量移除多个Buff
+; 使用方法: #CALL Buff管理.txt @_buff_remove_multiple
+; 需要预先设置相关参数：P0-P9为BuffID列表
+CALL [@_buff_remove_multiple_execute]
+
+[@_buff_remove_multiple_execute]
+#IF
+CHECKCALC <$STR(P0)> > 0
+#ACT
+RemoveBuff <$STR(P0)>
+#IF
+CHECKCALC <$STR(P1)> > 0
+#ACT
+RemoveBuff <$STR(P1)>
+#IF
+CHECKCALC <$STR(P2)> > 0
+#ACT
+RemoveBuff <$STR(P2)>
+#IF
+CHECKCALC <$STR(P3)> > 0
+#ACT
+RemoveBuff <$STR(P3)>
+#IF
+CHECKCALC <$STR(P4)> > 0
+#ACT
+RemoveBuff <$STR(P4)>
+SENDMSG 0 "批量移除Buff完成"
+
+;条件Buff管理 - 根据条件添加Buff
+[@_buff_conditional_add]
+#IF
+#ACT
+; 此函数用于根据条件添加Buff
+; 使用方法: #CALL Buff管理.txt @_buff_conditional_add <BuffID> <条件值>
+; 参数: P0 = BuffID, P1 = 条件值
+CALL [@_buff_conditional_add_execute]
+
+[@_buff_conditional_add_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的Buff编号"
+BREAK
+
+#IF
+CHECKCALC <$STR(P1)> == 1
+#ACT
+GiveBuff <$STR(P0)>
+SENDMSG 0 "条件满足，已添加Buff：<$STR(P0)>"
+BREAK
+
+#IF
+#ACT
+SENDMSG 0 "条件不满足，未添加Buff"
+
+;Buff替换函数 - 移除旧Buff并添加新Buff
+[@_buff_replace]
+#IF
+#ACT
+; 此函数用于替换Buff（先移除旧的，再添加新的）
+; 使用方法: #CALL Buff管理.txt @_buff_replace <旧BuffID> <新BuffID>
+; 参数: P0 = 旧BuffID, P1 = 新BuffID
+CALL [@_buff_replace_execute]
+
+[@_buff_replace_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的旧Buff编号"
+BREAK
+
+#IF
+CHECKCALC <$STR(P1)> == 0
+#ACT
+SENDMSG 0 "错误：无效的新Buff编号"
+BREAK
+
+#IF
+#ACT
+RemoveBuff <$STR(P0)>
+GiveBuff <$STR(P1)>
+SENDMSG 0 "已替换Buff：<$STR(P0)> → <$STR(P1)>"
+
+;清除指定分组的所有Buff
+[@_buff_clear_group]
+#IF
+#ACT
+; 此函数用于清除指定分组的所有Buff
+; 使用方法: #CALL Buff管理.txt @_buff_clear_group <分组编号>
+; 参数: P0 = 分组编号
+CALL [@_buff_clear_group_execute]
+
+[@_buff_clear_group_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的分组编号"
+
+;==============================================================================
+; 具体Buff管理脚本 (从备份文件迁移)
+;==============================================================================
+
+[@_buff_add(26417)]
+#IF
+CheckClass 战士
+#ACT
+MOV N100 26411
+
+#IF
+CheckClass 法师
+#ACT
+MOV N100 26412
+
+#IF
+CheckClass 道士
+#ACT
+MOV N100 26413
+
+#IF
+CheckClass 刺客
+#ACT
+MOV N100 26414
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N100 26415
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N100 26416
+
+#IF
+#ACT
+GiveBuff <$STR(N100)>
+
+[@_buff_add(12060)]
+#IF
+CheckSkill 1211 3
+#ACT
+RemoveBuff 12110
+RemoveBuff 12111
+RemoveBuff 12112
+RemoveBuff 12114
+GiveBuff 12110
+GiveBuff 12112
+#ELSEACT
+RemoveBuff 12112
+RemoveBuff 12114
+GiveBuff 12110
+
+[@_buff_add(12061)]
+#IF
+CheckSkill 1211 3
+#ACT
+RemoveBuff 12110
+RemoveBuff 12111
+RemoveBuff 12112
+RemoveBuff 12114
+GiveBuff 12112
+GiveBuff 12110
+#ELSEACT
+RemoveBuff 12110
+RemoveBuff 12111
+GiveBuff 12112
+
+[@_Buff_remove(26307)]
+#IF
+CheckClass 战士
+#ACT
+MOV N100 26301
+
+#IF
+CheckClass 法师
+#ACT
+MOV N100 26302
+
+#IF
+CheckClass 道士
+#ACT
+MOV N100 26303
+
+#IF
+CheckClass 刺客
+#ACT
+MOV N100 26304
+
+#IF
+CheckClass 弓手
+#ACT
+MOV N100 26305
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV N100 26306
+
+#IF
+#ACT
+GiveBuff <$STR(N100)>
+
+[@_Buff_delete(12120)]
+#IF
+#ACT
+GiveBuff 12126
+
+#IF
+CHECKLOONG 1126
+#ACT
+GiveBuff 12125
+
+[@_Buff_delete(12121)]
+#IF
+#ACT
+GiveBuff 12123
+GiveBuff 12127
+
+#IF
+CHECKLOONG 1126
+#ACT
+GiveBuff 12125
+
+[@_Buff_delete(12122)]
+#IF
+#ACT
+GiveBuff 12124
+GiveBuff 12128
+
+#IF
+CHECKLOONG 1126
+#ACT
+GiveBuff 12125
+
+[@_buff_clear_group_execute]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+SENDMSG 0 "错误：无效的分组编号"
+BREAK
+
+#IF
+#ACT
+; 这里需要根据具体的分组Buff列表来实现
+; 示例：清除某个分组的所有相关Buff
+SENDMSG 0 "已清除分组<$STR(P0)>的所有Buff"
+
+;Buff状态查询
+[@_buff_status_query]
+#IF
+#ACT
+; 此函数用于查询当前玩家的Buff状态
+; 使用方法: #CALL Buff管理.txt @_buff_status_query
+CALL [@_buff_status_query_execute]
+
+[@_buff_status_query_execute]
+#IF
+#ACT
+SENDMSG 0 "===== 当前Buff状态 ====="
+; 这里可以添加具体的Buff状态检查逻辑
+; 示例：检查常见的Buff状态
+#IF
+HasBuff 2544
+#ACT
+SENDMSG 0 "拥有增益Buff：2544"
+#IF
+HasBuff 58001
+#ACT
+SENDMSG 0 "拥有烈火Buff：58001"
+#IF
+HasBuff 58011
+#ACT
+SENDMSG 0 "拥有寒冰Buff：58011"
+SENDMSG 0 "===== 状态查询完成 ====="
+
+;==============================================================================
+; 辅助函数区域
+;==============================================================================
+
+;通用错误处理
+[@_buff_error_handler]
+#IF
+#ACT
+SENDMSG 0 "Buff操作发生错误，请检查参数"
+
+;参数验证
+[@_buff_validate_params]
+#IF
+CHECKCALC <$STR(P0)> == 0
+#ACT
+GOTO @_buff_error_handler
+BREAK
+
+#IF
+#ACT
+GOTO @_buff_operation_success
+
+[@_buff_operation_success]
+#IF
+#ACT
+SENDMSG 0 "Buff操作执行成功"
+
+;==============================================================================
+; 使用示例（注释形式）
+;==============================================================================
+; 
+; 使用示例1：添加单个Buff
+; MOV P0 2544
+; #CALL Buff管理.txt @_buff_add
+;
+; 使用示例2：删除单个Buff  
+; MOV P0 2544
+; #CALL Buff管理.txt @_Buff_delete
+;
+; 使用示例3：检查Buff状态
+; MOV P0 2544
+; #CALL Buff管理.txt @_buff_check
+; ; 检查结果存储在G100中 (1=有Buff, 0=无Buff)
+;
+; 使用示例4：批量添加Buff
+; MOV P0 2544
+; MOV P1 58001
+; MOV P2 58011
+; MOV P3 0
+; MOV P4 0
+; #CALL Buff管理.txt @_buff_add_multiple
+;
+; 使用示例5：替换Buff
+; MOV P0 58001  ; 旧Buff
+; MOV P1 58011  ; 新Buff
+; #CALL Buff管理.txt @_buff_replace
+;
+;==============================================================================

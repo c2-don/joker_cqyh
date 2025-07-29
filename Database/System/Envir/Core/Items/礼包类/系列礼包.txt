@@ -1,0 +1,193 @@
+;==============================================================================
+; 系列礼包.txt - 系列礼包类物品使用处理器（已优化合并）
+; 包含：特殊礼包、名俊系列、酬勤礼包等系列化礼包
+; 脚本数量：41个
+; 最后更新：2025-07-28
+; 合并来源：特殊礼包.txt + 名俊系列.txt + 酬勤礼包.txt + 备份文件迁移
+;==============================================================================
+
+;==============================================================================
+; 特殊礼包系列 - 特殊奖励礼包
+;==============================================================================
+
+;说明：特殊礼包脚本需要根据现有的特殊礼包.txt内容添加
+;当前预留结构，实际脚本需要根据游戏中的特殊礼包配置来添加
+
+;==============================================================================
+; 名俊系列礼包 - 名俊主题礼包
+;==============================================================================
+
+;说明：名俊系列脚本需要根据现有的名俊系列.txt内容添加
+;当前预留结构，实际脚本需要根据游戏中的名俊系列配置来添加
+
+;==============================================================================
+; 酬勤礼包系列 - 勤奋奖励礼包
+;==============================================================================
+
+;酬勤礼盒21
+[@_USEITEM(140102)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140102 1
+#ACT
+TakeItemIdx 140102 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 10 TRUE
+GiveItem 练功券 2 TRUE
+GiveItem 碎裂的无相石 30 TRUE
+
+;酬勤礼盒1
+[@_USEITEM(1500301)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500301 1
+#ACT
+TakeItem 酬勤礼盒1 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 强效战神油 5 TRUE
+GiveItem 超级金创药3 1 TRUE
+GiveItem 超级魔法药3 1 TRUE
+GiveItem 副本入场券 1 TRUE
+
+;酬勤礼盒2
+[@_USEITEM(1500302)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500302 1
+#ACT
+TakeItem 酬勤礼盒2 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 10 TRUE
+GiveItem 练功券 2 TRUE
+
+;精进礼盒1
+[@_USEITEM(1500303)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500303 1
+#ACT
+TakeItem 精进礼盒1 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 15 TRUE
+GiveItem 练功券 2 TRUE
+
+;精进礼盒2
+[@_USEITEM(1500304)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500304 1
+#ACT
+TakeItem 精进礼盒2 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 20 TRUE
+GiveItem 练功券 3 TRUE
+
+;酬勤礼盒11
+[@_USEITEM(140101)]
+#IF
+HasBagSpace < 6
+#ACT
+TopMessage "背包格数剩余不足[6]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140101 1
+#ACT
+TakeItem 酬勤礼盒11 1
+GiveItem 太阳水包3 1 TRUE
+GiveItem 强效战神油 5 TRUE
+GiveItem 超级金创药3 1 TRUE
+GiveItem 超级魔法药3 1 TRUE
+GiveItem 副本入场券 1 TRUE
+GiveItem 碎裂的无相石 30 TRUE
+
+;精进礼盒11
+[@_USEITEM(140103)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140103 1
+#ACT
+TakeItem 精进礼盒11 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 15 TRUE
+GiveItem 练功券 2 TRUE
+GiveItemIDX 140002 3 TRUE
+
+;精进礼盒21
+[@_USEITEM(140104)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 140104 1
+#ACT
+TakeItem 精进礼盒21 1
+GiveItem 强效太阳水包3 1 TRUE
+GiveItem 点金锄 1 TRUE
+GiveItem 强效战神油 20 TRUE
+GiveItem 练功券 5 TRUE
+
+;==============================================================================
+; 传永礼包系列 - 特殊传永礼包
+;==============================================================================
+
+;传永礼包
+[@_USEITEM(1500038)]
+#IF
+HasBagSpace < 5
+#ACT
+TopMessage "背包格数剩余不足[5]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500038 1
+#ACT
+TakeItem 传永礼包 1
+GiveItem 强效太阳水包3 3 TRUE
+GiveItem 强效战神油 5 TRUE
+GiveItem 冥想丹 1 TRUE
+
+;==============================================================================
+; 灵石礼包系列 - 灵石相关礼包
+;==============================================================================
+
+
+

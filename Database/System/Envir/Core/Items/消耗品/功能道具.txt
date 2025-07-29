@@ -1,0 +1,493 @@
+;==============================================================================
+; 功能道具.txt - 功能类物品使用处理器（已优化合并）
+; 包含：传送卷轴、高级道具、装备升级道具等所有功能性道具
+; 脚本数量：13个
+; 最后更新：2025-07-28
+; 合并来源：传送道具.txt + 高级道具.txt
+;==============================================================================
+
+;==============================================================================
+; 传送道具系列 - 地图传送功能
+;==============================================================================
+
+;幽冥海传送卷轴
+[@_USEITEM(91112)]
+#IF
+CheckCalc <$VERSION> < 1
+#ACT
+TopMessage "该玩法将在幽冥海版本开放，可以通过快捷键W查看版本内容详情！" FALSE
+BREAK
+
+#IF
+Checkmap 223
+CheckItem 幽冥海传送卷轴 1
+#ACT
+TakeItem 幽冥海传送卷轴 1
+MOVE 226 950 208
+BREAK
+
+#IF
+Checkmap 224
+CheckItem 幽冥海传送卷轴 1
+#ACT
+TakeItem 幽冥海传送卷轴 1
+MOVE 226 950 208
+BREAK
+
+#IF
+Checkmap 225
+CheckItem 幽冥海传送卷轴 1
+#ACT
+TakeItem 幽冥海传送卷轴 1
+MOVE 226 950 208
+#ELSEACT
+TopMessage "此卷轴只可在幽冥海中使用" FALSE
+
+;坐标查询工具(测试用)
+[@_USEITEM(2101)]
+#IF
+CheckItemidx 2101 1
+#ACT
+LocalMessage "地图号：<$Map>"
+LocalMessage "坐标X：<$X_COORD>"
+LocalMessage "坐标Y：<$Y_COORD>"
+LocalMessage "地图怪物数：<$MAPMONCNT(<$Map>)>"
+
+;==============================================================================
+; 特殊道具系列 - 按职业分发
+;==============================================================================
+
+;特殊道具系列 - ID 94065
+[@_USEITEM(94065)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 21001 1
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 21002 1
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 21003 1
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 21004 1
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 21005 1
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 94065 1
+#ACT
+TakeItemIdx 94065 1
+GiveItemIdx 21006 1
+BREAK
+
+;特殊道具系列 - ID 94066
+[@_USEITEM(94066)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 21001 1
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 21002 1
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 21003 1
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 21004 1
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 21005 1
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 94066 1
+#ACT
+TakeItemIdx 94066 1
+GiveItemIdx 21006 1
+BREAK
+
+;特殊道具系列 - ID 94067
+[@_USEITEM(94067)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckClass 战士
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 21001 1
+BREAK
+
+#IF
+CheckClass 法师
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 21002 1
+BREAK
+
+#IF
+CheckClass 道士
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 21003 1
+BREAK
+
+#IF
+CheckClass 刺客
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 21004 1
+BREAK
+
+#IF
+CheckClass 弓手
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 21005 1
+BREAK
+
+#IF
+CheckClass 龙枪
+CheckItemidx 94067 1
+#ACT
+TakeItemIdx 94067 1
+GiveItemIdx 21006 1
+BREAK
+
+;==============================================================================
+; 高级装备道具系列 - 装备升级转换
+;==============================================================================
+
+;高级装备道具系列
+[@_USEITEM(1500896)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500896 1
+#ACT
+TakeItemIdx 1500896 1
+GiveItemIdx 1501014 1
+BREAK
+
+[@_USEITEM(1501028)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501028 1
+#ACT
+TakeItemIdx 1501028 1
+GiveItemIdx 1501018 1
+BREAK
+
+[@_USEITEM(1501017)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501017 1
+#ACT
+TakeItemIdx 1501017 1
+GiveItemIdx 1501016 1
+BREAK
+
+[@_USEITEM(1501015)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1501015 1
+#ACT
+TakeItemIdx 1501015 1
+GiveItemIdx 1029001 1
+BREAK
+
+;==============================================================================
+; 特殊材料道具系列 - 材料转换
+;==============================================================================
+
+;特殊材料道具
+[@_USEITEM(1023001)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1023001 1
+#ACT
+TakeItemIdx 1023001 1
+GiveItemIdx 1023002 1
+BREAK
+
+[@_USEITEM(1023003)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1023003 1
+#ACT
+TakeItemIdx 1023003 1
+GiveItemIdx 1500305 1
+BREAK
+
+;==============================================================================
+; 装备升级道具系列 - 装备强化功能
+;==============================================================================
+
+;装备升级道具
+[@_USEITEM(1500706)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500706 1
+#ACT
+TakeItemIdx 1500706 1
+GiveItemIdx 1510706 1
+BREAK
+
+[@_USEITEM(1500710)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500710 1
+#ACT
+TakeItemIdx 1500710 1
+GiveItemIdx 1500897 1
+BREAK
+
+;==============================================================================
+; 特殊功能道具系列 - 其他功能
+;==============================================================================
+
+;特殊功能道具
+[@_USEITEM(1700007)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1700007 1
+#ACT
+TakeItemIdx 1700007 1
+GiveItemIdx 1700029 1
+BREAK
+
+[@_USEITEM(1500820)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500820 1
+#ACT
+TakeItemIdx 1500820 1
+GiveItemIdx 140105 1
+BREAK
+
+[@_USEITEM(1500369)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500369 1
+#ACT
+TakeItemIdx 1500369 1
+GiveItemIdx 91125 1
+BREAK
+
+;==============================================================================
+; 随机道具系列 - 随机奖励功能
+;==============================================================================
+
+;随机包装盒
+[@_USEITEM(1029001)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1029001 1
+#ACT
+TakeItemIdx 1029001 1
+RandomGiveItemIdx 99990316,99990326,99990336,99990346,99990356, 99990366,99900018,99900019,99900021,99900054, 99900075,99900103,99920016,99920020,99920021, 99920044,99920073,99930014,99930017,99930018, 99930048,99930074,99940011,99940015,99940020, 99940037,99940072,99990411,99980413,99990413, 99980423,99990423,99980433,99990433,99980443, 99990443,99980453,99990453,99980463,99990463, 99990415,99990417 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1029001 1
+#ACT
+TakeItemIdx 1029001 1
+GiveItemIDX 418 1
+BREAK
+
+;特殊宝箱
+[@_USEITEM(1500305)]
+#IF
+HasBagSpace < 4
+#ACT
+TopMessage "背包格数剩余不足[4]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500305 1
+#ACT
+TakeItemIdx 1500305
+GiveItemIdx 417 1
+GiveItemIdx 80011 30
+GiveItemIdx 2315 5
+
+#IF
+Random 50
+#ACT
+GiveItemIdx 80003 1
+BREAK
+
+#IF
+Random 20
+#ACT
+GiveItemIdx 2315 1
+BREAK
+
+;装备随机宝箱
+[@_USEITEM(1500897)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 1500897 1
+#ACT
+TakeItemIdx 1500897 1
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK
+
+;高级装备宝箱
+[@_USEITEM(1510706)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1510706 1
+#ACT
+TakeItemIdx 1510706 1
+RandomGiveItemIdx 99920027,99920028,99920029,99920046,99920075,99920085,99930033,99930034,99930035,99930050,99930076,99930086,99940024,99940025,99940026,99940039,99940074,99940084,99990611,99990621,99990631,99990641,99990651,99990661 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1510706 1
+#ACT
+TakeItemIdx 1510706
+RandomGiveItemIdx 99920017,99920018,99920019,99920045,99920074,99920084,99930019,99930020,99930021,99930049,99930075,99930085,99940010,99940012,99940016,99940021,99940038,99940073,99940083 1 FALSE
+BREAK

@@ -1,0 +1,436 @@
+;==============================================================================
+; 货币道具.txt - 货币类物品使用处理器（已优化合并）
+; 包含：金币包、银币包、财源滚滚礼包等所有货币相关道具
+; 脚本数量：29个
+; 最后更新：2025-07-28
+; 合并来源：金币道具.txt + 银币道具.txt
+;==============================================================================
+
+;==============================================================================
+; 金币道具系列 - 直接给予金币
+;==============================================================================
+
+;荣耀礼包（含金币）
+[@_USEITEM(1500194)]
+#IF
+CheckItemidx 1500194 1
+HasBagSpace 6
+#ACT
+TakeItemIdx 1500194 1
+CheckClass 战士
+GiveItemIdx 21001 1
+CheckClass Wizard
+GiveItemIdx 21002 1
+CheckClass Taoist
+GiveItemIdx 21003 1
+CheckClass Assassin
+GiveItemIdx 21004 1
+CheckClass Archer
+GiveItemIdx 21005 1
+CheckClass DragonSpear
+GiveItemIdx 21006 1
+GiveItemIdx 1500895 1
+GiveItemIdx 1500196 1
+GiveItemIdx 1500820 1
+GiveItemIdx 1500551 1
+GiveItemIdx 1500552 1
+GiveBindGold 10000
+TopMessage 恭喜你获得了荣耀礼包奖励！
+#ELSEACT
+TopMessage 背包空间不足，请清理后再试！
+
+
+
+;白日围城金币包
+[@_USEITEM(1370112)]
+#IF
+CheckItemidx 1370112 1
+#ACT
+TakeItemIdx 1370112 1
+GiveGold 135000
+TopMessage 你获得了135000金币！
+#ELSEACT
+TopMessage 你没有白日围城金币包！
+
+;赤月恶魔金币包
+[@_USEITEM(1370109)]
+#IF
+CheckItemidx 1370109 1
+#ACT
+TakeItemIdx 1370109 1
+GiveGold 165000
+TopMessage 你获得了165000金币！
+#ELSEACT
+TopMessage 你没有赤月恶魔金币包！
+
+;魔龙谷金币包
+[@_USEITEM(1370110)]
+#IF
+CheckItemidx 1370110 1
+#ACT
+TakeItemIdx 1370110 1
+GiveGold 220000
+TopMessage 你获得了220000金币！
+#ELSEACT
+TopMessage 你没有魔龙谷金币包！
+
+;赤月群岛金币包
+[@_USEITEM(1370114)]
+#IF
+CheckItemidx 1370114 1
+#ACT
+TakeItemIdx 1370114 1
+GiveGold 275000
+TopMessage 你获得了275000金币！
+#ELSEACT
+TopMessage 你没有赤月群岛金币包！
+
+;苍月岛金币包
+[@_USEITEM(1370111)]
+#IF
+CheckItemidx 1370111 1
+#ACT
+TakeItemIdx 1370111 1
+GiveGold 330000
+TopMessage 你获得了330000金币！
+#ELSEACT
+TopMessage 你没有苍月岛金币包！
+
+;踏雪屠龙金币包
+[@_USEITEM(1370113)]
+#IF
+CheckItemidx 1370113 1
+#ACT
+TakeItemIdx 1370113 1
+GiveGold 385000
+TopMessage 你获得了385000金币！
+#ELSEACT
+TopMessage 你没有踏雪屠龙金币包！
+
+;财源滚滚礼包
+[@_USEITEM(1500039)]
+#IF
+CheckItemidx 1500039 1
+#ACT
+TakeItemIdx 1500039 1
+GiveGold 880000
+TopMessage 你获得了880000金币！
+#ELSEACT
+TopMessage 你没有财源滚滚礼包！
+
+;==============================================================================
+; 银币道具系列 - 给予绑定银币
+;==============================================================================
+
+;1万银币包
+[@_USEITEM(1370201)]
+#IF
+CheckItemidx 1370201 1
+#ACT
+TakeItemIdx 1370201 1
+GiveBindGold 10000
+TopMessage 你获得了1万绑定银币！
+#ELSEACT
+TopMessage 你没有1万银币包！
+
+;2万银币包
+[@_USEITEM(1370202)]
+#IF
+CheckItemidx 1370202 1
+#ACT
+TakeItemIdx 1370202 1
+GiveBindGold 20000
+TopMessage 你获得了2万绑定银币！
+#ELSEACT
+TopMessage 你没有2万银币包！
+
+;3万银币包
+[@_USEITEM(1370203)]
+#IF
+CheckItemidx 1370203 1
+#ACT
+TakeItemIdx 1370203 1
+GiveBindGold 30000
+TopMessage 你获得了3万绑定银币！
+#ELSEACT
+TopMessage 你没有3万银币包！
+
+;5万银币包
+[@_USEITEM(1370204)]
+#IF
+CheckItemidx 1370204 1
+#ACT
+TakeItemIdx 1370204 1
+GiveBindGold 50000
+TopMessage 你获得了5万绑定银币！
+#ELSEACT
+TopMessage 你没有5万银币包！
+
+;8万银币包
+[@_USEITEM(1370205)]
+#IF
+CheckItemidx 1370205 1
+#ACT
+TakeItemIdx 1370205 1
+GiveBindGold 80000
+TopMessage 你获得了8万绑定银币！
+#ELSEACT
+TopMessage 你没有8万银币包！
+
+;10万银币包
+[@_USEITEM(1370206)]
+#IF
+CheckItemidx 1370206 1
+#ACT
+TakeItemIdx 1370206 1
+GiveBindGold 100000
+TopMessage 你获得了10万绑定银币！
+#ELSEACT
+TopMessage 你没有10万银币包！
+
+;15万银币包
+[@_USEITEM(1370207)]
+#IF
+CheckItemidx 1370207 1
+#ACT
+TakeItemIdx 1370207 1
+GiveBindGold 150000
+TopMessage 你获得了15万绑定银币！
+#ELSEACT
+TopMessage 你没有15万银币包！
+
+;20万银币包
+[@_USEITEM(1370208)]
+#IF
+CheckItemidx 1370208 1
+#ACT
+TakeItemIdx 1370208 1
+GiveBindGold 200000
+TopMessage 你获得了20万绑定银币！
+#ELSEACT
+TopMessage 你没有20万银币包！
+
+;30万银币包
+[@_USEITEM(1370209)]
+#IF
+CheckItemidx 1370209 1
+#ACT
+TakeItemIdx 1370209 1
+GiveBindGold 300000
+TopMessage 你获得了30万绑定银币！
+#ELSEACT
+TopMessage 你没有30万银币包！
+
+;50万银币包
+[@_USEITEM(1370210)]
+#IF
+CheckItemidx 1370210 1
+#ACT
+TakeItemIdx 1370210 1
+GiveBindGold 500000
+TopMessage 你获得了50万绑定银币！
+#ELSEACT
+TopMessage 你没有50万银币包！
+
+;80万银币包
+[@_USEITEM(1370211)]
+#IF
+CheckItemidx 1370211 1
+#ACT
+TakeItemIdx 1370211 1
+GiveBindGold 800000
+TopMessage 你获得了80万绑定银币！
+#ELSEACT
+TopMessage 你没有80万银币包！
+
+;100万银币包
+[@_USEITEM(1370212)]
+#IF
+CheckItemidx 1370212 1
+#ACT
+TakeItemIdx 1370212 1
+GiveBindGold 1000000
+TopMessage 你获得了100万绑定银币！
+#ELSEACT
+TopMessage 你没有100万银币包！
+
+;银币包500000
+[@_USEITEM(1370213)]
+#IF
+CheckItemidx 1370213 1
+#ACT
+TakeItemIdx 1370213 1
+GiveBindGold 500000
+TopMessage 你获得了500000银币！
+#ELSEACT
+TopMessage 你没有银币包！
+
+;银币包1000000
+[@_USEITEM(1370214)]
+#IF
+CheckItemidx 1370214 1
+#ACT
+TakeItemIdx 1370214 1
+GiveBindGold 1000000
+TopMessage 你获得了1000000银币！
+#ELSEACT
+TopMessage 你没有银币包！
+
+;银币包150000
+[@_USEITEM(1370215)]
+#IF
+CheckItemidx 1370215 1
+#ACT
+TakeItemIdx 1370215 1
+GiveBindGold 150000
+TopMessage 你获得了150000银币！
+#ELSEACT
+TopMessage 你没有银币包！
+
+;至尊银币礼包
+[@_USEITEM(1500892)]
+#IF
+CheckItemidx 1500892 1
+#ACT
+TakeItemIdx 1500892 1
+GiveBindGold 150000
+TopMessage 你获得了150000银币！
+#ELSEACT
+TopMessage 你没有至尊银币礼包！
+
+;银币加油包
+[@_USEITEM(1502033)]
+#IF
+CheckItemidx 1502033 1
+#ACT
+TakeItemIdx 1502033 1
+GiveBindGold 500000
+TopMessage 你获得了500000银币！
+#ELSEACT
+TopMessage 你没有银币加油包！
+
+;媒体特权礼包1
+[@_USEITEM(1500858)]
+#IF
+CheckItemidx 1500858 1
+#ACT
+TakeItemIdx 1500858 1
+GiveBindGold 50000
+TopMessage 你获得了50000银币！
+#ELSEACT
+TopMessage 你没有媒体特权礼包！
+
+;==============================================================================
+; 烟花道具系列 - 烟花爆竹特效道具
+;==============================================================================
+
+;蛋糕烟花2
+[@_USEITEM(1510088)]
+#IF
+CheckItemidx 1510088 1
+#ACT
+TopMessage "<#P0:<$USERNAME>><#P1:0><#T:990330>" FALSE
+
+#IF
+CheckCalc <$VERSION> == 0
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 250000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 1
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 330000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 3
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 330000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 4
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 6
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 7
+CheckItemidx 1510088 1
+#ACT
+TakeItemidx 1510088 1
+GiveGold 1000000
+BREAK
+
+;大蛋糕烟花3
+[@_USEITEM(1510096)]
+#IF
+CheckItemidx 1510096 1
+#ACT
+TopMessage "<#P0:<$USERNAME>><#P1:0><#T:990330>" FALSE
+
+#IF
+CheckCalc <$VERSION> == 0
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 12500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 1
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 12500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 3
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 16500000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 4
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 25000000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 6
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 25000000
+BREAK
+
+#IF
+CheckCalc <$VERSION> == 7
+CheckItemidx 1510096 1
+#ACT
+TakeItemIdx 1510096 1
+GiveGold 50000000
+BREAK
+

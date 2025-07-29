@@ -1,0 +1,73 @@
+;==============================================================================
+; 药剂道具.txt - 药剂类物品使用处理器（已优化合并）
+; 包含：诱惑圣水、诱惑神水、功能药剂等所有药剂相关道具
+; 脚本数量：15个
+; 最后更新：2025-07-28
+; 合并来源：可用药剂.txt + 部分功能道具
+;==============================================================================
+
+;==============================================================================
+; 圣水类药剂 - 诱惑系列
+;==============================================================================
+
+;诱惑圣水
+[@_USEITEM(719)]
+#IF
+HasBuff 46020
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+HasBuff 45780
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+CheckItemidx 719 1
+#ACT
+TakeItemIdx 719 1
+GiveBuff 46010
+BREAK
+
+[@_USEITEM(720)]
+#IF
+HasBuff 46010
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+HasBuff 45780
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+CheckItemidx 720 1
+#ACT
+TakeItemIdx 720 1
+GiveBuff 46020
+BREAK
+
+;诱惑神水
+[@_USEITEM(801)]
+#IF
+HasBuff 46020
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+HasBuff 46010
+#ACT
+TopMessage "已获得圣水效果，请勿重复使用" FALSE
+BREAK
+
+#IF
+CheckItemidx 801 1
+#ACT
+TakeItemIdx 801 1
+GiveBuff 45780
+BREAK

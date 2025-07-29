@@ -1,0 +1,3 @@
+[@MAIN]
+#SAY
+阁下找我有什么事吗？<#UI:EquipUpgdNhrt1>精炼传承<#UI/><#UI:EquipUpgdNhrt2>孔色传承<#UI/><#UI:EquipUpgdNhrt0>武器铭文传承<#UI/><#UI:EquipUpgdNhrt3>武器升级传承<#UI/><#UI:EquipUpgdNhrt4>装备升级传承<#UI/>

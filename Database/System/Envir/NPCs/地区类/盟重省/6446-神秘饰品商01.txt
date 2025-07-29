@@ -1,0 +1,3 @@
+[@MAIN]
+#SAY
+<#UI:Shop>虹魔饰品商店<#UI/>

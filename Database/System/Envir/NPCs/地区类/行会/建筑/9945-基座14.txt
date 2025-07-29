@@ -1,0 +1,6 @@
+[@MAIN]
+#IF
+检测公会会长
+#ACT
+#SAY
+<#Dft>

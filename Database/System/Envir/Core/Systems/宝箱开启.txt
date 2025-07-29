@@ -1,0 +1,92 @@
+;==============================================================================
+; 宝箱开启系统
+; 包含：铜宝箱、银宝箱、金宝箱、钥匙宝箱的开启逻辑
+;==============================================================================
+
+;铜宝箱
+[@_TryOpenDropBox(2023)]
+#IF
+NOT CheckItem 铜钥匙
+#ACT
+TopMessage "开启铜质宝箱需要一把铜钥匙" FALSE
+STOP
+Break
+
+#IF
+CheckItem 铜钥匙 1
+#ACT
+SetChestKeyName 铜钥匙 1
+OpenBoxNeedTimeMSec 1
+
+[@_OpenDropBox(2023)]
+#IF
+#ACT
+TakeItem 铜钥匙 1
+
+;----------------------------------------------------------------------
+
+;银宝箱
+[@_TryOpenDropBox(2024)]
+#IF
+NOT CheckItem 银钥匙
+#ACT
+TopMessage "开启银质宝箱需要一把银钥匙" FALSE
+STOP
+Break
+
+#IF
+CheckItem 银钥匙 1
+#ACT
+SetChestKeyName 银钥匙 1
+OpenBoxNeedTimeMSec 1
+
+[@_OpenDropBox(2024)]
+#IF
+#ACT
+TakeItem 银钥匙 1
+
+;-------------------------------------------------------------------------
+
+;金宝箱
+[@_TryOpenDropBox(2064)]
+#IF
+NOT CheckItem 金钥匙
+#ACT
+TopMessage "开启金质宝箱需要一把金钥匙" FALSE
+STOP
+Break
+
+#IF
+CheckItem 金钥匙 1
+#ACT
+SetChestKeyName 金钥匙 1
+OpenBoxNeedTimeMSec 1
+
+[@_OpenDropBox(2064)]
+#IF
+#ACT
+TakeItem 金钥匙 1
+
+;-------------------------------------------------------------------------
+;铜钥匙
+[@_TryOpenDropBox(2033)]
+#IF
+#ACT
+
+OpenBoxNeedTimeMSec 10000
+
+;-------------------------------------------------------------------------
+;银钥匙
+[@_TryOpenDropBox(2034)]
+#IF
+#ACT
+
+OpenBoxNeedTimeMSec 10000
+
+;-------------------------------------------------------------------------
+;金钥匙
+[@_TryOpenDropBox(2035)]
+#IF
+#ACT
+
+OpenBoxNeedTimeMSec 10000

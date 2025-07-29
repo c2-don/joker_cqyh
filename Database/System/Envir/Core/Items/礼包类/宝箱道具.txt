@@ -1,0 +1,512 @@
+;==============================================================================
+; 宝箱系列物品使用处理器
+; 包含：屠魔宝箱、长廊宝箱等各种等级宝箱
+;==============================================================================
+
+;神圣石
+[@_USEITEM(111114)]
+#IF
+CHECKITEMVALUE 0 0 11 >= <$ITEMVALUE(0,0,40)>
+#ACT
+ErrorMessage 1944 0 0 
+BREAK
+
+#IF
+CheckItemidx 111114 1
+RANDOM 5
+#ACT
+TAKEITEMIDX 111114 1
+MOV P1 <$ITEMVALUE(0,0,11)>
+CALC P1 + 1
+CHANGEITEMVALUE 0 0 11 %P1
+LocalMessage "<#T:MMOGame.HolyDmg.UpdateResult>"
+#ELSEACT
+TAKEITEMIDX 111114 1
+LocalMessage "<#T:MMOGame.HolyDmg.UpdateResult0>"
+
+;高级长廊宝箱(3级)
+[@_USEITEM(94068)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包空格不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94068 1
+#ACT
+TakeItemIdx 94068 1
+GiveItemIdx 94070 1
+GiveItemIdx 91184 3
+GiveExp 300000
+
+#IF
+Random 5
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+
+
+
+
+
+
+;中级长廊宝箱(2级)
+[@_USEITEM(94064)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94064 1
+#ACT
+TakeItemIdx 94064 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+#IF
+Random 20
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;中级长廊宝箱(1级)
+[@_USEITEM(94063)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94063 1
+#ACT
+TakeItemIdx 94063 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+;长廊宝箱(3级)
+[@_USEITEM(94062)]
+#IF
+HasBagSpace < 3
+#ACT
+TopMessage "背包空格不足[3]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94062 1
+#ACT
+TakeItemIdx 94062 1
+GiveItemIdx 94070 1
+GiveItemIdx 91184 3
+GiveExp 300000
+
+#IF
+Random 25
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;长廊宝箱(2级)
+[@_USEITEM(94061)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94061 1
+#ACT
+TakeItemIdx 94061 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+#IF
+Random 30
+#ACT
+RandomGiveItemIdx 21001,21002,21003,21004,21005,21006,111061,111062 1 FALSE
+
+;长廊宝箱(1级)
+[@_USEITEM(94060)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94060 1
+#ACT
+TakeItemIdx 94060 1
+GiveItemIdx 91184 3
+GiveExp 200000
+
+;屠魔宝箱(进阶秘境)
+[@_USEITEM(94057)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94057 1
+#ACT
+TakeItemIdx 94057 1
+GiveItemIdx 91127 40
+GiveExp 2000000
+
+#IF
+Random 5
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(标准秘境)
+[@_USEITEM(94056)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94056 1
+#ACT
+TakeItemIdx 94056 1
+GiveItemIdx 91127 35
+GiveExp 1700000
+
+#IF
+Random 10
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(15级)
+[@_USEITEM(94055)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94055 1
+#ACT
+TakeItemIdx 94055 1
+GiveItemIdx 91127 30
+GiveExp 1500000
+
+#IF
+Random 15
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(14级)
+[@_USEITEM(94054)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94054 1
+#ACT
+TakeItemIdx 94054 1
+GiveItemIdx 91127 28
+GiveExp 1400000
+
+#IF
+Random 20
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(13级)
+[@_USEITEM(94053)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94053 1
+#ACT
+TakeItemIdx 94053 1
+GiveItemIdx 91127 26
+GiveExp 1300000
+
+#IF
+Random 25
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(12级)
+[@_USEITEM(94052)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94052 1
+#ACT
+TakeItemIdx 94052 1
+GiveItemIdx 91127 24
+GiveExp 1200000
+
+#IF
+Random 30
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(11级)
+[@_USEITEM(94051)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94051 1
+#ACT
+TakeItemIdx 94051 1
+GiveItemIdx 91127 22
+GiveExp 1100000
+
+#IF
+Random 35
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(10级)
+[@_USEITEM(94050)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94050 1
+#ACT
+TakeItemIdx 94050 1
+GiveItemIdx 91127 20
+GiveExp 1000000
+
+#IF
+Random 40
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(9级)
+[@_USEITEM(94049)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94049 1
+#ACT
+TakeItemIdx 94049 1
+GiveItemIdx 91127 18
+GiveExp 900000
+
+#IF
+Random 45
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(8级)
+[@_USEITEM(94048)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94048 1
+#ACT
+TakeItemIdx 94048 1
+GiveItemIdx 91127 16
+GiveExp 800000
+
+#IF
+Random 50
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(7级)
+[@_USEITEM(94047)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94047 1
+#ACT
+TakeItemIdx 94047 1
+GiveItemIdx 91127 14
+GiveExp 700000
+
+#IF
+Random 55
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(6级)
+[@_USEITEM(94046)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94046 1
+#ACT
+TakeItemIdx 94046 1
+GiveItemIdx 91127 12
+GiveExp 600000
+
+#IF
+Random 60
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(5级)
+[@_USEITEM(94045)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94045 1
+#ACT
+TakeItemIdx 94045 1
+GiveItemIdx 91127 10
+GiveExp 500000
+
+#IF
+Random 65
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(4级)
+[@_USEITEM(94044)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94044 1
+#ACT
+TakeItemIdx 94044 1
+GiveItemIdx 91127 8
+GiveExp 400000
+
+#IF
+Random 70
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(3级)
+[@_USEITEM(94043)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94043 1
+#ACT
+TakeItemIdx 94043 1
+GiveItemIdx 91127 6
+GiveExp 300000
+
+#IF
+Random 80
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(2级)
+[@_USEITEM(94042)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94042 1
+#ACT
+TakeItemIdx 94042 1
+GiveItemIdx 91127 4
+GiveExp 200000
+
+#IF
+Random 90
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;屠魔宝箱(1级)
+[@_USEITEM(94041)]
+#IF
+HasBagSpace < 2
+#ACT
+TopMessage "背包空格不足[2]格" FALSE
+BREAK
+
+#IF
+CheckItemidx 94041 1
+#ACT
+TakeItemIdx 94041 1
+GiveItemIdx 91127 2
+GiveExp 100000
+
+#IF
+Random 100
+#ACT
+RandomGiveItemIdx 80003,111115,91184 1 FALSE
+
+;高级宝箱(银)
+[@_USEITEM(1023002)]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包格数剩余不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItem 银钥匙 1
+#ELSEACT
+TopMessage "开启宝箱所需（银钥匙）一把" FALSE
+BREAK
+
+#IF
+Random 80
+CheckItemidx 1023002 1
+#ACT
+TakeItemIdx 1023002 1
+RandomGiveItemIdx 99961001,99961002,99961003,99961004,99961005,99961006,99920027,99920028,99920029,99920046,99920075,99920085,99930033,99930034,99930035,99930050,99930076,99930086,99940024,99940025,99940026,99940039,99940074,99940084,99990611,99990621,99990631,99990641,99990651,99990661 1 FALSE
+BREAK
+
+#IF
+CheckItemidx 1023002 1
+#ACT
+TakeItemIdx 1023002 1
+RandomGiveItemIdx 111061,111062,111063,111064,80003 1 FALSE
+BREAK

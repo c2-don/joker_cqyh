@@ -1,0 +1,152 @@
+;==============================================================================
+; 职业礼包.txt - 职业礼包类物品使用处理器（已优化合并）
+; 包含：职业技能书包、职业装备包等职业专用礼包
+; 脚本数量：18个
+; 最后更新：2025-07-28
+; 合并来源：职业技能书包.txt + 职业装备包.txt
+;==============================================================================
+
+;==============================================================================
+; 职业技能书包系列 - 职业专用技能书
+;==============================================================================
+
+;战士技能书包
+[@_USEITEM(1400001)]
+#IF
+CheckItemidx 1400001 1
+HasBagSpace 10
+CheckClass 战士
+#ACT
+TakeItemIdx 1400001 1
+GiveItem 基本剑术 1
+GiveItem 攻杀剑术 1
+GiveItem 刺杀剑术 1
+GiveItem 半月弯刀 1
+GiveItem 野蛮冲撞 1
+GiveItem 烈火剑法 1
+GiveItem 逐日剑法 1
+GiveItem 开天斩 1
+GiveItem 破盾斩 1
+GiveItem 炎龙波 1
+TopMessage 恭喜你获得了战士技能书包！
+#ELSEACT
+TopMessage 背包空间不足或职业不符，请检查后再试！
+
+;法师技能书包
+[@_USEITEM(1400002)]
+#IF
+CheckItemidx 1400002 1
+HasBagSpace 10
+CheckClass 法师
+#ACT
+TakeItemIdx 1400002 1
+GiveItem 小火球 1
+GiveItem 大火球 1
+GiveItem 火墙 1
+GiveItem 雷电术 1
+GiveItem 疾光电影 1
+GiveItem 地狱雷光 1
+GiveItem 冰咆哮 1
+GiveItem 灭天火 1
+GiveItem 流星火雨 1
+GiveItem 冰旋风 1
+TopMessage 恭喜你获得了法师技能书包！
+#ELSEACT
+TopMessage 背包空间不足或职业不符，请检查后再试！
+
+;道士技能书包
+[@_USEITEM(1400003)]
+#IF
+CheckItemidx 1400003 1
+HasBagSpace 10
+CheckClass 道士
+#ACT
+TakeItemIdx 1400003 1
+GiveItem 治愈术 1
+GiveItem 精神力战法 1
+GiveItem 施毒术 1
+GiveItem 灵魂火符 1
+GiveItem 召唤骷髅 1
+GiveItem 隐身术 1
+GiveItem 集体隐身术 1
+GiveItem 神圣战甲术 1
+GiveItem 召唤神兽 1
+GiveItem 气功波 1
+TopMessage 恭喜你获得了道士技能书包！
+#ELSEACT
+TopMessage 背包空间不足或职业不符，请检查后再试！
+
+;刺客技能书包
+[@_USEITEM(1400004)]
+#IF
+CheckItemidx 1400004 1
+HasBagSpace 10
+CheckClass 刺客
+#ACT
+TakeItemIdx 1400004 1
+GiveItem 飞镖术 1
+GiveItem 一击必杀 1
+GiveItem 双龙斩 1
+GiveItem 火龙气焰 1
+GiveItem 冷酷 1
+GiveItem 分身术 1
+GiveItem 八卦掌 1
+GiveItem 三绝杀 1
+GiveItem 破血狂杀 1
+GiveItem 潜行术 1
+TopMessage 恭喜你获得了刺客技能书包！
+#ELSEACT
+TopMessage 背包空间不足或职业不符，请检查后再试！
+
+;弓手技能书包
+[@_USEITEM(1400005)]
+#IF
+CheckItemidx 1400005 1
+HasBagSpace 10
+CheckClass 弓手
+#ACT
+TakeItemIdx 1400005 1
+GiveItem 基础射击 1
+GiveItem 多重箭 1
+GiveItem 火箭术 1
+GiveItem 爆裂箭 1
+GiveItem 击退射击 1
+GiveItem 击飞射击 1
+GiveItem 强袭 1
+GiveItem 穿透射击 1
+GiveItem 连环箭 1
+GiveItem 暴风箭雨 1
+TopMessage 恭喜你获得了弓手技能书包！
+#ELSEACT
+TopMessage 背包空间不足或职业不符，请检查后再试！
+
+;龙枪技能书包
+[@_USEITEM(1400006)]
+#IF
+CheckItemidx 1400006 1
+HasBagSpace 10
+CheckClass 龙枪
+#ACT
+TakeItemIdx 1400006 1
+GiveItem 基础枪法 1
+GiveItem 连击枪法 1
+GiveItem 旋风枪 1
+GiveItem 破甲枪 1
+GiveItem 龙牙枪 1
+GiveItem 枪出如龙 1
+GiveItem 乾坤斗气 1
+GiveItem 龙腾四海 1
+GiveItem 万枪齐发 1
+GiveItem 龙魂附体 1
+TopMessage 恭喜你获得了龙枪技能书包！
+#ELSEACT
+TopMessage 背包空间不足或职业不符，请检查后再试！
+
+;==============================================================================
+; 职业装备包系列 - 职业专用装备
+;==============================================================================
+
+
+
+
+

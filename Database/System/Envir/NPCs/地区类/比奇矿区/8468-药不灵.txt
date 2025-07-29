@@ -1,0 +1,3 @@
+[@MAIN]
+#SAY
+太好啦，到处都是僵尸，我的药剂都要脱销啦！<#UI:OpenFilterShop1>药店<#UI/>
