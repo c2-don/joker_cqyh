@@ -9,8 +9,21 @@ ConfigMgr = {
 ConfigMgr.__index = ConfigMgr
 setmetatable(ConfigMgr, Class)
 
--- 数据配置文件的路径  这里自己根据目录替换
-local cfgPath = "D:/CQYH/Database/System/lua/Config/%s.lua"
+-- 数据配置文件的路径  从package.path中动态获取，确保可移植性
+local function get_config_base_path()
+	local path = package.path
+	-- 查找包含System/lua的路径
+	for pattern in string.gmatch(path, "[^;]+") do
+		local base = string.match(pattern, "(.*/System/lua)/")
+		if base then
+			return base .. "/Config/%s.lua"
+		end
+	end
+	-- 如果没找到，使用相对路径作为后备
+	return "Config/%s.lua"
+end
+
+local cfgPath = get_config_base_path()
 
 -- 构造器
 function ConfigMgr:new()

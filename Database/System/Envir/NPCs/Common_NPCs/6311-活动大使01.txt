@@ -2,4 +2,35 @@
 #IF
 #ACT
 #SAY
-111
+我是活动大使，可以为你提供各种便民服务。<#SO:1>开启自动拾取<#SO/><#SO:2>关闭自动拾取<#SO/><#SO:3>离开<#SO/>
+
+[@1]
+#IF
+CheckCalc <$VIP> >= 1
+#ACT
+AutoPickCfg 5 3000
+LocalMessage "你开启了范围为5的自动拾取功能，3秒执行一次!"
+SaveValue "AutoPickLog.txt" "AutoPick" "<$USERNAME>_<$DATE>_<$HOUR>" "玩家<$USERNAME>开启了自动拾取功能,范围:5,间隔:3000毫秒"
+BREAK
+#ELSESAY
+对不起，只有VIP玩家才能使用自动拾取功能！请先开通VIP特权。
+#SAY
+你开启了范围为5的自动拾取功能，3秒执行一次!
+
+[@2]
+#IF
+CheckCalc <$VIP> >= 1
+#ACT
+AutoPickCfg 0 0
+LocalMessage "你已关闭自动拾取功能!"
+SaveValue "AutoPickLog.txt" "AutoPick" "<$USERNAME>_<$DATE>_<$HOUR>" "玩家<$USERNAME>关闭了自动拾取功能"
+BREAK
+#ELSESAY
+对不起，只有VIP玩家才能操作自动拾取功能！
+#SAY
+你已关闭自动拾取功能!
+
+[@3]
+#IF
+#ACT
+CLOSE

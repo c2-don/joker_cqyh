@@ -19,6 +19,6 @@ Break
 #IF
 ;random 10
 #ACT
-MonGenEx 227 1144 570 兽人大祭司 1
-GlobalMessage "[兽人大祭司]：<font color='#FF0000'>我感受到了人类的气息，好久没有闻到这么香的味道了！</font>" FALSE
-;GlobalMessage "<font color='#FF0000'>有人成功唤醒了妖塔里的“兽人大祭司”，快快前往镇压！</font>" FALSE
+MONGENEX 227 1144 570 兽人大祭司 1
+GLOBALMESSAGE "[兽人大祭司]：<font color='#FF0000'>我感受到了人类的气息，好久没有闻到这么香的味道了！</font>" FALSE
+;GLOBALMESSAGE "<font color='#FF0000'>有人成功唤醒了妖塔里的"兽人大祭司"，快快前往镇压！</font>" FALSE

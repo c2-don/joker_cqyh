@@ -24,7 +24,7 @@
 ; 酬勤礼包系列 - 勤奋奖励礼包
 ;==============================================================================
 
-;酬勤礼盒21
+; 酬勤礼盒21 - 可用杂物(18)
 [@_USEITEM(140102)]
 #IF
 HasBagSpace < 5
@@ -42,7 +42,7 @@ GiveItem 强效战神油 10 TRUE
 GiveItem 练功券 2 TRUE
 GiveItem 碎裂的无相石 30 TRUE
 
-;酬勤礼盒1
+; 酬勤礼盒1 - 可用杂物(18)
 [@_USEITEM(1500301)]
 #IF
 HasBagSpace < 5
@@ -60,7 +60,7 @@ GiveItem 超级金创药3 1 TRUE
 GiveItem 超级魔法药3 1 TRUE
 GiveItem 副本入场券 1 TRUE
 
-;酬勤礼盒2
+; 酬勤礼盒2 - 可用杂物(18)
 [@_USEITEM(1500302)]
 #IF
 HasBagSpace < 4
@@ -77,7 +77,7 @@ GiveItem 点金锄 1 TRUE
 GiveItem 强效战神油 10 TRUE
 GiveItem 练功券 2 TRUE
 
-;精进礼盒1
+; 精进礼盒1 - 可用杂物(18)
 [@_USEITEM(1500303)]
 #IF
 HasBagSpace < 4
@@ -94,7 +94,7 @@ GiveItem 点金锄 1 TRUE
 GiveItem 强效战神油 15 TRUE
 GiveItem 练功券 2 TRUE
 
-;精进礼盒2
+; 精进礼盒2 - 可用杂物(18)
 [@_USEITEM(1500304)]
 #IF
 HasBagSpace < 4
@@ -111,7 +111,7 @@ GiveItem 点金锄 1 TRUE
 GiveItem 强效战神油 20 TRUE
 GiveItem 练功券 3 TRUE
 
-;酬勤礼盒11
+; 酬勤礼盒11 - 可用杂物(18)
 [@_USEITEM(140101)]
 #IF
 HasBagSpace < 6
@@ -130,7 +130,7 @@ GiveItem 超级魔法药3 1 TRUE
 GiveItem 副本入场券 1 TRUE
 GiveItem 碎裂的无相石 30 TRUE
 
-;精进礼盒11
+; 精进礼盒11 - 可用杂物(18)
 [@_USEITEM(140103)]
 #IF
 HasBagSpace < 5
@@ -148,7 +148,7 @@ GiveItem 强效战神油 15 TRUE
 GiveItem 练功券 2 TRUE
 GiveItemIDX 140002 3 TRUE
 
-;精进礼盒21
+; 精进礼盒21 - 可用杂物(18)
 [@_USEITEM(140104)]
 #IF
 HasBagSpace < 4
@@ -169,7 +169,7 @@ GiveItem 练功券 5 TRUE
 ; 传永礼包系列 - 特殊传永礼包
 ;==============================================================================
 
-;传永礼包
+; 传永礼包 - 可用杂物(18)
 [@_USEITEM(1500038)]
 #IF
 HasBagSpace < 5

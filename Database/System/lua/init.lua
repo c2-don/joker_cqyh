@@ -11,7 +11,8 @@ package.loaded["Common/zbdyb"] = nil
 
 package.loaded["Helper/server"] = nil
 
-package.loaded["Map/scene"] = nil
+package.loaded["Map/map"] = nil
+-- package.loaded["Map/scene"] = nil
 package.loaded["Npc/npc"] = nil
 
 package.loaded["Player/player"] = nil
@@ -31,7 +32,7 @@ require "Common/const" --常量数据
 require "Common/func" --功能函数
 require "Common/zbdyb" --装备回收对应表
 require "Helper/server" --服务器获取相关
-require "Map/scene" --地图相关处理
+require "Map/map" --地图相关处理
 require "Npc/npc" --npc相关交互
 
 require "Player/player" --玩家相关交互

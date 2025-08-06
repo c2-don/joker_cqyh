@@ -1,22 +1,22 @@
 print("重新加载scene.lua")
 
 package.loaded["Map/yaota"] = nil
-package.loaded["Map/tumo"] = nil
-package.loaded["Map/mochongku"] = nil
-package.loaded["Map/mota"] = nil
-package.loaded["Map/xuegong"] = nil
-package.loaded["Map/motamijing"] = nil
-package.loaded["Map/zhizhuchanglang"] = nil
-package.loaded["Map/weizhiandian"] = nil
+-- package.loaded["Map/tumo"] = nil
+-- package.loaded["Map/mochongku"] = nil
+-- package.loaded["Map/mota"] = nil
+-- package.loaded["Map/xuegong"] = nil
+-- package.loaded["Map/motamijing"] = nil
+-- package.loaded["Map/zhizhuchanglang"] = nil
+-- package.loaded["Map/weizhiandian"] = nil
 
 require "Map/yaota"
-require "Map/tumo"
-require "Map/mochongku"
-require "Map/mota"
-require "Map/xuegong"
-require "Map/motamijing"
-require "Map/zhizhuchanglang"
-require "Map/weizhiandian"
+-- require "Map/tumo"
+-- require "Map/mochongku"
+-- require "Map/mota"
+-- require "Map/xuegong"
+-- require "Map/motamijing"
+-- require "Map/zhizhuchanglang"
+-- require "Map/weizhiandian"
 
 function scene_instance_create(地图)
 

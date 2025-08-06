@@ -10,7 +10,6 @@
 ; 小道具包系列 - 各种小道具包装
 ;==============================================================================
 
-;点金锄包
 ; 金创药礼包 - 可用杂物(18)
 [@_USEITEM(1500008)]
 #IF
@@ -26,7 +25,6 @@ TakeItemIdx 1500008 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;副本入场券包
 ; 太阳水礼包 - 可用杂物(18)
 [@_USEITEM(1500010)]
 #IF
@@ -42,7 +40,6 @@ TakeItemIdx 1500010 1
 GiveItemIdx 416 1 FALSE
 BREAK
 
-;祝福油包
 ; 祝福油礼包 - 可用杂物(18)
 [@_USEITEM(1500020)]
 #IF
@@ -58,7 +55,6 @@ TakeItemIdx 1500020 1
 GiveItemIdx 80003 3 TRUE
 BREAK
 
-;特殊道具包
 ; 老大礼包 - 可用杂物(18)
 [@_USEITEM(1500040)]
 #IF
@@ -74,7 +70,6 @@ TakeItemIdx 1500040 1
 GiveItemIdx 69900008 1 FALSE
 BREAK
 
-;修为丹包
 ; 感恩传永礼包 - 可用杂物(18)
 [@_USEITEM(1500058)]
 #IF
@@ -90,7 +85,6 @@ TakeItemIdx 1500058 1
 GiveItemIdx 91125 188 FALSE
 BREAK
 
-;强效战神油包
 ; 龙枪精粹礼包 - 可用杂物(18)
 [@_USEITEM(1500172)]
 #IF
@@ -106,7 +100,6 @@ TakeItemIdx 1500172 1
 GiveItemIdx 111301 10 FALSE
 BREAK
 
-;练功券包
 ; 称心如意礼包 - 可用杂物(18)
 [@_USEITEM(1500191)]
 #IF
@@ -122,7 +115,6 @@ TakeItemIdx 1500191 1
 GiveItemIdx 91211 1 FALSE
 BREAK
 
-;副本券包
 ; 万事如意礼包 - 可用杂物(18)
 [@_USEITEM(1500192)]
 #IF
@@ -142,7 +134,6 @@ BREAK
 ; 太阳水包系列 - 药剂包装
 ;==============================================================================
 
-;太阳水包3
 ; 金创药礼包2 - 可用杂物(18)
 [@_USEITEM(1500202)]
 #IF
@@ -158,7 +149,6 @@ TakeItemIdx 1500202 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500209)
 ; 金创药礼包9 - 可用杂物(18)
 [@_USEITEM(1500209)]
 #IF
@@ -174,7 +164,6 @@ TakeItemIdx 1500209 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500212)
 ; 金创药礼包12 - 可用杂物(18)
 [@_USEITEM(1500212)]
 #IF
@@ -190,7 +179,6 @@ TakeItemIdx 1500212 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500214)
 ; 金创药礼包14 - 可用杂物(18)
 [@_USEITEM(1500214)]
 #IF
@@ -206,7 +194,6 @@ TakeItemIdx 1500214 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500215)
 ; 金创药礼包15 - 可用杂物(18)
 [@_USEITEM(1500215)]
 #IF
@@ -222,7 +209,6 @@ TakeItemIdx 1500215 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500216)
 ; 金创药礼包16 - 可用杂物(18)
 [@_USEITEM(1500216)]
 #IF
@@ -238,7 +224,6 @@ TakeItemIdx 1500216 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500217)
 ; 金创药礼包17 - 可用杂物(18)
 [@_USEITEM(1500217)]
 #IF
@@ -254,7 +239,6 @@ TakeItemIdx 1500217 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500218)
 ; 金创药礼包18 - 可用杂物(18)
 [@_USEITEM(1500218)]
 #IF
@@ -270,7 +254,6 @@ TakeItemIdx 1500218 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500219)
 ; 金创药礼包19 - 可用杂物(18)
 [@_USEITEM(1500219)]
 #IF
@@ -286,7 +269,6 @@ TakeItemIdx 1500219 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500220)
 ; 金创药礼包20 - 可用杂物(18)
 [@_USEITEM(1500220)]
 #IF
@@ -302,7 +284,6 @@ TakeItemIdx 1500220 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500221)
 ; 金创药礼包21 - 可用杂物(18)
 [@_USEITEM(1500221)]
 #IF
@@ -318,7 +299,6 @@ TakeItemIdx 1500221 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500223)
 ; 金创药礼包23 - 可用杂物(18)
 [@_USEITEM(1500223)]
 #IF
@@ -334,7 +314,6 @@ TakeItemIdx 1500223 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500225)
 ; 金创药礼包25 - 可用杂物(18)
 [@_USEITEM(1500225)]
 #IF
@@ -350,7 +329,6 @@ TakeItemIdx 1500225 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500226)
 ; 金创药礼包26 - 可用杂物(18)
 [@_USEITEM(1500226)]
 #IF
@@ -366,7 +344,6 @@ TakeItemIdx 1500226 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500227)
 ; 金创药礼包27 - 可用杂物(18)
 [@_USEITEM(1500227)]
 #IF
@@ -382,7 +359,6 @@ TakeItemIdx 1500227 1
 GiveItemIdx 397 1 FALSE
 BREAK
 
-;太阳水包系列(1500228)
 ; 金创药礼包28 - 可用杂物(18)
 [@_USEITEM(1500228)]
 #IF
@@ -402,7 +378,6 @@ BREAK
 ; 特殊物品包系列 - 特殊道具包装
 ;==============================================================================
 
-;特殊物品包
 ; 采矿礼包37 - 可用杂物(18)
 [@_USEITEM(1500237)]
 #IF
@@ -418,7 +393,6 @@ TakeItemIdx 1500237 1
 GiveItemIdx 99900042 1 FALSE
 BREAK
 
-;碎裂的无相石包
 ; 妖兽残卷礼包 - 可用杂物(18)
 [@_USEITEM(1500351)]
 #IF

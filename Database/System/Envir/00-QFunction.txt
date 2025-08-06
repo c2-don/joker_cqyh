@@ -149,7 +149,7 @@ TakeItemIdx 111022 60
 #INCLUDE Core\Items\消耗品\药剂道具.txt      ; 药剂道具：圣水、神水、功能药剂等
 #INCLUDE Core\Items\消耗品\功能道具.txt      ; 功能道具：传送卷轴、高级道具等
 #INCLUDE Core\Items\消耗品\技能道具.txt      ; 技能道具：技能书、铭文石等
-#INCLUDE Core\Items\消耗品\称号道具.txt      ; 称号道具：称号回城石、称号道具等
+#INCLUDE Core\Items\消耗品\称号坐骑.txt      ; 称号坐骑等
 #INCLUDE Core\Items\消耗品\货币道具.txt      ; 货币道具：金币包、银币包等
 #INCLUDE Core\Items\消耗品\杂物道具.txt      ; 杂物道具：小道具包、特殊材料等
 

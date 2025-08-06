@@ -1,0 +1,331 @@
+;==============================================================================
+; 称号道具.txt - 称号类物品使用处理器
+; 包含：称号回城石、称号道具、称号激活道具等所有称号相关道具
+; 脚本数量：21个
+; 最后更新：2025-07-28
+; 合并来源：称号类目录
+;==============================================================================
+
+;说明：称号类物品脚本需要根据具体的称号系统设计添加
+;当前文件为预留结构，实际脚本需要根据游戏中的称号道具配置来添加
+
+;示例称号道具格式：
+;[@_USEITEM(称号道具ID)]
+;#IF
+;CheckItemidx 称号道具ID 1
+;#ACT
+;TakeItemIdx 称号道具ID 1
+;GiveTitle       称号ID
+; Break  ;       确保执行完成后立即停止，不继续处理其他脚本
+
+; 伤不起 - 可用杂物(18)
+ ; 当玩家右键使用编号为 1410036 的道具时执行以下逻辑
+[@_USEITEM(1410036)]  
+#IF 
+ ; 判断玩家背包中是否有该物品（1410036）至少1个
+CheckItemidx 1410036 1
+#ACT
+; 从背包中扣除1个该道具
+TakeItemIdx 1410036 1
+ ; 给予玩家称号编号11（即"伤不起"）
+GiveTitle 11 
+Break
+
+; 玛法功臣礼包 - 可用杂物(18)
+[@_USEITEM(1410093)]
+#IF
+CheckItemidx 1410093 1
+#ACT
+TakeItemIdx 1410093 1
+GiveTitle 93
+
+; 修行不缀 - 可用杂物(18)
+[@_USEITEM(1410094)]
+#IF
+CheckItemidx 1410094 1
+#ACT
+TakeItemIdx 1410094 1
+GiveTitle 94
+
+; 17173称号礼包 - 可用杂物(18)
+[@_USEITEM(1410095)]
+#IF
+CheckItemidx 1410095 1
+#ACT
+TakeItemIdx 1410095 1
+GiveTitle 95
+
+; 擂台小将 - 可用杂物(18)
+[@_USEITEM(1410096)]
+#IF
+CheckItemidx 1410096 1
+#ACT
+TakeItemIdx 1410096 1
+GiveTitle 96
+
+; 擂台霸主 - 可用杂物(18)
+[@_USEITEM(1410097)]
+#IF
+CheckItemidx 1410097 1
+#ACT
+TakeItemIdx 1410097 1
+GiveTitle 97
+
+; 征战玛法 - 可用杂物(18)
+[@_USEITEM(1410103)]
+#IF
+CheckItemidx 1410103 1
+#ACT
+TakeItemIdx 1410103 1
+GiveTitle 103
+
+; 武道圣心礼包 - 可用杂物(18)
+[@_USEITEM(1410122)]
+#IF
+CheckItemidx 1410122 1
+#ACT
+TakeItemIdx 1410122 1
+GiveTitle 128
+
+; 武道至尊礼包 - 可用杂物(18)
+[@_USEITEM(1410123)]
+#IF
+CheckItemidx 1410123 1
+#ACT
+TakeItemIdx 1410123 1
+GiveTitle 129
+
+; 周年庆称号礼包 - 可用杂物(18)
+[@_USEITEM(1410124)]
+#IF
+CheckItemidx 1410124 1
+#ACT
+TakeItemIdx 1410124 1
+GiveTitle 130
+
+;坐骑
+; 白泽·幼 - 物品ID 39101，坐骑编号 1
+[@_USEITEM(39101)]
+#IF
+CheckItemidx 39101 1
+#ACT
+TakeItemIdx 39101 1
+GiveMount 1
+Break
+
+; 追风 - 物品ID 39102，坐骑编号 2
+[@_USEITEM(39102)]
+#IF
+CheckItemidx 39102 1
+#ACT
+TakeItemIdx 39102 1
+GiveMount 2
+Break
+
+; 玛法之魂 坐骑编号 3
+[@_USEITEM(39103)]
+#IF
+CheckItemidx 39103 1
+#ACT
+TakeItemIdx 39103 1
+GiveMount 3
+Break
+
+
+; 驯鹿 - 坐骑编号 4
+[@_USEITEM(39104)]
+#IF
+CheckItemidx 39104 1
+#ACT
+TakeItemIdx 39104 1
+GiveMount 4
+Break
+
+; 琉璃鹿 - 坐骑编号 5
+[@_USEITEM(39105)]
+#IF
+CheckItemidx 39105 1
+#ACT
+TakeItemIdx 39105 1
+GiveMount 5
+Break
+
+; 剑齿虎 - 坐骑编号 6
+[@_USEITEM(39106)]
+#IF
+CheckItemidx 39106 1
+#ACT
+TakeItemIdx 39106 1
+GiveMount 6
+Break
+
+; 奔雷兽 - 坐骑编号 7
+[@_USEITEM(39107)]
+#IF
+CheckItemidx 39107 1
+#ACT
+TakeItemIdx 39107 1
+GiveMount 7
+Break
+
+; 白泽 - 坐骑编号 8
+[@_USEITEM(39108)]
+#IF
+CheckItemidx 39108 1
+#ACT
+TakeItemIdx 39108 1
+GiveMount 8
+Break
+
+; 踏风隼 - 坐骑编号 9
+[@_USEITEM(39109)]
+#IF
+CheckItemidx 39109 1
+#ACT
+TakeItemIdx 39109 1
+GiveMount 9
+Break
+
+; 覆甲獠牙 - 坐骑编号 10
+[@_USEITEM(39112)]
+#IF
+CheckItemidx 39112 1
+#ACT
+TakeItemIdx 39112 1
+GiveMount 10
+Break
+
+; 龙髯 - 坐骑编号 11
+[@_USEITEM(39111)]
+#IF
+CheckItemidx 39111 1
+#ACT
+TakeItemIdx 39111 1
+GiveMount 11
+Break
+
+; 血牙 - 坐骑编号 12
+[@_USEITEM(39119)]
+#IF
+CheckItemidx 39119 1
+#ACT
+TakeItemIdx 39119 1
+GiveMount 12
+Break
+
+; 长牙 - 坐骑编号 13
+[@_USEITEM(39113)]
+#IF
+CheckItemidx 39113 1
+#ACT
+TakeItemIdx 39113 1
+GiveMount 13
+Break
+
+; 偃甲灵鼠 - 坐骑编号 14
+[@_USEITEM(39114)]
+#IF
+CheckItemidx 39114 1
+#ACT
+TakeItemIdx 39114 1
+GiveMount 14
+Break
+
+; 机关木鼠 - 坐骑编号 15
+[@_USEITEM(39115)]
+#IF
+CheckItemidx 39115 1
+#ACT
+TakeItemIdx 39115 1
+GiveMount 15
+Break
+
+; 熔火龙蜥 - 坐骑编号 16
+[@_USEITEM(39116)]
+#IF
+CheckItemidx 39116 1
+#ACT
+TakeItemIdx 39116 1
+GiveMount 16
+Break
+
+; 牛魔 - 坐骑编号 18
+[@_USEITEM(39117)]
+#IF
+CheckItemidx 39117 1
+#ACT
+TakeItemIdx 39117 1
+GiveMount 18
+Break
+
+; 三尾 - 坐骑编号 19
+[@_USEITEM(39120)]
+#IF
+CheckItemidx 39120 1
+#ACT
+TakeItemIdx 39120 1
+GiveMount 19
+Break
+
+; 玄虎 - 坐骑编号 20
+[@_USEITEM(39121)]
+#IF
+CheckItemidx 39121 1
+#ACT
+TakeItemIdx 39121 1
+GiveMount 20
+Break
+
+; 踏云 - 坐骑编号 21
+[@_USEITEM(39122)]
+#IF
+CheckItemidx 39122 1
+#ACT
+TakeItemIdx 39122 1
+GiveMount 21
+Break
+
+; 灵兔 - 坐骑编号 22
+[@_USEITEM(39123)]
+#IF
+CheckItemidx 39123 1
+#ACT
+TakeItemIdx 39123 1
+GiveMount 22
+Break
+
+; 军机魔蝎 - 坐骑编号 23
+[@_USEITEM(39124)]
+#IF
+CheckItemidx 39124 1
+#ACT
+TakeItemIdx 39124 1
+GiveMount 23
+Break
+
+; 利爪 - 坐骑编号 24
+[@_USEITEM(39125)]
+#IF
+CheckItemidx 39125 1
+#ACT
+TakeItemIdx 39125 1
+GiveMount 24
+Break
+
+; 巅峰战熊 - 坐骑编号 25
+[@_USEITEM(39126)]
+#IF
+CheckItemidx 39126 1
+#ACT
+TakeItemIdx 39126 1
+GiveMount 25
+Break
+
+; 军机戎车 - 坐骑编号 26
+[@_USEITEM(39127)]
+#IF
+CheckItemidx 39127 1
+#ACT
+TakeItemIdx 39127 1
+GiveMount 26
+Break

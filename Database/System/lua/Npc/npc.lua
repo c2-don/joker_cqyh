@@ -1,5 +1,29 @@
--- local npcPath = "../Database/System/lua/Npc/NpcFace/%s.lua"
-local npcPath = "D:/CQYH/Database/System/lua/Npc/NpcFace/%s.lua"
+-- 从package.path中提取基础路径，确保可移植性
+local function get_lua_base_path()
+	local path = package.path
+	-- 查找包含System/lua的路径
+	for pattern in string.gmatch(path, "[^;]+") do
+		local base = string.match(pattern, "(.*/System/lua)/")
+		if base then
+			return base
+		end
+	end
+	-- 如果没找到，使用相对路径作为后备
+	return "."
+end
+
+local lua_base = get_lua_base_path()
+local npcPath = lua_base .. "/Npc/NpcFace/%s.lua"
+
+-- 添加路径测试函数
+function test_npc_path()
+	print("Package path: " .. package.path)
+	print("Lua base path: " .. lua_base)
+	local testId = "6112"
+	local fileName = string.format(npcPath, testId)
+	print("测试路径: " .. fileName)
+	print("文件存在: " .. tostring(file_exists(fileName)))
+end
 
 NPC界面函数表 = {}
 
@@ -17,10 +41,18 @@ function 获取界面函数(玩家, Id)
 		return tmpCfg
 	else
 		local fileName = string.format(npcPath, Id)
+		print("尝试加载NPC脚本: " .. fileName .. " (ID: " .. Id .. ")")
     if not file_exists(fileName) then
+      print("NPC脚本文件不存在: " .. fileName)
       return nil
     end
-		local npcFunction = dofile(fileName)
+		print("找到NPC脚本文件，开始加载: " .. fileName)
+		local success, npcFunction = pcall(dofile, fileName)
+		if not success then
+			print("NPC脚本加载失败: " .. fileName .. " 错误: " .. tostring(npcFunction))
+			return nil
+		end
+		print("NPC脚本加载成功，类型: " .. type(npcFunction))
 		NPC界面函数表[Id] = npcFunction;
 		return NPC界面函数表[Id]
 	end

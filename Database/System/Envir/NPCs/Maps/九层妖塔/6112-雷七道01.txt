@@ -1,0 +1,125 @@
+[@MAIN]
+#IF
+CheckCalc <$J3> >= 9
+#SAY
+勇士，你已成功挑战了9层妖塔，可以选择我们最近发现的妖塔秘境进行挑战，妖塔秘境只有1层，完成该挑战将获得更高的奖励。<br>每天只能完成1种妖塔挑战模式，请选择你要进行的挑战。<#SO:1>挑战九层妖塔<#SO/><#SO:3>挑战妖塔秘境<#SO/><#INS:S25>关于九层妖塔<#INS/>
+#ELSESAY
+任何达到20级的勇士均可进入九层妖塔进行试炼。<#SO:1>挑战九层妖塔<#SO/><#INS:S25>关于九层妖塔<#INS/>
+
+[@1]
+#IF
+检测有无队伍
+#ACT
+Break
+#SAY
+单人副本禁止组队！
+
+#IF
+Level  < 20
+#ACT
+Break
+#SAY
+等级未达到20级！
+
+#IF
+CHECKGOLD < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币！
+
+#IF
+#ACT
+CreateInstance  227 2 1 0
+TakeGold 20000
+InstanceMove  227 1028 148 0
+
+[@3]
+#SAY
+妖塔秘境之魔物，寿命无尽，不老不死，不生不灭，凶险莫测。勇士，你意欲挑战何种难度呢？<#SO:1>挑战妖塔秘境(标准)<#SO/><#SO:2>挑战妖塔秘境(进阶)<#SO/><#SO:3>挑战妖塔秘境(困难)<#SO/><#SO:5>如此凶险容我三思<#SO/>
+
+[@3_1]
+#IF
+;检测队长
+GROUPLEADER
+#ACT
+Break
+#SAY
+单人副本禁止组队！
+
+#IF
+Level < 20
+#ACT
+Break
+#SAY
+等级未达到20级！
+
+#IF
+CHECKGOLD < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币！
+
+#IF
+#ACT
+CreateInstance 227 2 1 1
+TakeGold  20000
+InstanceMove  227 596 576 0
+
+[@3_2]
+#IF
+GROUPLEADER
+#ACT
+Break
+#SAY
+单人副本禁止组队！
+
+#IF
+Level < 20
+#ACT
+Break
+#SAY
+等级未达到20级！
+
+#IF
+CHECKGOLD < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币！
+
+#IF
+#ACT
+CreateInstance 227 2 1 2
+TakeGold  20000
+InstanceMove  227 596 576 0
+
+[@3_3]
+#IF
+GROUPLEADER
+#ACT
+Break
+#SAY
+单人副本禁止组队！
+
+#IF
+Level < 20
+#ACT
+Break
+#SAY
+等级未达到20级！
+
+#IF
+CHECKGOLD < 20000
+#ACT
+Break
+#SAY
+身上不足[20000]金币！
+
+#IF
+#ACT
+CreateInstance 227 2 1 3
+TakeGold  20000
+InstanceMove  227 596 576 0
+

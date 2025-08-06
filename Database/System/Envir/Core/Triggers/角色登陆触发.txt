@@ -7,3 +7,22 @@ GlobalMessage "新玩家：<font color='#EE82EE'>[<$USERNAME>]</font>来到了<f
 LocalMessage "新玩家：<font color='#EE82EE'>[<$USERNAME>]</font>来到了<font color='#7d6aff'>《小丑传永》</font>，顿时电闪雷鸣.风云再起！！！" TRUE
 Break
 }
+
+; VIP自动拾取功能配置
+;{
+;#IF
+;CheckCalc <$VIP> >= 1
+;#ACT
+;AutoPickCfg 5 3000
+;LocalMessage "<font color='#FFA500'>您的基础VIP特权已开启范围3格的自动拾取功能，5秒执行一次！</font>" TRUE
+;SaveValue "AutoPickLog.txt" "AutoPick" "<$USERNAME>_<$DATE>_<$HOUR>" "玩家<$USERNAME>开启了自动拾取功能,范围:3,间隔:5000毫秒"
+;Break
+;}
+
+; 普通玩家默认关闭自动拾取
+;{
+;#IF
+;#ACT
+;AutoPickCfg 0 0
+;LocalMessage "<font color='#808080'>提示：开通VIP特权可享受自动拾取功能！</font>" TRUE
+;}
