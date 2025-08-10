@@ -101,6 +101,18 @@ function 消耗物品(玩家, 拿走编号, 拿走数量, 拿走日志)
 end
 
 --地图实例类
+
+function 获取副本怪物区域(地图, 区域名字)
+  local 刷怪列表 = 地图:获取怪物区域()
+  for i = 0, 刷怪列表.Count - 1 do
+    local 刷怪信息 = 刷怪列表[i]
+    if 刷怪信息.区域名字 == 区域名字 then
+      return 刷怪信息
+    end
+  end
+  return nil
+end
+
 function 创建副本(模板编号)
   local 地图模板 = 游戏地图.数据表[模板编号]
   local 实例 = 地图处理网关.地图实例表[模板编号 * 16 + 1]
@@ -145,6 +157,38 @@ function 范围刷新怪物从地图实例(怪物名字, 地图实例, 复活间
   return true
 end
 
+function 范围刷新怪物从地图实例(怪物名字, 地图, 复活间隔, 刷新范围, 禁止复活, 立即刷新, 是否循环, 循环次数)
+  local 模板 = 游戏怪物.数据表[怪物名字]
+  if 模板 then
+      if 是否循环 then
+          for i = 1, 循环次数 do
+              local 怪物 = 怪物实例(模板, 地图, 复活间隔, 刷新范围, 禁止复活, 立即刷新)
+              怪物.存活时间 = 主程.当前时间:AddHours(2.0)
+          end
+      else
+          local 怪物 = 怪物实例(模板, 地图, 复活间隔, 刷新范围, 禁止复活, 立即刷新)
+          怪物.存活时间 = 主程.当前时间:AddHours(2.0)
+      end
+      return true
+  end
+  return false
+end
+
+function 范围刷新采集从地图实例(怪物名字, 地图, 刷新范围, 是否循环, 循环次数)
+  local 模板 = 采集数据.检索表[怪物名字]
+  if 模板 then
+      if 是否循环 then
+          for i = 1, 循环次数 do
+              local 守采 = 采集实例(模板, 地图, 游戏方向.下方, 刷新范围, false)
+          end
+      else
+          local 守采 = 采集实例(模板, 地图, 游戏方向.下方, 刷新范围, false)
+      end
+      return true
+  end
+  return false
+end
+
 function 刷新怪物从地图实例(怪物名字, 地图实例, 复活间隔, 刷新坐标X, 刷新坐标Y, 禁止复活
                                      , 立即刷新)
   local 模板 = 游戏怪物.获取游戏怪物(怪物名字)
@@ -170,6 +214,15 @@ function 刷新怪物从地图编号(怪物名字, 地图编号, 复活间隔, �
   return true
 end
 
+function 刷新守卫从地图实例_时间(守卫编号, 地图实例, 出生方向, 出生坐标, 存在时间)
+  local 模板 = 地图守卫.数据表[守卫编号]
+  if 模板 then
+        local 守卫 = 守卫实例(模板, 地图实例, 出生方向, 出生坐标, 存在时间)
+      return true
+  end
+  return false
+end
+
 function 刷新守卫从地图实例(守卫编号, 地图实例, 出生方向, 出生坐标)
   local 模板 = 地图守卫.数据表[守卫编号]
   if 模板 == nil then
@@ -178,6 +231,18 @@ function 刷新守卫从地图实例(守卫编号, 地图实例, 出生方向, �
   local 守卫 = 守卫实例(模板, 地图实例, 出生方向, 出生坐标)
   return 守卫
 end
+
+function 守卫定时随机坐标传送(守卫, 守卫编号, 地图编号, 时间)
+  if 守卫.模板编号 == 守卫编号 and 守卫.当前地图.地图编号 == 地图编号 and 主程.当前时间 > 守卫.转移计时 then
+    守卫:清空邻居时处理();
+    守卫:解绑网格();
+    守卫.当前坐标 = 守卫.当前地图.传送区域.随机坐标;
+    守卫:绑定网格();
+    守卫:更新邻居时处理();
+    守卫.转移计时 = 主程.当前时间:AddMinutes(时间)
+  end
+end
+
 
 function 获取在线队友(玩家)
   local 队友列表 = {}
