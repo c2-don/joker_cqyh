@@ -1,89 +1,995 @@
 [@MAIN]
-#IF
-#ACT
-Break
 #SAY
-此活动将在3天后开放，与二区同步，给您带来不便，请谅解！
-
-#IF
-#ACT
-#SAY
-正义与邪恶的斗争一触即发！<#SO:111>屠魔大厅<#SO/><#SO:111>魔龙幻境<#SO/><#SO:111>秘宝广场<#SO/>
-
-[@111]
-#IF
-#ACT
-#SAY
-星空二区全面改版副本活动玩法，由于内容定档于赤月节点，故赤月节点开放屠魔大厅，魔龙幻境，秘宝广场三大世界BOSS争夺玩法！
-
-[@1]
-#IF
-#ACT
-#SAY
-<#SO:1>挑战屠魔大厅<#SO/>
-
-[@1_1]
-#OR
-CheckCalc <$WEEK> == 1
-CheckCalc <$WEEK> == 3
-CheckCalc <$WEEK> == 5
-#ACT
-Break
-#SAY
-当前不在活动时间，屠魔大厅仅在每周二，四，六、日的19点开放。<#SO:1>知道了<#SO/>
-
-#IF
-CheckCalc <$HOUR> != 19
-#ACT
-Break
-#SAY
-当前不在活动时间，屠魔大厅仅在每周二，四，六、日的19点开放。<#SO:1>知道了<#SO/>
-
-#IF
-#ACT
-MOVE 80 0 0 3
+请问你想去哪里？<#SO:1>屠魔大厅<#SO/><#SO:2>挑战副本<#SO/><#SO:3>蜘蛛长廊<#SO/><#SO:4>魔龙幻境<#SO/>
 
 [@2]
+#SAY
+请问你想挑战哪个副本呢<br>友情提醒：无相之境与魔虫窟共享挑战次数<#SO:1>魔虫窟<#SO/><#SO:2>无相之境<#SO/>
+
+;================================================================================================
+;屠魔大厅
+;================================================================================================
+[@1]
+#SAY
+欢迎挑战屠魔大厅，最多可供3位勇士组队进入。每日挑战次数不限，但每日只能领取1种屠魔奖励，每日24点将重置领取次数，请大家在此之前完成领取！是否现在开启挑战？<#SO:1>进入屠魔大厅<#SO/><#SO:2>挑战屠魔秘境(标准)<#SO/><#SO:3>挑战屠魔秘境(进阶)<#SO/><#SO:5>领取今日屠魔奖励<#SO/>
+
+[@1_1]
+#SAY
+屠魔大厅每日挑战不限次数，但奖励只能领取一次。<br>屠魔大厅今日挑战最高波数：<$STR(J24)>。<#SO:1>确认进入<#SO/><#SO:2>取消<#SO/>
+
+[@1_1_1]
+#IF
+;检测队长
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+;#IF
+;检测队员数量 > 3
+;GroupCount > 3
+;#ACT
+;Break
+;#SAY
+;队伍人数超过3人！
+
+#IF
+;检测队员等级 - 检查所有队员是否都>=25级
+NOT CHECKGROUPMEMBERLEVEL >= 25
+#ACT
+Break
+#SAY
+队伍有成员等级未达到25级！
+
+#IF  
+CHECKGROUPMEMBERGOLD  < 50000
+#ACT
+Break
+#SAY
+队伍有成员金币不到5万！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 90226 1
+#ACT
+Break
+#SAY
+队伍有成员灵符不到1个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+LOG "[哨探NPC] 普通屠魔大厅 - 开始扣除资源"
+TakeGroupMemberGold 50000
+LOG "[哨探NPC] 金币扣除完成，开始扣除物品"
+;队员删除物品（通过物品编号）
+;TakeItemIdx  90226 1
+TakeGroupMemberItemIdx  90226 1
+LOG "[哨探NPC] 物品扣除完成！"
+LOG "[哨探NPC] 资源扣除完成，创建副本，级别参数: 0"
+CreateInstance 80 120 21 0
+LOG "[哨探NPC] 普通屠魔大厅 - 副本创建完成，开始传送"
+GroupInstanceMove 80 1005 272 0
+LOG "[哨探NPC] 普通屠魔大厅 - 传送完成"
+#ELSESAY
+队伍成员不在附近
+
+[@1_2]
+#SAY
+屠魔大厅每日挑战不限次数，但奖励只能领取一次。<br>屠魔秘境(标准)今日挑战最高波数：<$STR(J25)>。<#SO:1>确认进入<#SO/><#SO:2>取消<#SO/>
+
+[@1_2_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 3
+#ACT
+Break
+#SAY
+队伍人数超过3人！
+
+#ACT
+LOG "[哨探NPC] [@1_2_1] 准备执行CHECKGROUPMEMBERLEVEL < 40 检查..."
+
+#IF
+;检测队员等级 - 检查是否有队员等级<40级
+CHECKGROUPMEMBERLEVEL < 40
+#ACT
+Break
+#SAY
+队伍有成员等级未达到40级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 50000
+#ACT
+Break
+#SAY
+队伍有成员金币不到5万！
+
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 90226 3
+#ACT
+Break
+#SAY
+队伍有成员灵符不到3个！
+
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+LOG "[哨探NPC] 标准屠魔秘境 - 开始扣除资源"
+TakeGroupMemberGold 50000
+TakeGroupMemberItemIdx 90226 3
+LOG "[哨探NPC] 资源扣除完成，创建副本，级别参数: 1"
+CreateInstance 80 120 21 1
+LOG "[哨探NPC] 标准屠魔秘境 - 副本创建完成，开始传送"
+GroupInstanceMove 80 1092 362 0
+LOG "[哨探NPC] 标准屠魔秘境 - 传送完成"
+#ELSESAY
+队伍成员不在附近
+
+[@1_3]
+#SAY
+屠魔大厅每日挑战不限次数，但奖励只能领取一次。<br>屠魔秘境(进阶)今日挑战最高波数：<$STR(J26)>。<#SO:1>确认进入<#SO/><#SO:2>取消<#SO/>
+
+[@1_3_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 3
+#ACT
+Break
+#SAY
+队伍人数超过3人！
+
+#IF
+CHECKGROUPMEMBERLEVEL < 40
+#ACT
+Break
+#SAY
+队伍有成员等级未达到40级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 50000
+#ACT
+Break
+#SAY
+队伍有成员金币不到5万！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 91195 1
+#ACT
+Break
+#SAY
+队伍有成员副本入场券不到1个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberGold 50000
+TakeGroupMemberItemIdx 91195 1
+CreateInstance 80 120 21 2
+GroupInstanceMove 80 1092 362 0
+#ELSESAY
+队伍成员不在附近
+
+[@1_5]
+#IF
+CHECKCALC <$STR(J27)> == 1
+#ACT
+Break
+#SAY
+勇士，您已领取过今日的奖励了，请来日再战。
+
+#IF
+CHECKCALC <$STR(J26)> > 0
+#ACT
+Break
+#SAY
+今日最佳除魔记录：<$STR(J26)>层(进阶)。是否确认领取奖励？<#SO:1>确认领取<#SO/><#SO:2>我再想想<#SO/>
+
+#IF
+CHECKCALC <$STR(J25)> > 0
+#ACT
+Break
+#SAY
+今日最佳除魔记录：<$STR(J25)>层(标准)。是否确认领取奖励？<#SO:1>确认领取<#SO/><#SO:2>我再想想<#SO/>
+
+#IF
+CHECKCALC <$STR(J24)> > 0
+#ACT
+Break
+#SAY
+今日最佳屠魔记录：<$STR(J24)>波。是否确认领取奖励？<#SO:1>确认领取<#SO/><#SO:2>我再想想<#SO/>
+
 #IF
 #ACT
 #SAY
-<#SO:1>挑战魔龙幻境<#SO/>
+您今日的屠魔战果尚不足令人信服，暂时无法领取奖励，请继续努力！
 
+[@1_5_1]
+#IF
+CHECKCALC <$STR(J26)> == 2
+#ACT
+MOV J27 1
+GiveItemIdx 94057 1
+Break
+
+#IF
+CHECKCALC <$STR(J25)> == 2
+#ACT
+MOV J27 1
+GiveItemIdx 94056 1
+Break
+
+#IF
+CHECKCALC <$STR(J24)> == 1
+#ACT
+MOV J27 1
+GiveItemIdx 94041 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 2
+#ACT
+MOV J27 1
+GiveItemIdx 94042 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 3
+#ACT
+MOV J27 1
+GiveItemIdx 94043 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 4
+#ACT
+MOV J27 1
+GiveItemIdx 94044 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 5
+#ACT
+MOV J27 1
+GiveItemIdx 94045 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 6
+#ACT
+MOV J27 1
+GiveItemIdx 94046 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 7
+#ACT
+MOV J27 1
+GiveItemIdx 94047 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 8
+#ACT
+MOV J27 1
+GiveItemIdx 94048 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 9
+#ACT
+MOV J27 1
+GiveItemIdx 94049 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 10
+#ACT
+MOV J27 1
+GiveItemIdx 94050 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 11
+#ACT
+MOV J27 1
+GiveItemIdx 94051 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 12
+#ACT
+MOV J27 1
+GiveItemIdx 94052 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 13
+#ACT
+MOV J27 1
+GiveItemIdx 94053 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 14
+#ACT
+MOV J27 1
+GiveItemIdx 94054 1
+Break
+#IF
+CHECKCALC <$STR(J24)> == 15
+#ACT
+MOV J27 1
+GiveItemIdx 94055 1
+Break
+
+;================================================================================================
+;魔虫窟
+;================================================================================================
 [@2_1]
-#OR
-CheckCalc <$WEEK> == 2
-CheckCalc <$WEEK> == 4
-CheckCalc <$WEEK> == 6
+#SAY
+我知道如何去往魔虫窟，那是个凶险无比的地方，只有依靠团队的力量才能存活，所以你必须组队前往。另外你的等级要达到25级，并且交给我1张“魔虫窟入场券”或“副本入场券”，我就能给你指点道路。（每天只能进入一次。）<#SO:1>进入魔虫窟<#SO/><#SO:2>取消<#SO/>
+
+[@2_1_1]
+#IF
+NOT GROUPLEADER
 #ACT
 Break
 #SAY
-当前不在活动时间，魔龙幻境仅在每周一，三，五、日的19点开放。<#SO:1>知道了<#SO/>
+勇士你不是队长，请等待队长操作！
+
+;#IF
+;GroupCount > 3
+;#ACT
+;Break
+;#SAY
+;队伍人数超过3人！
 
 #IF
-CheckCalc <$HOUR> != 19
+CHECKGROUPMEMBERLEVEL < 40
 #ACT
 Break
 #SAY
-当前不在活动时间，魔龙幻境仅在每周一，三，五、日的19点开放。<#SO:1>知道了<#SO/>
+队伍有成员等级未达到40级！
 
 #IF
+CHECKGROUPMEMBERGOLD  < 50000
 #ACT
-MOVE 36 0 0 3
+Break
+#SAY
+队伍有成员金币不到5万！
 
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 91195 1
+#ACT
+Break
+#SAY
+队伍有成员副本入场券不到1个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberGold 50000
+TakeGroupMemberItemIdx 91195 1
+CreateInstance 72 120 0 0
+GroupInstanceMove 72 0 0 3
+#ELSESAY
+队伍成员不在附近
+
+;================================================================================================
+;无相之境
+;================================================================================================
+[@2_2]
+#ACT
+InstanceMove 40 1013 287 0
+
+;================================================================================================
+;蜘蛛长廊
+;================================================================================================
 [@3]
-#IF
-#ACT
 #SAY
-<#SO:1>挑战秘宝广场<#SO/>
+蜘蛛长廊每周二、四、六、日全天开放，等级达到40级的玩家可组队后由队长传送进入，玩家每日仅限进入一次。蜘蛛长廊随游戏进度会开放不同难度供玩家选择，并根据选择的难度和完成的层数提供不同的宝箱奖励。<#SO:1>蜘蛛长廊（标准）<#SO/><#SO:2>蜘蛛长廊（进阶）<#SO/><#SO:3>蜘蛛长廊（困难）<#SO/><#SO:6>领取蜘蛛长廊奖励<#SO/>
 
 [@3_1]
+#SAY
+您当前选择挑战的是“蜘蛛长廊（标准）”难度，难度越高，刷新怪物的数量越多，同时怪物会获得随机的属性强化，准备好了就开始您的挑战吧！<#SO:1>确认进入<#SO/><#SO:3>我再想想<#SO/>
+
+[@3_1_1]
 #IF
-CheckCalc <$HOUR> != 19
+NOT GROUPLEADER
 #ACT
 Break
 #SAY
-当前不在活动时间，秘宝广场仅在每日19点开放。<#SO:1>知道了<#SO/>
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 3
+#ACT
+Break
+#SAY
+队伍人数超过3人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 40
+#ACT
+Break
+#SAY
+队伍有成员等级未达到40级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 50000
+#ACT
+Break
+#SAY
+队伍有成员金币不到5万！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 91195 1
+#ACT
+Break
+#SAY
+队伍有成员副本入场券不到1个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberGold 50000
+TakeGroupMemberItemIdx 91195 1
+CreateInstance 73 120 31 0
+GroupInstanceMove 73 887 284 0
+#ELSESAY
+队伍成员不在附近
+
+[@3_2]
+#SAY
+您当前选择挑战的是“蜘蛛长廊（进阶）”难度，难度越高，刷新怪物的数量越多，同时怪物会获得随机的属性强化，准备好了就开始您的挑战吧！<#SO:1>确认进入<#SO/><#SO:3>我再想想<#SO/>
+
+[@3_2_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 3
+#ACT
+Break
+#SAY
+队伍人数超过3人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 40
+#ACT
+Break
+#SAY
+队伍有成员等级未达到40级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 50000
+#ACT
+Break
+#SAY
+队伍有成员金币不到5万！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 91195 1
+#ACT
+Break
+#SAY
+队伍有成员副本入场券不到1个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberGold 50000
+TakeGroupMemberItemIdx 91195 1
+CreateInstance 73 120 31 1
+GroupInstanceMove 73 887 284 0
+#ELSESAY
+队伍成员不在附近
+
+[@3_3]
+#SAY
+您当前选择挑战的是“蜘蛛长廊（困难）”难度，难度越高，刷新怪物的数量越多，同时怪物会获得随机的属性强化，准备好了就开始您的挑战吧！<#SO:1>确认进入<#SO/><#SO:3>我再想想<#SO/>
+
+[@3_3_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 3
+#ACT
+Break
+#SAY
+队伍人数超过3人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 40
+#ACT
+Break
+#SAY
+队伍有成员等级未达到40级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 50000
+#ACT
+Break
+#SAY
+队伍有成员金币不到5万！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 91195 1
+#ACT
+Break
+#SAY
+队伍有成员副本入场券不到1个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberGold 50000
+TakeGroupMemberItemIdx 91195 1
+CreateInstance 73 120 31 2
+GroupInstanceMove 73 887 284 0
+#ELSESAY
+队伍成员不在附近
+
+
+[@3_6]
+#IF
+CHECKCALC <$STR(J35)> == 1
+#ACT
+Break
+#SAY
+勇士，您已领取过今日的奖励了，请来日再战。
+
+#IF
+CHECKCALC <$STR(J34)> > 0
+#ACT
+Break
+#SAY
+今日最佳蜘蛛长廊记录：困难难度[<$STR(J34)>]层。是否确认领取奖励？<#SO:1>确认领取<#SO/><#SO:2>我再想想<#SO/>
+
+#IF
+CHECKCALC <$STR(J33)> > 0
+#ACT
+Break
+#SAY
+今日最佳蜘蛛长廊记录：进阶难度[<$STR(J33)>]层。是否确认领取奖励？<#SO:1>确认领取<#SO/><#SO:2>我再想想<#SO/>
+
+#IF
+CHECKCALC <$STR(J32)> > 0
+#ACT
+Break
+#SAY
+今日最佳蜘蛛长廊记录：标准难度[<$STR(J32)>]层。是否确认领取奖励？<#SO:1>确认领取<#SO/><#SO:2>我再想想<#SO/>
 
 #IF
 #ACT
-MOVE 74 0 0 3
+#SAY
+您今日的屠魔战果尚不足令人信服，暂时无法领取奖励，请继续努力！
+
+[@3_6_1]
+#IF
+CHECKCALC <$STR(J34)> == 3
+#ACT
+变量 J35 1
+GiveItemIdx 94068 1
+Break
+#IF
+CHECKCALC <$STR(J34)> == 2
+#ACT
+变量 J35 1
+GiveItemIdx 94067 1
+Break
+#IF
+CHECKCALC <$STR(J34)> == 1
+#ACT
+变量 J35 1
+GiveItemIdx 94066 1
+Break
+
+#IF
+CHECKCALC <$STR(J33)> == 3
+#ACT
+变量 J35 1
+GiveItemIdx 94065 1
+Break
+#IF
+CHECKCALC <$STR(J33)> == 2
+#ACT
+变量 J35 1
+GiveItemIdx 94064 1
+Break
+#IF
+CHECKCALC <$STR(J33)> == 1
+#ACT
+变量 J35 1
+GiveItemIdx 94063 1
+Break
+
+#IF
+CHECKCALC <$STR(J32)> == 3
+#ACT
+变量 J35 1
+GiveItemIdx 94062 1
+Break
+#IF
+CHECKCALC <$STR(J32)> == 2
+#ACT
+变量 J35 1
+GiveItemIdx 94061 1
+Break
+#IF
+CHECKCALC <$STR(J32)> == 1
+#ACT
+变量 J35 1
+GiveItemIdx 94060 1
+Break
+
+;================================================================================================
+;魔龙幻境
+;================================================================================================
+[@4]
+#SAY
+我的好友魔龙城主龙火最近频受梦魇困扰，据说他在梦境中见到了魔龙城遭受恶魔来袭的灭顶之祸，不知阁下是否愿意闯入梦境中一探究竟，我可助你一臂之力。梦境险恶未卜，请至少三人成行前往！<#SO:1>挑战魔龙幻境（标准）<#SO/><#SO:2>挑战魔龙幻境（进阶）<#SO/><#SO:3>挑战魔龙幻境（困难）<#SO/><#SO:6>领取魔龙幻境奖励<#SO/><#INS:S98>关于魔龙幻境<#INS/>
+
+[@4_1]
+#SAY
+您选择了难度：魔龙幻境（标准），共会有7波入侵怪物，准备完毕就开始您的挑战吧！<br>该玩法可反复挑战，并会记录最佳成绩<#SO:1>使用金币传送进1入魔龙幻境 (每人10万金币)<#SO/><#SO:2>使用灵符传送进入魔龙幻境 (每人3个灵符)<#SO/><#SO:3>我再想想<#SO/>
+
+[@4_1_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 6
+#ACT
+Break
+#SAY
+队伍人数超过6人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 30
+#ACT
+Break
+#SAY
+队伍有成员等级未达到30级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 100000
+#ACT
+Break
+#SAY
+队伍有成员金币不到10万！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+CreateInstance 36 120 36 0
+TakeGroupMemberGold 100000
+GroupInstanceMove 36 1058 503 0
+#ELSESAY
+队伍成员不在附近
+
+[@4_1_2]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 6
+#ACT
+Break
+#SAY
+队伍人数超过6人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 30
+#ACT
+Break
+#SAY
+队伍有成员等级未达到30级！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 90226 3
+#ACT
+Break
+#SAY
+队伍有成员灵符不到3个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberItemIdx 90226 3
+CreateInstance 36 120 36 0
+;组队副本传送
+GroupInstanceMove  36 1058 503 0
+#ELSESAY
+队伍成员不在附近
+
+[@4_2]
+#SAY
+您选择了难度：魔龙幻境（进阶），共会有3波入侵怪物，准备完毕就开始您的挑战吧！<br>该玩法可反复挑战，并会记录最佳成绩<#SO:1>使用金币传送进入魔龙幻境 (每人10万金币)<#SO/><#SO:2>使用灵符传送进入魔龙幻境 (每人3个灵符)<#SO/><#SO:3>我再想想<#SO/>
+
+[@4_2_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 6
+#ACT
+Break
+#SAY
+队伍人数超过6人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 30
+#ACT
+Break
+#SAY
+队伍有成员等级未达到30级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 100000
+#ACT
+Break
+#SAY
+队伍有成员金币不到10万！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+CreateInstance 36 120 36 1
+TakeGroupMemberGold 100000
+GroupInstanceMove 36 1058 503 0
+#ELSESAY
+队伍成员不在附近
+
+[@4_2_2]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 6
+#ACT
+Break
+#SAY
+队伍人数超过6人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 30
+#ACT
+Break
+#SAY
+队伍有成员等级未达到30级！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 90226 3
+#ACT
+Break
+#SAY
+队伍有成员灵符不到3个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberItemIdx 90226 3
+CreateInstance 36 120 36 1
+GroupInstanceMove 36 1058 503 0
+#ELSESAY
+队伍成员不在附近
+
+[@4_3]
+#SAY
+您选择了难度：魔龙幻境（困难），共会有2波入侵怪物，准备完毕就开始您的挑战吧！<br>该玩法可反复挑战，并会记录最佳成绩<#SO:1>使用金币传送进入魔龙幻境 (每人10万金币)<#SO/><#SO:2>使用灵符传送进入魔龙幻境 (每人3个灵符)<#SO/><#SO:3>我再想想<#SO/>
+
+[@4_3_1]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 6
+#ACT
+Break
+#SAY
+队伍人数超过6人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 30
+#ACT
+Break
+#SAY
+队伍有成员等级未达到30级！
+
+#IF
+CHECKGROUPMEMBERGOLD  < 100000
+#ACT
+Break
+#SAY
+队伍有成员金币不到10万！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+CreateInstance 36 120 36 2
+TakeGroupMemberGold 100000
+GroupInstanceMove 36 1058 503 0
+#ELSESAY
+队伍成员不在附近
+
+[@4_3_2]
+#IF
+NOT GROUPLEADER
+#ACT
+Break
+#SAY
+勇士你不是队长，请等待队长操作！
+
+#IF
+GroupCount > 6
+#ACT
+Break
+#SAY
+队伍人数超过6人！
+
+#IF
+CHECKGROUPMEMBERLEVEL  < 30
+#ACT
+Break
+#SAY
+队伍有成员等级未达到30级！
+
+#IF
+NOT CHECKGROUPMEMBERITEMIDX 90226 3
+#ACT
+Break
+#SAY
+队伍有成员灵符不到3个！
+
+#IF
+GROUPCHECKNEARBY
+#ACT
+TakeGroupMemberItemIdx 90226 3
+CreateInstance 36 120 36 2
+GroupInstanceMove 36 1058 503 0
+#ELSESAY
+队伍成员不在附近
+
+[@4_6]
+#IF
+CHECKCALC <$STR(J40)> == 1
+#ACT
+Break
+#SAY
+勇士，您已领取过今日的奖励了，请来日再战。<#SO:999999>确定<#SO/>
+#ELSESAY
+您需要魔龙什么奖励呢？以下奖励只能领取一次哦！<#SO:1>领取魔龙幻境(标准)奖励<#SO/><#SO:2>领取魔龙幻境(进阶)奖励<#SO/><#SO:3>领取魔龙幻境(困难)奖励<#SO/>
+
+[@4_6_1]
+#IF
+CHECKCALC <$STR(J37)> > 0
+#ACT
+Break
+#SAY
+这位勇士，您今日的最佳战绩是：魔龙幻境(标准) [<$STR(J37)>]，是要领取奖励还是继续尝试挑战？<br>提示：当前难度达到9千分可额外获得：守卫宝箱<#SO:1>领取奖励<#SO/><#SO:2>暂不领取<#SO/>
+#ELSESAY
+您今日的战果尚不足令人信服，暂时无法领取奖励，请继续努力！
+
+[@4_6_1_1]
+#IF
+CHECKCALC <$STR(J37)> >= 9000
+#ACT
+变量 J40 1
+获得物品 守卫宝箱(标准) 1 TRUE
+增加经验 1450000
+Break
+
+#IF
+CHECKCALC <$STR(J37)> < 9000
+CHECKCALC <$STR(J37)> >= 5000
+#ACT
+变量 J40 1
+增加经验 1150000
+Break
+
+#IF
+CHECKCALC <$STR(J37)> < 5000
+#ACT
+变量 J40 1
+增加经验 950000
+Break
+
+[@4_6_2]
+#IF
+CHECKCALC <$STR(J38)> > 0
+#ACT
+Break
+#SAY
+这位勇士，您1今日的最佳战绩是：魔龙幻境(进阶) [<$STR(J38)>]，是要领取奖励还是继续尝试挑战？<br>提示：当前难度达到9千分可额外获得：守卫宝箱<#SO:1>领取奖励<#SO/><#SO:2>暂不领取<#SO/>
+#ELSESAY
+您今日的战果尚不足令人信服，暂时无法领取奖励，请继续努力！
+
+[@4_6_2_1]
+#IF
+CHECKCALC <$STR(J38)> >= 9000
+#ACT
+变量 J40 1
+获得物品 守卫宝箱(进阶) 1 TRUE
+增加经验 2500000
+Break
+
+#IF
+CHECKCALC <$STR(J38)> < 9000
+CHECKCALC <$STR(J38)> >= 5000
+#ACT
+变量 J40 1
+增加经验 2100000
+Break
+
+#IF
+CHECKCALC <$STR(J38)> < 5000
+#ACT
+变量 J40 1
+增加经验 1700000
+Break
+
+[@4_6_3]
+#IF
+CHECKCALC <$STR(J39)> > 0
+#ACT
+Break
+#SAY
+这位勇士，您今日的最佳战绩是：魔龙幻境(困难) [<$STR(J39)>]，是要领取奖励还是继续尝试挑战？<br>提示：当前难度达到9千分可额外获得：守卫宝箱<#SO:1>领取奖励<#SO/><#SO:2>暂不领取<#SO/>
+#ELSESAY
+您今日的战果尚不足令人信服，暂时无法领取奖励，请继续努力！
+
+[@4_6_3_1]
+#IF
+CHECKCALC <$STR(J39)> >= 9000
+#ACT
+变量 J40 1
+获得物品 守卫宝箱(困难) 1 TRUE
+增加经验 3100000
+Break
+
+#IF
+CHECKCALC <$STR(J39)> < 9000
+CHECKCALC <$STR(J39)> >= 5000
+#ACT
+变量 J40 1
+增加经验 2700000
+Break
+
+#IF
+CHECKCALC <$STR(J39)> < 5000
+#ACT
+变量 J40 1
+增加经验 2300000
+Break

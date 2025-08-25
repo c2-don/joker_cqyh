@@ -6,7 +6,7 @@ REMOVEBUFF 58011
 
 ;妖塔秘境完成（九层妖塔十层）
 #IF
-CHECKCALC <$STR(J9)> >= 10
+CHECKCALC <$STR(J0)> >= 1
 #ACT
 MOV J0 1
 MOVE 147 0 0 1

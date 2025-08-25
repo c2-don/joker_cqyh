@@ -41,18 +41,18 @@ function 获取界面函数(玩家, Id)
 		return tmpCfg
 	else
 		local fileName = string.format(npcPath, Id)
-		print("尝试加载NPC脚本: " .. fileName .. " (ID: " .. Id .. ")")
+		-- print("尝试加载NPC脚本: " .. fileName .. " (ID: " .. Id .. ")")
     if not file_exists(fileName) then
-      print("NPC脚本文件不存在: " .. fileName)
+      -- print("NPC脚本文件不存在: " .. fileName)
       return nil
     end
-		print("找到NPC脚本文件，开始加载: " .. fileName)
+		-- print("找到NPC脚本文件，开始加载: " .. fileName)
 		local success, npcFunction = pcall(dofile, fileName)
 		if not success then
-			print("NPC脚本加载失败: " .. fileName .. " 错误: " .. tostring(npcFunction))
+			-- print("NPC脚本加载失败: " .. fileName .. " 错误: " .. tostring(npcFunction))
 			return nil
 		end
-		print("NPC脚本加载成功，类型: " .. type(npcFunction))
+		-- print("NPC脚本加载成功，类型: " .. type(npcFunction))
 		NPC界面函数表[Id] = npcFunction;
 		return NPC界面函数表[Id]
 	end

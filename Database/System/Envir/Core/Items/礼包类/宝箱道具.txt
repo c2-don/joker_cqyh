@@ -8,7 +8,7 @@
 #IF
 CHECKITEMVALUE 0 0 11 >= <$ITEMVALUE(0,0,40)>
 #ACT
-ErrorMessage 1944 0 0 
+ErrorMessage 1944 0 0
 BREAK
 
 #IF

@@ -2,34 +2,57 @@
 ; 称号道具.txt - 称号类物品使用处理器
 ; 包含：称号回城石、称号道具、称号激活道具等所有称号相关道具
 ; 脚本数量：21个
-; 最后更新：2025-07-28
+; 最后更新：2025-08-19
 ; 合并来源：称号类目录
 ;==============================================================================
 
 ;说明：称号类物品脚本需要根据具体的称号系统设计添加
 ;当前文件为预留结构，实际脚本需要根据游戏中的称号道具配置来添加
 
-;示例称号道具格式：
-;[@_USEITEM(称号道具ID)]
-;#IF
-;CheckItemidx 称号道具ID 1
-;#ACT
-;TakeItemIdx 称号道具ID 1
-;GiveTitle       称号ID
-; Break  ;       确保执行完成后立即停止，不继续处理其他脚本
-
-; 伤不起 - 可用杂物(18)
- ; 当玩家右键使用编号为 1410036 的道具时执行以下逻辑
-[@_USEITEM(1410036)]  
-#IF 
- ; 判断玩家背包中是否有该物品（1410036）至少1个
+; 测试脚本 - 复制成功的1410104语法
+[@_USEITEM(1410036)]
+LOG "[ENVIR脚本调试] [@_USEITEM(1410036)] 脚本被调用"
+#IF
 CheckItemidx 1410036 1
 #ACT
-; 从背包中扣除1个该道具
+LOG "[物品使用调试] 伤不起(1410036) 脚本开始执行"
 TakeItemIdx 1410036 1
- ; 给予玩家称号编号11（即"伤不起"）
-GiveTitle 11 
+LOG "[物品使用调试] 伤不起(1410036) 物品已消耗"
+GiveTitle 11
+LOG "[物品使用调试] 伤不起(1410036) 称号11已授予"
 Break
+#ELSESAY
+LOG "[ENVIR脚本调试] 伤不起(1410036) 检查条件失败，物品不足或无此物品"
+
+; 充满正能量 - 可用杂物(18)
+[@_USEITEM(1410038)]
+LOG "[ENVIR脚本调试] [@_USEITEM(1410038)] 脚本被调用"
+#IF
+CheckItemidx 1410038 1
+#ACT
+LOG "[物品使用调试] 充满正能量(1410038) 脚本开始执行"
+TakeItemIdx 1410038 1
+LOG "[物品使用调试] 充满正能量(1410038) 物品已消耗"
+GiveTitle 13
+LOG "[物品使用调试] 充满正能量(1410038) 称号13已授予"
+Break
+#ELSESAY
+LOG "[ENVIR脚本调试] 充满正能量(1410038) 检查条件失败，物品不足或无此物品"
+
+; 新手上路礼包 - 可用杂物(18)
+[@_USEITEM(1503008)]
+LOG "[ENVIR脚本调试] [@_USEITEM(1503008)] 脚本被调用"
+#IF
+CheckItemidx 1503008 1
+#ACT
+LOG "[物品使用调试] 新手上路礼包(1503008) 脚本开始执行"
+TakeItemIdx 1503008 1
+LOG "[物品使用调试] 新手上路礼包(1503008) 物品已消耗"
+GiveTitle 14
+LOG "[物品使用调试] 新手上路礼包(1503008) 称号14已授予"
+Break
+#ELSESAY
+LOG "[ENVIR脚本调试] 新手上路礼包(1503008) 检查条件失败，物品不足或无此物品"
 
 ; 玛法功臣礼包 - 可用杂物(18)
 [@_USEITEM(1410093)]
@@ -38,6 +61,7 @@ CheckItemidx 1410093 1
 #ACT
 TakeItemIdx 1410093 1
 GiveTitle 93
+Break
 
 ; 修行不缀 - 可用杂物(18)
 [@_USEITEM(1410094)]
@@ -46,6 +70,7 @@ CheckItemidx 1410094 1
 #ACT
 TakeItemIdx 1410094 1
 GiveTitle 94
+Break
 
 ; 17173称号礼包 - 可用杂物(18)
 [@_USEITEM(1410095)]
@@ -54,6 +79,7 @@ CheckItemidx 1410095 1
 #ACT
 TakeItemIdx 1410095 1
 GiveTitle 95
+Break
 
 ; 擂台小将 - 可用杂物(18)
 [@_USEITEM(1410096)]
@@ -62,6 +88,7 @@ CheckItemidx 1410096 1
 #ACT
 TakeItemIdx 1410096 1
 GiveTitle 96
+Break
 
 ; 擂台霸主 - 可用杂物(18)
 [@_USEITEM(1410097)]
@@ -70,6 +97,34 @@ CheckItemidx 1410097 1
 #ACT
 TakeItemIdx 1410097 1
 GiveTitle 97
+Break
+
+; 玛法豪杰 - 可用杂物(18)
+[@_USEITEM(1410099)]
+#IF
+CheckItemidx 1410099 1
+#ACT
+TakeItemIdx 1410099 1
+GiveTitle 124
+Break
+
+; 玛法名俊 - 可用杂物(18)
+[@_USEITEM(1410100)]
+#IF
+CheckItemidx 1410100 1
+#ACT
+TakeItemIdx 1410100 1
+GiveTitle 61
+Break
+
+; 玛法战将 - 可用杂物(18)
+[@_USEITEM(1410101)]
+#IF
+CheckItemidx 1410101 1
+#ACT
+TakeItemIdx 1410101 1
+GiveTitle 131
+Break
 
 ; 征战玛法 - 可用杂物(18)
 [@_USEITEM(1410103)]
@@ -78,6 +133,7 @@ CheckItemidx 1410103 1
 #ACT
 TakeItemIdx 1410103 1
 GiveTitle 103
+Break
 
 ; 武道圣心礼包 - 可用杂物(18)
 [@_USEITEM(1410122)]
@@ -86,6 +142,7 @@ CheckItemidx 1410122 1
 #ACT
 TakeItemIdx 1410122 1
 GiveTitle 128
+Break
 
 ; 武道至尊礼包 - 可用杂物(18)
 [@_USEITEM(1410123)]
@@ -94,6 +151,7 @@ CheckItemidx 1410123 1
 #ACT
 TakeItemIdx 1410123 1
 GiveTitle 129
+Break
 
 ; 周年庆称号礼包 - 可用杂物(18)
 [@_USEITEM(1410124)]
@@ -102,6 +160,33 @@ CheckItemidx 1410124 1
 #ACT
 TakeItemIdx 1410124 1
 GiveTitle 130
+Break
+
+; 传永记者团 - 可用杂物(18)
+[@_USEITEM(1410102)]
+#IF
+CheckItemidx 1410102 1
+#ACT
+TakeItemIdx 1410102 1
+GiveTitle 132
+Break
+
+; 玛法至尊 - 可用杂物(18)
+[@_USEITEM(1410104)]
+LOG "[ENVIR脚本调试] [@_USEITEM(1410104)] 脚本被调用"
+#IF
+CheckItemidx 1410104 1
+#ACT
+LOG "[物品使用调试] 玛法至尊(1410104) 脚本开始执行"
+TakeItemIdx 1410104 1
+LOG "[物品使用调试] 玛法至尊(1410104) 物品已消耗"
+GiveTitle 147
+LOG "[物品使用调试] 玛法至尊(1410104) 称号147已授予"
+Break
+#ELSESAY
+LOG "[ENVIR脚本调试] 玛法至尊(1410104) 检查条件失败，物品不足或无此物品"
+
+
 
 ;坐骑
 ; 白泽·幼 - 物品ID 39101，坐骑编号 1

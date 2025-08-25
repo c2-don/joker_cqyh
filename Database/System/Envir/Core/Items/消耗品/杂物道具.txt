@@ -389,7 +389,7 @@ BREAK
 #IF
 CheckItemidx 1500237 1
 #ACT
-TakeItemIdx 1500237 1 
+TakeItemIdx 1500237 1
 GiveItemIdx 99900042 1 FALSE
 BREAK
 

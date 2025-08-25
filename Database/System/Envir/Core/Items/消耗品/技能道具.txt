@@ -151,7 +151,7 @@ GiveItem 冰咆哮残卷 1 TRUE
 BREAK
 
 #IF
-CheckClass 刺客  
+CheckClass 刺客
 CheckItemidx 1700002 1
 #ACT
 TakeItem 稀有技能书残卷 1

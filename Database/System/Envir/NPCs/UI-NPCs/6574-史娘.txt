@@ -141,7 +141,7 @@ GOTO @检测七天乐
 
 [@检测七天乐]
 #IF
-CHECKDOUBLEEXP
+IsOpenSevenCarnival
 #ACT
 ChangeSevenCarnival 67 + 1
 
