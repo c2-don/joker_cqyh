@@ -1,0 +1,152 @@
+;==============================================================================
+; ⏰ 定时器执行内容 - 测试定时器触发处理
+; 说明：当玩家的个人定时器到时间时，系统会自动调用对应的@_OnTimer(定时器ID)
+;==============================================================================
+
+; 定时器ID1执行内容 - 测试有限次数定时器（最多10次）
+[@_OnTimer(1)]
+{
+#IF
+Level < 60
+#ACT
+LOG "[定时器执行] 定时器ID1被触发（经验加速），玩家：<$USERNAME>，等级：<$LEVEL>"
+GiveExp 1000
+TopMessage "经验加速：获得1000经验值（30级前有效）" TRUE
+LOG "[定时器执行] 经验加速定时器执行完成，已给予1000经验"
+Break
+#ELSEACT
+LOG "[定时器执行] 玩家<$USERNAME>等级已达到30级，关闭经验加速定时器"
+SetOffTimer 1
+TopMessage "经验加速已结束（已达30级）" TRUE
+LOG "[定时器执行] 经验加速定时器已关闭"
+Break
+}
+
+; 定时器ID2执行内容 - 测试无限循环定时器（每3秒执行）
+[@_OnTimer(2)]
+{
+#IF
+#ACT
+MOV P2 <$P2> + 1
+SendMsg 7 "无限定时器ID2执行第<$P2>次：这是一个无限循环的测试定时器"
+TopMessage "无限定时器ID2：第<$P2>次执行" TRUE
+Break
+}
+
+; 定时器ID3执行内容 - 经验加速测试定时器（持续30秒）
+[@_OnTimer(3)]
+{
+#IF
+#ACT
+MOV P3 <$P3> + 1
+GiveExp 500
+SendMsg 7 "经验定时器ID3执行第<$P3>次：获得500点经验值"
+TopMessage "经验加速：+500 EXP（第<$P3>次）" TRUE
+#IF
+CheckCalc <$P3> >= 30
+#ACT
+SetOffTimer 3
+SendMsg 7 "经验定时器ID3已完成30次执行，自动关闭"
+TopMessage "经验加速：已完成，定时器关闭" TRUE
+MOV P3 0
+Break
+}
+
+; 高级定时器测试 - 条件检测定时器
+[@测试条件定时器]
+{
+#IF
+#ACT
+SetOnTimer 4 2
+SendMsg 7 "条件定时器已开启：ID4，每2秒检测等级，30级以下获得经验奖励"
+TopMessage "提示：条件定时器已开启，30级前有效" TRUE
+Break
+}
+
+; 定时器ID4执行内容 - 条件检测定时器（30级前有效）
+[@_OnTimer(4)]
+{
+#IF
+Level < 30
+#ACT
+GiveExp 1000
+SendMsg 7 "条件定时器ID4：当前等级<$LEVEL>，获得1000点经验值"
+TopMessage "经验奖励：+1000 EXP（等级：<$LEVEL>）" TRUE
+Break
+#ELSEACT
+SetOffTimer 4
+SendMsg 7 "条件定时器ID4已关闭：已达到30级限制"
+TopMessage "条件定时器：已达到30级，自动关闭" TRUE
+Break
+}
+
+; 复杂定时器测试 - 多条件判断定时器
+[@测试60级经验加速]
+{
+#IF
+Level < 60
+#ACT
+SetOnTimer 6 1
+SendMsg 7 "60级经验加速已启动：每秒获得1000点经验值"
+TopMessage "经验加速开启：+1000 EXP/秒（60级前有效）" TRUE
+Break
+#ELSEACT
+SendMsg 7 "您已达到60级，经验加速功能不再生效"
+TopMessage "经验加速：等级已达上限" TRUE
+Break
+}
+
+[@测试复杂定时器]
+{
+#IF
+#ACT
+SetOnTimer 5 5
+MOV P5 0
+SendMsg 7 "复杂定时器已开启：ID5，每5秒执行复杂逻辑判断"
+TopMessage "提示：复杂定时器已开启，执行多条件判断" TRUE
+Break
+}
+
+; 定时器ID5执行内容 - 复杂多条件判断定时器
+[@_OnTimer(5)]
+{
+#IF
+#ACT
+MOV P5 <$P5> + 1
+#IF
+CheckCalc <$P5> % 2 = 1
+#ACT
+GiveExp 200
+SendMsg 7 "复杂定时器ID5（第<$P5>次）：奇数次执行，获得200经验"
+TopMessage "复杂定时器：奇数次执行 +200 EXP" TRUE
+Break
+#ELSEACT
+Give 金币 1000
+SendMsg 7 "复杂定时器ID5（第<$P5>次）：偶数次执行，获得1000金币"
+TopMessage "复杂定时器：偶数次执行 +1000金币" TRUE
+#IF
+CheckCalc <$P5> >= 10
+#ACT
+SetOffTimer 5
+SendMsg 7 "复杂定时器ID5已完成10次执行，自动关闭"
+TopMessage "复杂定时器：执行完成，已关闭" TRUE
+MOV P5 0
+Break
+}
+
+; 定时器ID6执行内容 - 60级以下经验加速定时器
+[@_OnTimer(6)]
+{
+#IF
+Level < 60
+#ACT
+GiveExp 1000
+SendMsg 7 "经验加速：获得1000点经验值（当前等级：<$LEVEL>）"
+TopMessage "经验加速：+1000 EXP（等级：<$LEVEL>）" TRUE
+Break
+#ELSEACT
+SetOffTimer 6
+SendMsg 7 "经验加速已关闭：已达到60级上限"
+TopMessage "经验加速结束：已达到60级上限" TRUE
+Break
+}

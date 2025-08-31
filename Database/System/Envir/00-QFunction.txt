@@ -52,6 +52,7 @@
 MOV G50 1
 ;GlobalMessage "[小丑传永]：<font color='#FF0000'>服务器已正式开放，点击管理员(玛法特训)离开等待地图</font>" FALSE
 
+
 ;==============================================================================
 ; 🔧 装备重铸系统 - 按装备部位分类的重铸处理
 ; 说明：与Lua脚本系统配合，提供装备重铸功能
@@ -64,6 +65,8 @@ MOV G50 1
 CheckItem 装备碎片 90
 #ACT
 TakeItemIdx 111001 90
+Calc U500 + 1
+;TopMessage "重铸武器触发了" FALSE
 #CALL Core\Equipment\Reforge\武器重铸.txt @武器重铸处理
 
 ; 头盔重铸 (部位1) - 需要75个装备碎片
@@ -72,6 +75,7 @@ TakeItemIdx 111001 90
 CheckItem 装备碎片 75
 #ACT
 TakeItemIdx 111001 75
+Calc U503 + 1
 #CALL Core\Equipment\Reforge\头盔重铸.txt @头盔重铸处理
 
 ; 衣服重铸 (部位3) - 需要90个装备碎片
@@ -80,6 +84,7 @@ TakeItemIdx 111001 75
 CheckItem 装备碎片 90
 #ACT
 TakeItemIdx 111001 90
+Calc U501 + 1
 #CALL Core\Equipment\Reforge\衣服重铸.txt @衣服重铸处理
 
 ; 项链重铸 (部位8) - 需要60个装备碎片
@@ -88,6 +93,7 @@ TakeItemIdx 111001 90
 CheckItem 装备碎片 60
 #ACT
 TakeItemIdx 111001 60
+Calc U508 + 1
 #CALL Core\Equipment\Reforge\项链重铸.txt @项链重铸处理
 
 ; 戒指重铸 (部位9) - 需要60个装备碎片
@@ -96,6 +102,7 @@ TakeItemIdx 111001 60
 CheckItem 装备碎片 60
 #ACT
 TakeItemIdx 111001 60
+Calc U509 + 1
 #CALL Core\Equipment\Reforge\戒指重铸.txt @戒指重铸处理
 
 ; 手镯重铸 (部位10) - 需要75个装备碎片
@@ -104,6 +111,7 @@ TakeItemIdx 111001 60
 CheckItem 装备碎片 75
 #ACT
 TakeItemIdx 111001 75
+Calc U511 + 1
 #CALL Core\Equipment\Reforge\手镯重铸.txt @手镯重铸处理
 
 ; 技能重铸 (部位99) - 需要60个技能书残卷
@@ -182,3 +190,23 @@ TakeItemIdx 111022 60
 ;
 ; 触发优先级：Lua脚本 > 内置处理 > Envir脚本
 ;==============================================================================
+
+[@_OnTimer(1)]
+#IF
+#ACT
+#CALL 增加经验.txt @增加经验
+
+TopMessage "提示：正增加经验。"
+Break
+
+[@_OnTimer(31)] 
+#IF
+#ACT
+#CALL 沃玛级回收.txt @沃玛级回收
+TopMessage "沃玛级别装备回收中。。。" FALSE
+BREAK
+[@_OnTimer(32)] 
+#IF
+#ACT
+#CALL 祖玛级回收.txt @祖玛级回收
+LocalMessage "祖玛级别装备回收中。。。" FALSE

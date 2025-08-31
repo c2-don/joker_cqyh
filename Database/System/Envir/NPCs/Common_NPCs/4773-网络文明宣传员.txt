@@ -1,0 +1,458 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+游戏有很多新功能，在我这里都可以体验哦！你的当前爆率为：<font color='#7d6aff'>[<$SCRIPTDROPRATE>]</font><#SO:1>元宝袋兑换元宝<#SO/><#SO:2>装备兑换元宝<#SO/><#SO:3>自动回收装备<#SO/><#SO:4>自动拾取<#SO/><#SO:5>修复卡任务<#SO/><#SO:6>推广码系统<#SO/><#SO:7>角色转变为男性（1000万金币）<#SO/><#SO:8>角色转变为女性（1000万金币）<#SO/>
+
+[@1]
+#IF
+#ACT
+#SAY
+10个宝袋可以兑换100个元宝<br>100个宝袋可以兑换1000个元宝<br>500个宝袋可以兑换5000个元宝<#SO:1>10个宝袋兑换100个元宝<#SO/><#SO:2>100个宝袋兑换1000个元宝<#SO/><#SO:3>500个宝袋兑换5000个元宝<#SO/><#SO:4>返回上一级<#SO/>
+
+[@1_1]
+#IF
+HasBagSpace < 1
+#ACT
+TopMessage "背包空格不足[1]格" FALSE
+BREAK
+
+#IF
+CheckItemIdx 1510107 10
+#ACT
+TakeItemIdx 1510107 10
+GAMEGOLD + 10000
+#ELSESAY
+元宝袋不足，无法进行兑换！
+
+[@1_2]
+#IF
+CheckItemIdx 1510107 100
+#ACT
+TakeItemIdx 1510107 100
+GAMEGOLD + 100000
+#ELSESAY
+元宝袋不足，无法进行兑换！
+
+[@1_3]
+#IF
+CheckItemIdx 1510107 500
+#ACT
+TakeItemIdx 1510107 500
+GAMEGOLD + 500000
+#ELSESAY
+元宝袋不足，无法进行兑换！
+
+
+[@1_4]
+#IF
+#ACT
+goto @MAIN
+
+Break
+
+[@2]
+#IF
+#ACT
+#SAY
+沃玛级装备回收10元宝<br>祖玛级装备回收20元宝<br>赤月级装备回收100元宝<#SO:1>沃玛级装备一键回收<#SO/><#SO:2>祖玛级装备一键回收<#SO/><#SO:3>赤月级装备一键回收<#SO/><#SO:4>返回上一级<#SO/>
+
+[@2_1]
+#IF
+#ACT
+#CALL 沃玛级回收.txt @沃玛级回收
+
+[@2_1_1]
+#IF
+#ACT
+
+goto @2
+Break
+
+
+
+
+
+[@2_2]
+
+#IF
+#ACT
+#CALL 祖玛级回收.txt @祖玛级回收
+
+
+[@2_2_1]
+#IF
+#ACT
+
+goto @2
+Break
+
+
+
+[@2_3]
+
+#IF
+#ACT
+#CALL 赤月级回收.txt @赤月级回收
+
+[@2_3_1]
+#IF
+#ACT
+
+
+goto @2
+Break
+
+
+[@2_4]
+#IF
+#ACT
+
+goto @MAIN
+
+Break
+
+[@3]
+#IF
+#ACT
+#SAY
+开启自动回收背包内装备成元宝<#SO:1>开启自动回收沃玛装备 <#SO/><#SO:2>关闭自动回收沃玛装备 <#SO/><#SO:3>开启自动回收祖玛装备 <#SO/><#SO:4>关闭自动回收祖玛装备 <#SO/><#SO:5>开启自动回收赤月装备<#SO/><#SO:6>关闭自动回收赤月装备<#SO/><#SO:7>返回上一级<#SO/>
+
+[@3_1]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SetOnTimer 10 60
+#SAY
+你开启了自动回收沃玛装备功能，每1分钟回收一次背包内装备!<#SO:3>返回上一级<#SO/>
+#IF
+#ACT
+
+TopMessage "你成功开启自动回收沃玛装备。" FALSE
+
+[@3_1_1]
+#IF
+#ACT
+goto @3
+Break
+
+[@3_2]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SetOffTimer 10
+#SAY
+你关闭了自动回收沃玛装备功能!<#SO:3>返回上一级<#SO/>
+#IF
+#ACT
+TopMessage "你成功关闭自动回收沃玛装备。" FALSE
+
+[@3_2_1]
+#IF
+#ACT
+goto @3
+Break
+
+
+[@3_3]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SetOnTimer 11 60
+#SAY
+你开启了自动回收祖玛装备功能，每1分钟回收一次背包内装备!<#SO:3>返回上一级<#SO/>
+#IF
+#ACT
+TopMessage "你成功开启自动回收祖玛装备。" FALSE
+
+[@3_3_1]
+#IF
+#ACT
+goto @3
+Break
+
+[@3_4]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SetOffTimer 11
+#SAY
+你关闭了自动回收祖玛装备功能!<#SO:3>返回上一级<#SO/>
+#IF
+#ACT
+TopMessage "你成功关闭自动回收祖玛装备。" FALSE
+
+
+[@3_4_1]
+#IF
+#ACT
+goto @3
+Break
+
+
+[@3_5]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SetOnTimer 12 60
+#SAY
+你开启了自动回收赤月装备功能，每1分钟回收一次背包内装备!<#SO:3>返回上一级<#SO/>
+#IF
+#ACT
+TopMessage "你成功开启自动回收赤月装备。" FALSE
+
+[@3_5_1]
+#IF
+#ACT
+goto @3
+Break
+
+[@3_6]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SetOffTimer 12
+#SAY
+你关闭了自动回收赤月装备功能!<#SO:3>返回上一级<#SO/>
+#IF
+#ACT
+TopMessage "你成功关闭自动回收赤月装备。" FALSE
+
+[@3_6_1]
+#IF
+#ACT
+goto @3
+Break
+
+
+
+[@3_7]
+#IF
+#ACT
+
+goto @MAIN
+
+Break
+
+
+
+[@4]
+#IF
+#ACT
+#SAY
+选择你要开启的功能？<#SO:11>开启自动拾取<#SO/><#SO:12>关闭自动拾取<#SO/>
+
+[@4_11]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SET [3] 1
+AutoPickCfg 15 3000
+
+#SAY
+你开启了范围为15的自动拾取功能，3秒执行一次!<#SO:1>返回上一级<#SO/>
+
+#IF
+#ACT
+TopMessage "你成功开启了自动拾取。" FALSE
+
+[@4_11_1]
+#IF
+#ACT
+
+goto @MAIN
+
+[@4_12]
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+#ACT
+SET [3] 0
+AutoPickCfg 0
+#SAY
+你关闭了自动拾取功能!<#SO:1>返回上一级<#SO/>
+
+#IF
+#ACT
+TopMessage "你成功关闭了自动拾取。" FALSE
+
+[@4_12_1]
+#IF
+#ACT
+
+goto @MAIN
+
+[@5]
+#IF
+#ACT
+#SAY
+选择要修复的任务？<#SO:21>修复荒漠奇袭任务（四）<#SO/>
+
+[@5_21]
+#IF
+#ACT
+StartQuest 414
+Break
+#SAY
+修复成功!重新开始任务！
+
+
+[@6]
+#IF
+#ACT
+#SAY
+测试武器 <#SO:1>攻击<#SO/><#SO:2>随机<#SO/><#SO:3>兑换<#SO/>
+<#SO:4>我要领取<#SO/>
+<#SO:5>我要领取<#SO/>
+
+
+[@6_1]
+#IF
+#ACT
+MOV P1 <$ItemValue(0,0,2)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 2 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器攻击属性提升1点" FALSE
+Break
+
+[@7]
+#IF
+#ACT
+#SAY
+你确定要接受转换魔法吗？<#SO:1>确定！！！<#SO/><#SO:2>我不要...<#SO/>
+[@7_1]
+#IF
+CheckGender 1
+#ACT
+TopMessage "勇士你现在就是一位猛男不需要变了！！" FALSE
+Break
+
+
+
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+
+CHECKGOLD > 10000000
+#ACT
+TakeGold 10000000
+CHANGEGENDER 男性
+Break
+#SAY
+你变成了一个猛男!角色小退后生效！
+#ELSESAY
+身上不足[1000]万金币，无法变性！
+[@7_2]
+
+#IF
+#ACT
+
+goto @MAIN
+
+
+[@8]
+#IF
+#ACT
+#SAY
+你确定要接受转换魔法吗？<#SO:1>确定！！！<#SO/><#SO:2>我不要...<#SO/>
+[@8_1]
+
+#IF
+CheckGender 2
+#ACT
+TopMessage "勇士你现在就是一位美女不需要变了！！" FALSE
+Break
+
+#IF
+CheckCalc <$VIP> < 7
+#ACT
+Break
+#SAY
+您不是玛法至尊玩家,无法开启！
+
+#IF
+CheckCalc <$VIP> == 7
+CHECKGOLD > 10000000
+#ACT
+TakeGold 10000000
+CHANGEGENDER 女性
+Break
+#SAY
+你变成了一个美女!角色小退后生效！
+#ELSESAY
+身上不足[1000]万金币，无法变性！
+[@8_2]
+#IF
+#ACT
+
+goto @MAIN
+
+
+
+
+
+

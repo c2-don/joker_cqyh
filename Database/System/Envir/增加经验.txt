@@ -1,0 +1,11 @@
+[@增加经验]
+{
+#IF
+Level < 60
+#ACT
+GiveExp 1000
+TopMessage "提示：60级之前每秒增加1000点经验值" TRUE
+BREAK
+#ELSEACT
+SetOffTimer 1 ;等级到达60后关闭个人定时器
+}

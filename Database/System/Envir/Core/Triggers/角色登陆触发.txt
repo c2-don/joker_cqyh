@@ -1,12 +1,26 @@
 [@登陆触发执行]
+; 新玩家欢迎信息
 {
 #IF
 IsNewHuman
 #ACT
+LOG "[角色登陆] 新玩家登录：<$USERNAME>"
 GlobalMessage "新玩家：<font color='#EE82EE'>[<$USERNAME>]</font>来到了<font color='#7d6aff'>《小丑传永》</font>，顿时电闪雷鸣.风云再起！！！" FALSE
 LocalMessage "新玩家：<font color='#EE82EE'>[<$USERNAME>]</font>来到了<font color='#7d6aff'>《小丑传永》</font>，顿时电闪雷鸣.风云再起！！！" TRUE
-Break
+
+
+#IF
+Level >= 1
+#ACT
+LOG "[角色登陆] 玩家<$USERNAME>登陆，准备开启经验加速定时器，等级：<$LEVEL>"
+SetOnTimer 1 1 0
+LOG "[角色登陆] SetOnTimer 1 1 0 命令已执行（经验加速定时器）"
+TopMessage "提示：开启ID1的定时器,1秒执行1次" TRUE
+SendMsg 7 "经验加速定时器已启动（60级前有效）"
+BREAK
+
 }
+
 
 ; VIP自动拾取功能配置
 ;{
