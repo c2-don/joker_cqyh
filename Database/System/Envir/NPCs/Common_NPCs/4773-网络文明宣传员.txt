@@ -2,7 +2,7 @@
 #IF
 #ACT
 #SAY
-游戏有很多新功能，在我这里都可以体验哦！你的当前爆率为：<font color='#7d6aff'>[<$SCRIPTDROPRATE>]</font><#SO:1>元宝袋兑换元宝<#SO/><#SO:2>装备兑换元宝<#SO/><#SO:3>自动回收装备<#SO/><#SO:4>自动拾取<#SO/><#SO:5>修复卡任务<#SO/><#SO:6>推广码系统<#SO/><#SO:7>角色转变为男性（1000万金币）<#SO/><#SO:8>角色转变为女性（1000万金币）<#SO/>
+游戏有很多新功能，在我这里都可以体验哦！你的当前爆率为：<font color='#7d6aff'>[<$SCRIPTDROPRATE>]</font><#SO:1>元宝袋兑换元宝<#SO/><#SO:2>装备兑换元宝<#SO/><#SO:3>自动回收装备<#SO/><#SO:4>自动拾取<#SO/><#SO:5>修复卡任务<#SO/><#SO:6>自动泡点<#SO/><#SO:7>角色转变为男性（1000万金币）<#SO/><#SO:8>角色转变为女性（1000万金币）<#SO/>
 
 [@1]
 #IF
@@ -356,22 +356,43 @@ Break
 #IF
 #ACT
 #SAY
-测试武器 <#SO:1>攻击<#SO/><#SO:2>随机<#SO/><#SO:3>兑换<#SO/>
-<#SO:4>我要领取<#SO/>
-<#SO:5>我要领取<#SO/>
-
+选择你要开启的功能？<#SO:1>开启泡点<#SO/><#SO:2>关闭泡点<#SO/>
 
 [@6_1]
 #IF
 #ACT
-MOV P1 <$ItemValue(0,0,2)> ;将身上武器的攻击属性存入变量P1
-MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
-CALC P1 + 1 ;将变量值加1
-CALC P2 + 1 ;将变量值加1
-ChangeItemValue 0 0 2 %P1 ;设置武器攻击属性为P1变量的值
-ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
-TopMessage "你的武器攻击属性提升1点" FALSE
-Break
+LOG "[角色登陆] 玩家<$USERNAME>登陆，准备开启经验加速定时器，等级：<$LEVEL>"
+SetOnTimer 1 10 0
+SendMsg 7 "经验加速定时器已启动（60级前有效）"
+#SAY
+你开启了自动泡点!<#SO:3>返回上一级<#SO/>
+[@6_2]
+#IF
+#ACT
+SetOffTimer 1 ;等级到达30后关闭个人定时器
+#SAY
+你关闭了自动泡点!<#SO:1>返回上一级<#SO/>
+
+
+;#IF
+;#ACT
+;#SAY
+;测试武器 <#SO:1>攻击<#SO/><#SO:2>随机<#SO/><#SO:3>兑换<#SO/>
+;<#SO:4>我要领取<#SO/>
+;<#SO:5>我要领取<#SO/>
+
+
+;[@6_1]
+;#IF
+;#ACT
+;MOV P1 <$ItemValue(0,0,2)> ;将身上武器的攻击属性存入变量P1
+;MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+;CALC P1 + 1 ;将变量值加1
+;CALC P2 + 1 ;将变量值加1
+;ChangeItemValue 0 0 2 %P1 ;设置武器攻击属性为P1变量的值
+;ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+;TopMessage "你的武器攻击属性提升1点" FALSE
+;Break
 
 [@7]
 #IF
