@@ -653,32 +653,34 @@ Break
 #SAY
 勇士你不是队长，请等待队长操作！
 
-#IF
-GroupCount > 6
-#ACT
-Break
-#SAY
-队伍人数超过6人！
+;#IF
+;GroupCount > 6
+;#ACT
+;Break
+;#SAY
+;队伍人数超过6人！
 
-#IF
-CHECKGROUPMEMBERLEVEL  < 30
-#ACT
-Break
-#SAY
-队伍有成员等级未达到30级！
+;#IF
+;CHECKGROUPMEMBERLEVEL  < 30
+;#ACT
+;Break
+;#SAY
+;队伍有成员等级未达到30级！
 
-#IF
-CHECKGROUPMEMBERGOLD  < 100000
-#ACT
-Break
-#SAY
-队伍有成员金币不到10万！
+;#IF
+;CHECKGROUPMEMBERGOLD  < 100000
+;#ACT
+;Break
+;#SAY
+;队伍有成员金币不到10万！
 
 #IF
 GROUPCHECKNEARBY
 #ACT
-CreateInstance 36 120 36 0
 TakeGroupMemberGold 100000
+CreateInstance 36 120 36 0
+;CreateInstance 36 120 0 0
+;创建副本实列 36 2 36 0
 GroupInstanceMove 36 1058 503 0
 #ELSESAY
 队伍成员不在附近

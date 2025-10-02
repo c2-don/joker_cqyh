@@ -1,3 +1,5 @@
 [@MAIN]
+#IF
+#ACT
 #SAY
 阁下是否需要我传送您回公会属地？<#UI:GuildTerri>确定<#UI/><#SO:2>取消<#SO/>

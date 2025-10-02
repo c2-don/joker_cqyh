@@ -10,17 +10,20 @@ Break
 
 [@1]
 #IF
-检测判断 <$变量(J131)> == 0
+Checkcalc <$STR(J131)> == 0
 #ACT
-添加BUFF 2513
-变量 J131 1
+;发放BUFF格式：GiveBuff BUFF编号
+GiveBuff 2513
+;变量赋值格式：MOV 变量名 值
+MOV J131 1
 进入公会温泉
 #ELSEACT
 进入公会温泉
 
 #IF
-检测任务 10000382 ACTIVE
+CheckQuest 10000382 ACTIVE
 #ACT
-变量运算 Y554 + 1
+;变量运算格式：Calc 变量名 运算符 值
+CALC Y554 + 1
 更新任务进度 10000382
 Break

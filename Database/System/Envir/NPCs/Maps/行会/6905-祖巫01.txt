@@ -1,42 +1,105 @@
 [@MAIN]
+#ACT
+
 #IF
-检测公会活动 4
+CheckCalc <$STR(J5)> == 10
 #ACT
 #SAY
-公会活动暂未开启<#SO:999>取消<#SO/>
+您今天已经祈祷过了<#SO:999>取消<#SO/>
+
+#IF
+判断公会祈祷
+#ACT
+#SAY
+公会祈祷活动暂未开启<#SO:999>取消<#SO/>
 #ELSESAY
-若得神龙护佑，公会便能越来越强大！向神龙祈祷吧勇士，你将得到经验值，这也是一种修行。<#SO:1>确定（花费5000金币）<#SO/><#SO:999>取消<#SO/>
+<$STR(J5)>若得神龙护佑，公会便能越来越强大！向神龙祈祷吧勇士，你将得到经验值，这也是一种修行。<#SO:1>确定（花费5000金币）<#SO/><#SO:999>取消<#SO/>
 
 [@1]
 #IF
-检测判断 <$变量(Y193)> >= 10
+CheckGold > 5000
 #ACT
-Break
+Calc J5 + 1
+GOTO @1_1
 #SAY
-您今天已经完成了10次祈祷了<#SO:999>取消<#SO/>
-
-#IF
-检测金币 < 5000
-#ACT
-Break
-#SAY
+#ELSESAY
 你身上的金币不足。<#SO:1>确定<#SO/>
 
+[@1_1]
 #IF
-检测判断 <$变量(Y193)> == 0
+Random 1
 #ACT
-修改角色变量 217
+GOTO @1_1_1
+BREAK
 
 #IF
+Random 2
 #ACT
-金币数量 - 5000
-变量运算 Y193 + 1
-修改角色变量 193 <$变量(Y193)>
-获得公会祈祷经验
+GOTO @1_1_2
+BREAK
+
+[@1_1_1]
+#IF
+Random 1
+#ACT
+MOV U2 10
+GOTO @2
+BREAK
 
 #IF
-检测任务 10000381 ACTIVE
+Random 2
 #ACT
-变量运算 Y553 + 1
+MOV U2 20
+GOTO @2
+BREAK
+
+#IF
+Random 3
+#ACT
+MOV U2 30
+GOTO @2
+BREAK
+
+#IF
+Random 4
+#ACT
+MOV U2 40
+GOTO @2
+BREAK
+
+[@1_1_2]
+#IF
+Random 1
+#ACT
+MOV U2 50
+GOTO @2
+BREAK
+
+#IF
+Random 2
+#ACT
+MOV U2 60
+GOTO @2
+BREAK
+
+#IF
+Random 3
+#ACT
+MOV U2 70
+GOTO @2
+BREAK
+
+#IF
+Random 4
+#ACT
+MOV U2 80
+GOTO @2
+BREAK
+
+[@2]
+#IF
+#ACT
+Calc Y553 + 1
 更新任务进度 10000381
-Break
+GiveExp <$STR(U2)>000
+BREAK

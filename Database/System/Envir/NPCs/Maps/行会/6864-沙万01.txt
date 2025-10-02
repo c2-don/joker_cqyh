@@ -1,22 +1,25 @@
 [@MAIN]
+#IF
+#ACT
 #SAY
 公会的强盛离不开每个成员的协力，阁下若有此志，不妨来看看我这儿每周1次的委托，帮助公会发展的同时还能获得一些不错的奖励。<#SO:1>听起来不错（接取每周任务）<#SO/>
 
 [@1]
 #OR
-检测任务 10000381 ACTIVE
-检测任务 10000382 ACTIVE
-检测任务 10000383 ACTIVE
-检测任务 10000384 ACTIVE
-检测任务 10000385 ACTIVE
-检测任务 10000386 ACTIVE
-检测任务 10000387 ACTIVE
-检测任务 10000388 ACTIVE
+CheckQuest 10000381 ACTIVE
+CheckQuest 10000382 ACTIVE
+CheckQuest 10000383 ACTIVE
+CheckQuest 10000384 ACTIVE
+CheckQuest 10000385 ACTIVE
+CheckQuest 10000386 ACTIVE
+CheckQuest 10000387 ACTIVE
+CheckQuest 10000388 ACTIVE
 #ACT
 #SAY
-阁下已经忙得不可开交，还是先把手头的委托完成再说吧。
+阁下似乎已接取过了我的委托，还是先把手头的委托完成再说吧。<#SO:999>知道了<#SO/>
 #ELSESAY
 本周任务已发布。<#SO:1>接取任务<#SO/><#SO:2>我再想想<#SO/>
+
 
 [@1_1]
 #IF

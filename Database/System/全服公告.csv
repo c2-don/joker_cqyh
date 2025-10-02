@@ -1,6 +1,4 @@
-﻿Id,Key
-1,玩家：<font color='#FF0000'>[%Play%]</font>打开了一个%Src%，金光一闪获得了<font color='#FF0000'>[%Item%]</font>
-2,玩家：<font color='#FF0000'>[%Play%]</font>打开了一个%Src%，金光一闪获得了<font color='#FF0000'>[%Item%]</font>
-3,玩家：<font color='#FF0000'>[%Play%]</font>打开了一个%Src%，金光一闪获得了<font color='#FF0000'>[%Item%]</font>
-4,玩家：<font color='#FF0000'>[%Play%]</font>打开了一个%Src%，金光一闪获得了<font color='#FF0000'>[%Item%]</font>
-5,玩家：<font color='#FF0000'>[%Play%]</font>打开了一个%Src%，金光一闪获得了<font color='#FF0000'>[%Item%]</font>
+编号,内容
+1,欢迎来到游戏世界！
+2,玩家【%Play%】获得了稀有物品【%Item%】！
+3,全服活动【%Src%】即将开始，请做好准备！

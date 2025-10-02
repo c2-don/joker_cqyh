@@ -2,9 +2,193 @@
 #IF
 #ACT
 #SAY
-我们为所有初涉玛法大陆的勇士准备了丰厚的成长礼物，每天都有惊喜哦。<#SO:1>开启自动拾取<#SO/><#SO:2>关闭自动拾取<#SO/><#SO:3>离开<#SO/><#UI:OpenHappyHoliday>查看【传永七天乐】活动信息<#UI/><#INS:S86>关于【传永七天乐】<#INS/>
+我们为所有初涉玛法大陆的勇士准备了丰厚的成长礼物，每天都有惊喜哦。<#SO:1>开启自动拾取<#SO/><#SO:2>关闭自动拾取<#SO/><#SO:4>开启神圣护体<#SO/><#SO:5>武器开启双铭文孔<#SO/><#SO:6>武器强化<#SO/><#SO:3>离开<#SO/><#UI:OpenHappyHoliday>查看【传永七天乐】活动信息<#UI/><#INS:S86>关于【传永七天乐】<#INS/>
 
 ;我是活动大使，可以为你提供各种便民服务。<#SO:1>开启自动拾取<#SO/><#SO:2>关闭自动拾取<#SO/><#SO:3>离开<#SO/>
+
+[@5]
+#IF
+#SAY
+<#D>给予我5000元宝，即可让你的武器开启空白的铭文双孔<#D/><#SO:1>开双铭文孔<#SO/><#SO:2>返回上一级<#SO/>
+;=================================================================================================================
+==
+
+[@6]
+#IF
+#ACT
+#SAY
+武器强化 <#SO:1>强化武器<#SO/>
+
+[@6_1]
+#IF
+CheckClass 战士
+#ACT
+MOV P1 <$ItemValue(0,0,2)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 2 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器攻击属性提升1点" FALSE
+Break
+
+#IF
+CheckClass 道士
+#ACT
+MOV P1 <$ItemValue(0,0,4)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 4 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器道术属性提升1点" FALSE
+Break
+
+#IF
+CheckClass 法师
+#ACT
+MOV P1 <$ItemValue(0,0,3)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 3 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器魔法属性提升1点" FALSE
+Break
+
+#IF
+CheckClass 弓手
+#ACT
+MOV P1 <$ItemValue(0,0,6)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 6 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器弓箭属性提升1点" FALSE
+Break
+
+#IF
+CheckClass 刺客
+#ACT
+MOV P1 <$ItemValue(0,0,5)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 5 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器刺术属性提升1点" FALSE
+Break
+
+#IF
+CheckClass 龙枪
+#ACT
+MOV P1 <$ItemValue(0,0,2)> ;将身上武器的攻击属性存入变量P1
+MOV P2 <$ItemValue(0,0,1)> ;将身上武器的升级次数存入变量P2
+CALC P1 + 1 ;将变量值加1
+CALC P2 + 1 ;将变量值加1
+ChangeItemValue 0 0 2 %P1 ;设置武器攻击属性为P1变量的值
+ChangeItemValue 0 0 1 %P2 ;设置武器升级次数为P2变量的值
+TopMessage "你的武器攻击属性提升1点" FALSE
+Break
+
+
+
+
+[@5_2]
+#IF
+#ACT
+goto @MAIN
+
+[@5_1]
+#IF
+CHECKITEMVALUE 0 0 15 < 1200
+#ACT
+#ELSEACT
+TopMessage "你的武器已开启双铭文孔，请勿重复开启！！" FALSE
+Break
+
+
+#IF
+CHECKGameGold  >= 500000
+#ACT
+GameGold - 500000
+ChangeItemValue 0 0 15 1201
+TopMessage "恭喜玩家[<$USERNAME>]成功开启武器铭文双孔！！" FALSE
+#ELSEACT
+TopMessage "你的元宝数量不足！！" FALSE
+
+;============================================================================================
+[@4]
+#IF
+#SAY
+神圣护体：攻击属性+5，血量上限+50<BR>开启费用：100元宝<#SO:1>确定开启<#SO/><#SO:2>返回上一级<#SO/>
+
+
+[@4_2]
+#IF
+#ACT
+goto @MAIN
+Break
+
+
+[@4_1]
+#IF
+HasBuff 63000
+#ACT
+TopMessage "你当前已拥有神圣护体！" FALSE
+Break
+
+#IF
+CHECKGameGold  >= 10000
+#ACT
+GiveBuff 63000
+GameGold - 10000
+TopMessage "你开启了神圣护体！" FALSE
+GlobalMessage "恭喜玩家：<font color='#EE82EE'>[<$USERNAME>]</font>开启了<font color='#7d6aff'>神圣护体</font>，请大家小心！！！" FALSE
+#ELSESAY
+"你身上的元宝不足！"
+Break
+
+
+[@1]
+#IF
+CheckClass 战士
+#ACT
+goto @1_1
+Break
+
+#IF
+CheckClass 法师
+#ACT
+goto @1_2
+Break
+
+#IF
+CheckClass 道士
+#ACT
+goto @1_3
+Break
+
+#IF
+CheckClass 刺客
+#ACT
+goto @1_4
+Break
+
+#IF
+CheckClass 弓手
+#ACT
+goto @1_5
+Break
+
+#IF
+CheckClass 龙枪
+#ACT
+goto @1_6
+Break
+
+;战士铭文兑换界面-------------------------------------------------------------------------
 
 [@1]
 #IF

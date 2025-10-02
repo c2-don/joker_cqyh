@@ -1,3 +1,252 @@
 [@MAIN]
+#IF
+#ACT
 #SAY
-<#Dft>
+<#D>新服来袭,勇士只要到达6、13、21、27、29、31级就可以在我这里领取海量经验。开服一段时间，我这里每天都会新增一个任务选项，完成后可以获得海量经验(每个任务选项只可以完成一次)<#D/><#SO:1>领取等级奖励<#SO/><#SO:2>任务一：登录领好礼<#SO/><#SO:3>任务二：九层妖塔五层<#SO/><#SO:4>任务三：屠魔大厅第10波<#SO/><#SO:5>任务四：参与经验武斗场或者皇室宝库<#SO/><#SO:6>任务五：击杀魔虫窟三精英<#SO/><#SO:7>任务六：学习35级技能<#SO/><#SO:8>任务七：成就点数1000<#SO/><#SO:9>任务八：上交祝福油<#SO/><#SO:10>任务九：上交屠魔令（100个）<#SO/><#SO:11>任务十：到达40级<#SO/><#SO:12>任务十一：到达41级<#SO/><#SO:13>任务十二：到达42级<#SO/>
+
+[@1]
+#IF
+#ACT
+#CALL 等级奖励.txt @等级奖励执行
+
+[@2]
+#IF
+Checkcalc <$STR(J7151)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV J7151 1
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件。
+
+;九层妖塔
+[@3]
+#IF
+Checkcalc <$STR(U17)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+CheckCalc <$STR(F14)> > 4
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV U17 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件,当前层数<$STR(F14)>。
+
+;屠魔大厅
+[@4]
+#IF
+Checkcalc <$STR(U18)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+CheckCalc <$STR(J24)> > 9
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV U18 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件,当前层数<$STR(J24)>。
+
+;参与宝库或者经验
+[@5]
+#IF
+Checkcalc <$STR(U19)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+Checkcalc <$STR(U6101)> == 1
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV U19 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件。
+
+;魔虫精英
+[@6]
+#IF
+Checkcalc <$STR(U20)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+CheckCalc <$STR(U28)> == 3
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV U20 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件，当前杀死<$STR(U28)>只。
+
+;技能
+[@7]
+#IF
+Checkcalc <$STR(U21)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#OR
+CheckSkill 30001
+CheckSkill 30002
+CheckSkill 30003
+CheckSkill 30004
+CheckSkill 30005
+CheckSkill 30006
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV U21 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件。
+
+;成就点
+[@8]
+#IF
+Checkcalc <$STR(U22)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+Checkcalc <$成就点数> > 999
+#ACT
+GiveItem 如意丹 1 TRUE
+MOV U22 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件。
+
+
+
+;上交祝福油
+[@9]
+#IF
+Checkcalc <$STR(U23)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+CheckItem 祝福油 1
+#ACT
+TakeItem 祝福油 1
+GiveItem 如意丹 1 TRUE
+MOV U23 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件。
+
+;上交屠魔
+[@10]
+#IF
+Checkcalc <$STR(U24)> == 1
+#ACT
+Break
+#SAY
+该奖励已领取<#SO:1>知道了<#SO/>
+
+#IF
+CheckItem 屠魔令 100
+#ACT
+TakeItem 屠魔令 100
+GiveItem 如意丹 1 TRUE
+MOV U24 1
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+#ELSESAY
+未达成条件。
+
+
+
+[@11]
+#IF
+Checkcalc <$STR(U25)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 40
+#ACT
+Break
+#SAY
+<#D>等级不足[40]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+level > 39
+#ACT
+MOV U25 1
+GiveItem 如意丹 1 TRUE
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+[@12]
+#IF
+Checkcalc <$STR(U26)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 41
+#ACT
+Break
+#SAY
+<#D>等级不足[41]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+level > 40
+#ACT
+MOV U26 1
+GiveItem 如意丹 1 TRUE
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+[@13]
+#IF
+Checkcalc <$STR(U27)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 42
+#ACT
+Break
+#SAY
+<#D>等级不足[42]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+level > 41
+#ACT
+MOV U27 1
+GiveItem 如意丹 1 TRUE
+#SAY
+<#D>勇士！你已登封造极！<#D/><#SO:1>关闭<#SO/>
+

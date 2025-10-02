@@ -1,3 +1,5 @@
 [@MAIN]
+#IF
+#ACT
 #SAY
 我以龙家百年声誉向你保证，存入我库中的物品一样都不会丢失，你尽管放心。<#UI:GuildWarehouse>公会仓库<#UI/><#INS:S2>关于公会仓库<#INS/>
