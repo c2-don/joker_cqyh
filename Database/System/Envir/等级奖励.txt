@@ -1,0 +1,230 @@
+[@等级奖励执行]
+{
+#IF
+#ACT
+#SAY
+<#SO:1>领取6级奖励<#SO/><#SO:2>领取13级奖励<#SO/><#SO:3>领取21级奖励<#SO/><#SO:4>领取27级奖励<#SO/><#SO:5>领取29级奖励<#SO/><#SO:6>领取31级奖励<#SO/>
+
+[@1]
+#IF
+Checkcalc <$STR(U10)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 6
+#ACT
+Break
+#SAY
+<#D>等级不足[6]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+HasBagSpace == 0
+#ACT
+Break
+#SAY
+很遗憾勇士，你的背包满了，请先清理一下背包再来领取！<#SO:1>关闭<#SO/>
+
+#IF
+level >= 6
+#ACT
+MOV U10 1
+GiveItem 修为丹 2 TRUE
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+[@2]
+#IF
+Checkcalc <$STR(U11)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 13
+#ACT
+Break
+#SAY
+<#D>等级不足[13]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+HasBagSpace == 0
+#ACT
+Break
+#SAY
+很遗憾勇士，你的背包满了，请先清理一下背包再来领取！<#SO:1>关闭<#SO/>
+
+#IF
+level >= 13
+#ACT
+MOV U11 1
+GiveItem 冥想丹 1 TRUE
+GiveExp 4000
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+[@3]
+#IF
+Checkcalc <$STR(U12)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 21
+#ACT
+Break
+#SAY
+<#D>等级不足[21]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+HasBagSpace == 0
+#ACT
+Break
+#SAY
+很遗憾勇士，你的背包满了，请先清理一下背包再来领取！<#SO:1>关闭<#SO/>
+
+#IF
+level >= 21
+#ACT
+MOV U12 1
+GiveItem 如意丹 1 TRUE
+GiveItem 冥想丹 1 TRUE
+GiveExp 5000
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+
+[@4]
+#IF
+Checkcalc <$STR(U13)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 27
+#ACT
+Break
+#SAY
+<#D>等级不足[27]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+HasBagSpace == 0
+#ACT
+Break
+#SAY
+很遗憾勇士，你的背包满了，请先清理一下背包再来领取！<#SO:1>关闭<#SO/>
+
+#IF
+level >= 27
+#ACT
+MOV U13 1
+GiveItem 如意丹 2 TRUE
+GiveItem 冥想丹 2 TRUE
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+[@5]
+#IF
+Checkcalc <$STR(U14)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 29
+#ACT
+Break
+#SAY
+<#D>等级不足[29]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+HasBagSpace == 0
+#ACT
+Break
+#SAY
+很遗憾勇士，你的背包满了，请先清理一下背包再来领取！<#SO:1>关闭<#SO/>
+
+#IF
+level >= 29
+#ACT
+MOV U14 1
+GiveItem 如意丹 3 TRUE
+GiveItem 冥想丹 3 TRUE
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+
+[@6]
+#IF
+Checkcalc <$STR(U15)> == 1
+#ACT
+Break
+#SAY
+该等级奖励已领取，达到下一等级可再来找我。<#SO:1>知道了<#SO/>
+
+#IF
+level < 31
+#ACT
+Break
+#SAY
+<#D>等级不足[31]级，无法领取！<#D/><#SO:1>关闭<#SO/>
+
+#IF
+HasBagSpace == 0
+#ACT
+Break
+#SAY
+很遗憾勇士，你的背包满了，请先清理一下背包再来领取！<#SO:1>关闭<#SO/>
+
+#IF
+level >= 31
+#ACT
+MOV U15 1
+GiveItem 如意丹 6 TRUE
+
+#IF
+CheckClass 战士
+#ACT
+GiveItem 初级烈火剑法 1 TRUE
+BREAK
+
+#IF
+CheckClass 法师
+#ACT
+GiveItem 初级冰咆哮 1 TRUE
+BREAK
+
+#IF
+CheckClass 刺客
+#ACT
+GiveItem 初级冷酷 1 TRUE
+BREAK
+
+#IF
+CheckClass 道士
+#ACT
+GiveItem 初级召唤神兽 1 TRUE
+BREAK
+
+#IF
+CheckClass 弓手
+#ACT
+GiveItem 初级强袭 1 TRUE
+BREAK
+
+#IF
+CheckClass 龙枪
+#ACT
+GiveItem 初级枪出如龙 1 TRUE
+BREAK
+
+#SAY
+<#D>勇士！后续还有更多好礼！<#D/><#SO:1>关闭<#SO/>
+}

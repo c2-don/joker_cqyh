@@ -1,105 +1,46 @@
 [@MAIN]
-#ACT
-
 #IF
-CheckCalc <$STR(J5)> == 10
+检测公会活动 4
 #ACT
 #SAY
-您今天已经祈祷过了<#SO:999>取消<#SO/>
-
-#IF
-判断公会祈祷
-#ACT
-#SAY
-公会祈祷活动暂未开启<#SO:999>取消<#SO/>
+公会活动暂未开启<#SO:999>取消<#SO/>
 #ELSESAY
-<$STR(J5)>若得神龙护佑，公会便能越来越强大！向神龙祈祷吧勇士，你将得到经验值，这也是一种修行。<#SO:1>确定（花费5000金币）<#SO/><#SO:999>取消<#SO/>
+若得神龙护佑，公会便能越来越强大！向神龙祈祷吧勇士，你将得到经验值，这也是一种修行。<#SO:1>确定（花费5000金币）<#SO/><#SO:999>取消<#SO/>
 
 [@1]
 #IF
-CheckGold > 5000
+Checkcalc <$STR(J193)> >= 10
 #ACT
-Calc J5 + 1
-GOTO @1_1
+Break
 #SAY
-#ELSESAY
+您今天已经完成了10次祈祷了<#SO:999>取消<#SO/>
+
+#IF
+;检测金币
+CHECKGOLD < 5000
+#ACT
+Break
+#SAY
 你身上的金币不足。<#SO:1>确定<#SO/>
 
-[@1_1]
 #IF
-Random 1
+Checkcalc <$STR(J193)> == 0
 #ACT
-GOTO @1_1_1
-BREAK
+ChangeSelfVar 217
 
 #IF
-Random 2
 #ACT
-GOTO @1_1_2
-BREAK
-
-[@1_1_1]
-#IF
-Random 1
-#ACT
-MOV U2 10
-GOTO @2
-BREAK
+;扣除金币
+TakeGold 5000
+CALC J193 + 1
+ChangeSelfVar 193 <$STR(J193)>
+获得公会祈祷经验
+;🆕 添加日程进度：每次祈祷获得5点活跃度
+日程进度  5
 
 #IF
-Random 2
+CheckQuest 10000381 ACTIVE
 #ACT
-MOV U2 20
-GOTO @2
-BREAK
-
-#IF
-Random 3
-#ACT
-MOV U2 30
-GOTO @2
-BREAK
-
-#IF
-Random 4
-#ACT
-MOV U2 40
-GOTO @2
-BREAK
-
-[@1_1_2]
-#IF
-Random 1
-#ACT
-MOV U2 50
-GOTO @2
-BREAK
-
-#IF
-Random 2
-#ACT
-MOV U2 60
-GOTO @2
-BREAK
-
-#IF
-Random 3
-#ACT
-MOV U2 70
-GOTO @2
-BREAK
-
-#IF
-Random 4
-#ACT
-MOV U2 80
-GOTO @2
-BREAK
-
-[@2]
-#IF
-#ACT
-Calc Y553 + 1
+CALC Y553 + 1
 更新任务进度 10000381
-GiveExp <$STR(U2)>000
-BREAK
+Break

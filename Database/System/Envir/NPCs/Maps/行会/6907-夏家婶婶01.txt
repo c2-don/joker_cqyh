@@ -10,6 +10,12 @@ Break
 
 [@1]
 #IF
+检测公会活动 3
+#ACT
+;活动未开启时点击取消，直接返回
+Break
+
+#IF
 Checkcalc <$STR(J131)> == 0
 #ACT
 ;发放BUFF格式：GiveBuff BUFF编号
@@ -19,6 +25,11 @@ MOV J131 1
 进入公会温泉
 #ELSEACT
 进入公会温泉
+
+[@2]
+#ACT
+;点击取消选项，直接返回
+Break
 
 #IF
 CheckQuest 10000382 ACTIVE
