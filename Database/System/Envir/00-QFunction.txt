@@ -46,11 +46,24 @@
 #CALL Core\Triggers\被人杀死触发.txt @被杀触发执行
 
 ; 开区等待处理 - 服务器开放状态控制
+;[@_开区等待]
+;#IF
+;#ACT
+;MOV G50 1
+;GlobalMessage "[小丑传永]：<font color='#FF0000'>服务器已正式开放，点击管理员(玛法特训)离开等待地图</font>" FALSE
+
 [@_开区等待]
 #IF
 #ACT
-MOV G50 1
-;GlobalMessage "[小丑传永]：<font color='#FF0000'>服务器已正式开放，点击管理员(玛法特训)离开等待地图</font>" FALSE
+GlobalMessage "机器人配置测试！！！" TRUE
+Break
+
+; 5秒定时测试 - 每5秒执行一次
+[@_5秒测试]
+#IF
+#ACT
+GlobalMessage "【定时任务】5秒测试执行中..." TRUE
+Break
 
 ;==============================================================================
 ; 🔧 装备重铸系统 - 按装备部位分类的重铸处理
