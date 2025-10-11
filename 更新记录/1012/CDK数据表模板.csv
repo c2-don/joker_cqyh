@@ -1,0 +1,4 @@
+CDK码,奖励类型,金币数量,元宝数量,物品名字,物品数量,是否绑定,已使用,充值价值
+VIPABCD1234,元宝,0,100,,0,false,false,10
+GOLDXYZ7890,金币,5000,0,,0,false,false,5
+ITEMQWER5678,物品,0,0,回城卷,10,true,false,0
