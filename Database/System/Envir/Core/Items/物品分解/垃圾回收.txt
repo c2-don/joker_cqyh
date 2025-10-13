@@ -1,0 +1,29 @@
+; 垃圾级装备分解脚本 - 获取元宝和金币奖励
+; 物品ID范围：99900001-99900017, 99900020, 99900034-99900043
+; 木剑
+[@_DeCompose(99900001)]
+#IF
+#ACT
+GiveGold 1000
+GameGold + 100
+TopMessage "成功分解木剑，获得1000金币和1元宝！" TRUE
+SendMsg 0 "恭喜您成功分解垃圾装备，获得奖励！" 255 255 0
+Break
+;匕首
+[@_DeCompose(99900002)]
+#IF
+#ACT
+GiveGold 1000
+GameGold + 100
+TopMessage "成功分解匕首，获得1000金币和1元宝！" TRUE
+SendMsg 0 "恭喜您成功分解垃圾装备，获得奖励！" 255 255 0
+Break
+;乌木剑
+[@_DeCompose(99900003)]
+#IF
+#ACT
+GiveGold 1000
+GameGold + 100
+TopMessage "成功分解乌木剑，获得1000金币和1元宝！" TRUE
+SendMsg 0 "恭喜您成功分解垃圾装备，获得奖励！" 255 255 0
+Break
