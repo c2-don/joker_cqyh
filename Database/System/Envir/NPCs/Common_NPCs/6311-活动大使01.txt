@@ -2,7 +2,7 @@
 #IF
 #ACT
 #SAY
-我们为所有初涉玛法大陆的勇士准备了丰厚的成长礼物，每天都有惊喜哦。<#SO:1>开启自动拾取<#SO/><#SO:2>关闭自动拾取<#SO/><#SO:4>开启神圣护体<#SO/><#SO:5>武器开启双铭文孔<#SO/><#SO:6>武器强化<#SO/><#SO:3>离开<#SO/><#UI:OpenHappyHoliday>查看【传永七天乐】活动信息<#UI/><#INS:S86>关于【传永七天乐】<#INS/>
+我是活动大使，为勇士们准备了丰厚的礼物。<#SO:1>领取排行榜称号<#SO/><#SO:2>查看我的排名<#SO/><#SO:4>开启神圣护体<#SO/><#SO:5>武器开启双铭文孔<#SO/><#SO:6>武器强化<#SO/><#UI:OpenHappyHoliday>查看【传永七天乐】活动<#UI/><#SO:3>离开<#SO/>
 
 ;我是活动大使，可以为你提供各种便民服务。<#SO:1>开启自动拾取<#SO/><#SO:2>关闭自动拾取<#SO/><#SO:3>离开<#SO/>
 
@@ -122,7 +122,7 @@ TopMessage "你的元宝数量不足！！" FALSE
 [@4]
 #IF
 #SAY
-神圣护体：攻击属性+5，血量上限+50<BR>开启费用：100元宝<#SO:1>确定开启<#SO/><#SO:2>返回上一级<#SO/>
+神圣护体：攻击属性+5，血量上限+50<br>开启费用：100元宝<#SO:1>确定开启<#SO/><#SO:2>返回上一级<#SO/>
 
 
 [@4_2]
@@ -151,71 +151,322 @@ GlobalMessage "恭喜玩家：<font color='#EE82EE'>[<$USERNAME>]</font>开启�
 Break
 
 
-[@1]
-#IF
-CheckClass 战士
-#ACT
-goto @1_1
-Break
-
-#IF
-CheckClass 法师
-#ACT
-goto @1_2
-Break
-
-#IF
-CheckClass 道士
-#ACT
-goto @1_3
-Break
-
-#IF
-CheckClass 刺客
-#ACT
-goto @1_4
-Break
-
-#IF
-CheckClass 弓手
-#ACT
-goto @1_5
-Break
-
-#IF
-CheckClass 龙枪
-#ACT
-goto @1_6
-Break
-
-;战士铭文兑换界面-------------------------------------------------------------------------
-
-[@1]
-#IF
-CheckCalc <$VIP> >= 1
-#ACT
-AutoPickCfg 5 3000
-LocalMessage "你开启了范围为5的自动拾取功能，3秒执行一次!"
-SaveValue "AutoPickLog.txt" "AutoPick" "<$USERNAME>_<$DATE>_<$HOUR>" "玩家<$USERNAME>开启了自动拾取功能,范围:5,间隔:3000毫秒"
-BREAK
-#ELSESAY
-对不起，只有VIP玩家才能使用自动拾取功能！请先开通VIP特权。
-#SAY
-你开启了范围为5的自动拾取功能，3秒执行一次!
-
-[@2]
-#IF
-CheckCalc <$VIP> >= 1
-#ACT
-AutoPickCfg 0 0
-LocalMessage "你已关闭自动拾取功能!"
-SaveValue "AutoPickLog.txt" "AutoPick" "<$USERNAME>_<$DATE>_<$HOUR>" "玩家<$USERNAME>关闭了自动拾取功能"
-BREAK
-#ELSESAY
-对不起，只有VIP玩家才能操作自动拾取功能！
-#SAY
-你已关闭自动拾取功能!
+;[@1] 已删除 - 自动拾取功能
+;[@2] 已删除 - 关闭自动拾取功能
 [@3]
 #IF
 #ACT
 CLOSE
+
+;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+;                        排行榜称号奖励系统
+;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[@1]
+#IF
+#ACT
+#SAY
+勇士<$USERNAME>，根据您的排行榜表现，可领取称号奖励！<#SO:1>全服战力榜第一<#SO/><#SO:2>全服等级榜第一<#SO/><#SO:3>职业战力榜第一<#SO/><#SO:4>职业等级榜第一<#SO/><#SO:5>返回<#SO/>
+
+[@1_1]
+#IF
+Checkcalc <$STR(U200)> == 1
+#ACT
+Break
+#SAY
+您已经领取过全服战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+检测战力排行榜第一
+#ACT
+MOV U200 1
+GiveTitle 140 2592000
+SENDMSG 5 恭喜您获得【无相霸主】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登全服战力榜第一，获得<font color='#FFD700'>【无相霸主】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【无相霸主】称号！<#D/><br>作为全服战力排行榜第一名，您获得了专属称号！<br>称号属性：攻击+50 体力+100 防御+50 魔防+50<br>暴击+50% 幸运+5 攻速+5<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+很抱歉，您不是全服战力排行榜第一名。继续努力，提升战力！<#SO:1>返回<#SO/>
+
+[@1_2]
+#IF
+Checkcalc <$STR(U201)> == 1
+#ACT
+Break
+#SAY
+您已经领取过全服等级榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+检测等级排行榜第一
+#ACT
+MOV U201 1
+GiveTitle 129 2592000
+SENDMSG 5 恭喜您获得【武道至尊】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登全服等级榜第一，获得<font color='#FFD700'>【武道至尊】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【武道至尊】称号！<#D/><br>作为全服等级排行榜第一名，您获得了专属称号！<br>称号属性以【武道至尊】配置为准。<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+很抱歉，您不是全服等级排行榜第一名。继续努力，冲刺等级！<#SO:1>返回<#SO/>
+
+[@1_3]
+#IF
+#ACT
+#SAY
+勇士，请选择您的职业领取对应称号：<#SO:1>战士战力榜第一<#SO/><#SO:2>法师战力榜第一<#SO/><#SO:3>道士战力榜第一<#SO/><#SO:4>刺客战力榜第一<#SO/><#SO:5>弓手战力榜第一<#SO/><#SO:6>龙枪战力榜第一<#SO/><#SO:10>返回上级<#SO/>
+
+[@1_3_1]
+#IF
+Checkcalc <$STR(U202)> == 1
+#ACT
+Break
+#SAY
+您已经领取过战士战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 战士
+检测排行榜排名 7 == 1
+#ACT
+MOV U202 1
+GiveTitle 151 2592000
+SENDMSG 5 恭喜您获得【战士之王】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登战士战力榜第一，获得<font color='#FFD700'>【战士之王】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【战士之王】称号！<#D/><br>战士战力榜第一名专属称号！<br>称号属性：攻击+40 体力+80 防御+40<br>暴击+40% 幸运+4 攻速+4<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 战士
+#SAY
+很抱歉，您不是战士战力排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是战士！<#SO:1>返回<#SO/>
+
+[@1_3_2]
+#IF
+Checkcalc <$STR(U203)> == 1
+#ACT
+Break
+#SAY
+您已经领取过法师战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 法师
+检测排行榜排名 8 == 1
+#ACT
+MOV U203 1
+GiveTitle 152 2592000
+SENDMSG 5 恭喜您获得【法神】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登法师战力榜第一，获得<font color='#FFD700'>【法神】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【法神】称号！<#D/><br>法师战力榜第一名专属称号！<br>称号属性：魔法+40 体力+60 魔防+40<br>暴击+40% 幸运+4 攻速+4<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 法师
+#SAY
+很抱歉，您不是法师战力排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是法师！<#SO:1>返回<#SO/>
+
+[@1_3_3]
+#IF
+Checkcalc <$STR(U204)> == 1
+#ACT
+Break
+#SAY
+您已经领取过道士战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 道士
+检测排行榜排名 9 == 1
+#ACT
+MOV U204 1
+GiveTitle 153 2592000
+SENDMSG 5 恭喜您获得【道尊】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登道士战力榜第一，获得<font color='#FFD700'>【道尊】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【道尊】称号！<#D/><br>道士战力榜第一名专属称号！<br>称号属性：道术+40 体力+70 防御+30 魔防+30<br>暴击+40% 幸运+4 攻速+4<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 道士
+#SAY
+很抱歉，您不是道士战力排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是道士！<#SO:1>返回<#SO/>
+
+[@1_3_4]
+#IF
+Checkcalc <$STR(U205)> == 1
+#ACT
+Break
+#SAY
+您已经领取过刺客战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 刺客
+检测排行榜排名 10 == 1
+#ACT
+MOV U205 1
+GiveTitle 154 2592000
+SENDMSG 5 恭喜您获得【暗影之主】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登刺客战力榜第一，获得<font color='#FFD700'>【暗影之主】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【暗影之主】称号！<#D/><br>刺客战力榜第一名专属称号！<br>称号属性：刺术+40 体力+65 防御+35<br>暴击+50% 幸运+5 攻速+5<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 刺客
+#SAY
+很抱歉，您不是刺客战力排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是刺客！<#SO:1>返回<#SO/>
+
+[@1_3_5]
+#IF
+Checkcalc <$STR(U206)> == 1
+#ACT
+Break
+#SAY
+您已经领取过弓手战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 弓手
+检测排行榜排名 11 == 1
+#ACT
+MOV U206 1
+GiveTitle 155 2592000
+SENDMSG 5 恭喜您获得【神射手】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登弓手战力榜第一，获得<font color='#FFD700'>【神射手】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【神射手】称号！<#D/><br>弓手战力榜第一名专属称号！<br>称号属性：弓术+40 体力+65 防御+35<br>暴击+45% 幸运+4 攻速+4<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 弓手
+#SAY
+很抱歉，您不是弓手战力排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是弓手！<#SO:1>返回<#SO/>
+
+[@1_3_6]
+#IF
+Checkcalc <$STR(U207)> == 1
+#ACT
+Break
+#SAY
+您已经领取过龙枪战力榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 龙枪
+检测排行榜排名 37 == 1
+#ACT
+MOV U207 1
+GiveTitle 156 2592000
+SENDMSG 5 恭喜您获得【龙战士】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登龙枪战力榜第一，获得<font color='#FFD700'>【龙战士】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【龙战士】称号！<#D/><br>龙枪战力榜第一名专属称号！<br>称号属性：攻击+40 体力+75 防御+40<br>暴击+40% 幸运+4 攻速+4<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 龙枪
+#SAY
+很抱歉，您不是龙枪战力排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是龙枪！<#SO:1>返回<#SO/>
+
+[@1_3_10]
+#IF
+#ACT
+goto @1
+
+[@1_4]
+#IF
+#ACT
+#SAY
+职业等级榜第一称号<br>请选择您的职业领取对应称号（有效期30天）<#SO:1>战士等级榜第一<#SO/><#SO:2>法师等级榜第一<#SO/><#SO:3>道士等级榜第一<#SO/><#SO:4>刺客等级榜第一<#SO/><#SO:5>弓手等级榜第一<#SO/><#SO:6>龙枪等级榜第一<#SO/><#SO:10>返回上级<#SO/>
+
+[@1_4_1]
+#IF
+#SAY
+该职业等级榜称号暂未配置，敬请期待！<#SO:10>返回上级<#SO/>
+
+[@1_4_2]
+#IF
+#SAY
+该职业等级榜称号暂未配置，敬请期待！<#SO:10>返回上级<#SO/>
+
+[@1_4_3]
+#IF
+Checkcalc <$STR(U213)> == 1
+#ACT
+Break
+#SAY
+您已经领取过道士等级榜第一称号！<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 道士
+检测排行榜排名 3 == 1
+#ACT
+MOV U213 1
+GiveTitle 128 2592000
+SENDMSG 5 恭喜您获得【武道圣心】称号！
+GlobalMessage "恭喜<font color='#FF0000'><$USERNAME></font>荣登道士等级榜第一，获得<font color='#FFD700'>【武道圣心】</font>称号！" TRUE
+#SAY
+<#D>恭喜获得【武道圣心】称号！<#D/><br>道士等级榜第一名专属称号。<br>称号属性以【武道圣心】配置为准。<br>有效期：30天<#SO:1>返回<#SO/>
+
+#IF
+CheckClass 道士
+#SAY
+很抱歉，您不是道士等级排行榜第一名。<#SO:1>返回<#SO/>
+
+#IF
+#SAY
+您的职业不是道士。<#SO:1>返回<#SO/>
+
+[@1_4_4]
+#IF
+#SAY
+该职业等级榜称号暂未配置，敬请期待！<#SO:10>返回上级<#SO/>
+
+[@1_4_5]
+#IF
+#SAY
+该职业等级榜称号暂未配置，敬请期待！<#SO:10>返回上级<#SO/>
+
+[@1_4_6]
+#IF
+#SAY
+该职业等级榜称号暂未配置，敬请期待！<#SO:10>返回上级<#SO/>
+
+[@1_4_10]
+#IF
+#ACT
+goto @1
+
+[@1_5]
+#IF
+#ACT
+goto @MAIN
+
+[@2]
+#IF
+#ACT
+#SAY
+您的排行榜信息<br>角色名称：<$USERNAME><br>当前等级：<$LEVEL>级<br>温馨提示：排行榜每30秒刷新一次，只显示前300名。<#SO:1>返回主菜单<#SO/>
+
+[@2_1]
+#IF
+#ACT
+goto @MAIN

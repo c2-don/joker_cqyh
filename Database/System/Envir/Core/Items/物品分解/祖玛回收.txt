@@ -1,13 +1,319 @@
-; 祖玛级装备分解脚本 - 获取元宝和金币奖励
-; 物品ID范围：99900022-99900024, 99900025
-; 裁决之杖
-[@_DeCompose(99900025)]
+; 井中月
+[@_DeCompose(99900022)]
 #IF
 #ACT
-GiveGold 50000
-GameGold + 1000
-TopMessage "成功分解裁决之杖，获得50000金币和10元宝！" TRUE
-SendMsg 0 "恭喜您成功分解银蛇，获得丰厚奖励！" 255 255 0
+GiveGold 25000
+LocalMessage "分解井中月，获得25000金币！" FALSE
 Break
 
-;===========本个修改的到此结束=====================================================
+; 血饮
+[@_DeCompose(99900023)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解血饮，获得25000金币！" FALSE
+Break
+
+; 无极棍
+[@_DeCompose(99900024)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解无极棍，获得25000金币！" FALSE
+Break
+
+; 赤影
+[@_DeCompose(99900055)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解赤影，获得25000金币！" FALSE
+Break
+
+; 沉锋
+[@_DeCompose(99900076)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解沉锋，获得25000金币！" FALSE
+Break
+
+; 青虹
+[@_DeCompose(99900105)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解青虹，获得25000金币！" FALSE
+Break
+
+; 绿色项链
+[@_DeCompose(99920017)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解绿色项链，获得20000金币！" FALSE
+Break
+
+; 灵魂项链
+[@_DeCompose(99920018)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解灵魂项链，获得25000金币！" FALSE
+Break
+
+; 恶魔铃铛
+[@_DeCompose(99920019)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解恶魔铃铛，获得25000金币！" FALSE
+Break
+
+; 芒星项链
+[@_DeCompose(99920045)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解芒星项链，获得20000金币！" FALSE
+Break
+
+; 神射项链
+[@_DeCompose(99920074)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解神射项链，获得20000金币！" FALSE
+Break
+
+; 铁虎项链
+[@_DeCompose(99920084)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解铁虎项链，获得20000金币！" FALSE
+Break
+
+; 力量戒指
+[@_DeCompose(99930019)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解力量戒指，获得20000金币！" FALSE
+Break
+
+; 紫碧螺
+[@_DeCompose(99930020)]
+#IF
+#ACT
+GiveGold 15000
+LocalMessage "分解紫碧螺，获得15000金币！" FALSE
+Break
+
+; 泰坦戒指
+[@_DeCompose(99930021)]
+#IF
+#ACT
+GiveGold 15000
+LocalMessage "分解泰坦戒指，获得15000金币！" FALSE
+Break
+
+; 芒星戒指
+[@_DeCompose(99930049)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解芒星戒指，获得20000金币！" FALSE
+Break
+
+; 射手指环
+[@_DeCompose(99930075)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解射手指环，获得20000金币！" FALSE
+Break
+
+; 铁虎指环
+[@_DeCompose(99930085)]
+#IF
+#ACT
+GiveGold 20000
+LocalMessage "分解铁虎指环，获得20000金币！" FALSE
+Break
+
+; 三眼手镯
+[@_DeCompose(99940010)]
+#IF
+#ACT
+GiveGold 10000
+LocalMessage "分解三眼手镯，获得10000金币！" FALSE
+Break
+
+; 骑士手镯
+[@_DeCompose(99940012)]
+#IF
+#ACT
+GiveGold 15000
+LocalMessage "分解骑士手镯，获得15000金币！" FALSE
+Break
+
+; 龙之手镯
+[@_DeCompose(99940016)]
+#IF
+#ACT
+GiveGold 12000
+LocalMessage "分解龙之手镯，获得12000金币！" FALSE
+Break
+
+; 阎罗手套
+[@_DeCompose(99940021)]
+#IF
+#ACT
+GiveGold 5000
+LocalMessage "分解阎罗手套，获得5000金币！" FALSE
+Break
+
+; 芒星手镯
+[@_DeCompose(99940038)]
+#IF
+#ACT
+GiveGold 15000
+LocalMessage "分解芒星手镯，获得15000金币！" FALSE
+Break
+
+; 血狮腕带
+[@_DeCompose(99940073)]
+#IF
+#ACT
+GiveGold 15000
+LocalMessage "分解血狮腕带，获得15000金币！" FALSE
+Break
+
+; 铁虎腕轮
+[@_DeCompose(99940083)]
+#IF
+#ACT
+GiveGold 15000
+LocalMessage "分解铁虎腕轮，获得15000金币！" FALSE
+Break
+
+; 黑铁头盔
+[@_DeCompose(99990511)]
+#IF
+#ACT
+GiveGold 12500
+LocalMessage "分解黑铁头盔，获得12500金币！" FALSE
+Break
+
+; 战神盔甲
+[@_DeCompose(99980513)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解战神盔甲，获得25000金币！" FALSE
+Break
+
+; 战神盔甲6
+[@_DeCompose(99990513)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解战神盔甲，获得25000金币！" FALSE
+Break
+
+; 恶魔长袍
+[@_DeCompose(99980523)]
+#IF
+#ACT
+GiveGold 22000
+LocalMessage "分解恶魔长袍，获得22000金币！" FALSE
+Break
+
+; 恶魔长袍6
+[@_DeCompose(99990523)]
+#IF
+#ACT
+GiveGold 22000
+LocalMessage "分解恶魔长袍，获得22000金币！" FALSE
+Break
+
+; 幽灵战衣
+[@_DeCompose(99980533)]
+#IF
+#ACT
+GiveGold 22000
+LocalMessage "分解幽灵战衣，获得22000金币！" FALSE
+Break
+
+; 幽灵战衣6
+[@_DeCompose(99990533)]
+#IF
+#ACT
+GiveGold 22000
+LocalMessage "分解幽灵战衣，获得22000金币！" FALSE
+Break
+
+; 风侠短袍
+[@_DeCompose(99980543)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解风侠短袍，获得25000金币！" FALSE
+Break
+
+; 风侠短袍6
+[@_DeCompose(99990543)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解风侠短袍，获得25000金币！" FALSE
+Break
+
+; 兽骨猎袍
+[@_DeCompose(99980553)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解兽骨猎袍，获得25000金币！" FALSE
+Break
+
+; 兽骨猎袍6
+[@_DeCompose(99990553)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解兽骨猎袍，获得25000金币！" FALSE
+Break
+
+; 陷阵之甲
+[@_DeCompose(99980563)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解陷阵之甲，获得25000金币！" FALSE
+Break
+
+; 陷阵之甲6
+[@_DeCompose(99990563)]
+#IF
+#ACT
+GiveGold 25000
+LocalMessage "分解陷阵之甲，获得25000金币！" FALSE
+Break
+
+; 青铜腰带
+[@_DeCompose(99990515)]
+#IF
+#ACT
+GiveGold 10000
+LocalMessage "分解青铜腰带，获得10000金币！" FALSE
+Break
+
+; 紫绸靴
+[@_DeCompose(99990517)]
+#IF
+#ACT
+GiveGold 10000
+LocalMessage "分解紫绸靴，获得10000金币！" FALSE
+Break
