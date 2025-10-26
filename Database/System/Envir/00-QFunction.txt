@@ -33,17 +33,17 @@
 #ACT
 #CALL Core\Triggers\每日零点触发.txt @零点触发执行
 
-; 杀死角色触发 - 玩家击杀其他玩家时执行
-[@_KillPlayer]
-#IF
-#ACT
-#CALL Core\Triggers\杀死角色触发.txt @击杀触发执行
-
-; 被人杀死触发 - 玩家被其他玩家击杀时执行
-[@_KilledByPlayer]
+; 被击杀触发 - 被击杀者执行的触发器
+[@_PlayKill]
 #IF
 #ACT
 #CALL Core\Triggers\被人杀死触发.txt @被杀触发执行
+
+; 击杀玩家触发 - 击杀者执行的触发器
+[@_KillPlay]
+#IF
+#ACT
+#CALL Core\Triggers\杀死角色触发.txt @击杀触发执行
 
 ; 开区等待处理 - 服务器开放状态控制
 ;[@_开区等待]

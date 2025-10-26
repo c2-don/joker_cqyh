@@ -1,10 +1,18 @@
 [@被杀触发执行]
 {
 #IF
-检测称号 135
+CheckTitle 11
 #ACT
-称号到期 135
-元宝数量角色 + 10000 <$最后杀死自己玩家的名字>
-网关发送公告 "[杀戮通知]：<$最后杀死自己玩家的名字>击杀了狂暴者[<$角色名字>]获得了100元宝" FALSE
+DelTitle 11
+GameGold + 10000
+GlobalMessage  "[杀戮通知]：<$LASTKILLMEPLAYNAME>击杀了狂暴者[<$USERNAME>]获得了10000元宝" FALSE
+Break
+
+#IF
+#ACT
+; 普通死亡处理
+; 死亡惩罚逻辑
+; 复活相关处理
+GlobalMessage "[死亡通知]：玩家[<$USERNAME>]被[<$LASTKILLMEPLAYNAME>]击杀" FALSE
 Break
 }
