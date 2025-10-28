@@ -1,0 +1,356 @@
+[@靴子附魔]
+{
+#ACT
+MOVR N1 10000
+
+;1，最大攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 31
+#ACT
+AddBodyItemLuck 7 2021
+LocalMessage "装备附魔成功，靴子最大攻击 + 3" FALSE                             	
+Break
+;2，最大魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 62
+#ACT
+AddBodyItemLuck 7 4021
+LocalMessage "装备附魔成功，靴子最大魔法 + 3" FALSE                             	
+Break
+;3，最大刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 94
+#ACT
+AddBodyItemLuck 7 45021
+LocalMessage "装备附魔成功，靴子最大刺术 + 3" FALSE                             	
+Break
+;4，最大弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 125
+#ACT
+AddBodyItemLuck 7 47021
+LocalMessage "装备附魔成功，靴子最大弓术 + 3" FALSE                             	
+Break
+;5，最大道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 156
+#ACT
+AddBodyItemLuck 7 6021
+LocalMessage "装备附魔成功，靴子最大道术 + 3" FALSE                             	
+Break
+;6，最大防御 + 3
+#IF
+CheckCalc <$STR(N1)> < 187
+#ACT
+AddBodyItemLuck 7 8021
+LocalMessage "装备附魔成功，靴子最大防御 + 3" FALSE                             	
+Break
+;7，最大魔防 + 3
+#IF
+CheckCalc <$STR(N1)> < 219
+#ACT
+AddBodyItemLuck 7 10021
+LocalMessage "装备附魔成功，靴子最大魔防 + 3" FALSE                             	
+Break
+;8，最小攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 250
+#ACT
+AddBodyItemLuck 7 1021
+LocalMessage "装备附魔成功，靴子最小攻击 + 3" FALSE                             	
+Break
+;9，最小魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 281
+#ACT
+AddBodyItemLuck 7 3021
+LocalMessage "装备附魔成功，靴子最小魔法 + 3" FALSE                             	
+Break
+;10，最小刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 312
+#ACT
+AddBodyItemLuck 7 44021
+LocalMessage "装备附魔成功，靴子最小刺术 + 3" FALSE                             	
+Break
+;11，最小弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 344
+#ACT
+AddBodyItemLuck 7 46021
+LocalMessage "装备附魔成功，靴子最小弓术 + 3" FALSE                             	
+Break
+;12，最小道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 375
+#ACT
+AddBodyItemLuck 7 5021
+LocalMessage "装备附魔成功，靴子最小道术 + 3" FALSE                             	
+Break
+;13，最小防御 + 3
+#IF
+CheckCalc <$STR(N1)> < 406
+#ACT
+AddBodyItemLuck 7 7021
+LocalMessage "装备附魔成功，靴子最小防御 + 3" FALSE                             	
+Break
+;14，最小魔防 + 3
+#IF
+CheckCalc <$STR(N1)> < 437
+#ACT
+AddBodyItemLuck 7 9021
+LocalMessage "装备附魔成功，靴子最小魔防 + 3" FALSE                             	
+Break
+;15，最大体力 + 20
+#IF
+CheckCalc <$STR(N1)> < 469
+#ACT
+AddBodyItemLuck 7 11039
+LocalMessage "装备附魔成功，靴子最大体力 + 20" FALSE                             	
+Break
+;16，最大魔力 + 20
+#IF
+CheckCalc <$STR(N1)> < 500
+#ACT
+AddBodyItemLuck 7 12020
+LocalMessage "装备附魔成功，靴子最大魔力 + 20" FALSE                             	
+Break
+;17，最大攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 656
+#ACT
+AddBodyItemLuck 7 2011
+LocalMessage "装备附魔成功，靴子最大攻击 + 2" FALSE                             	
+Break
+;18，最大魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 812
+#ACT
+AddBodyItemLuck 7 4011
+LocalMessage "装备附魔成功，靴子最大魔法 + 2" FALSE                             	
+Break
+;19，最大刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 969
+#ACT
+AddBodyItemLuck 7 45011
+LocalMessage "装备附魔成功，靴子最大刺术 + 2" FALSE                             	
+Break
+;20，最大弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1125
+#ACT
+AddBodyItemLuck 7 47011
+LocalMessage "装备附魔成功，靴子最大弓术 + 2" FALSE                             	
+Break
+;21，最大道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1281
+#ACT
+AddBodyItemLuck 7 6011
+LocalMessage "装备附魔成功，靴子最大道术 + 2" FALSE                             	
+Break
+;22，最大防御 + 2
+#IF
+CheckCalc <$STR(N1)> < 1437
+#ACT
+AddBodyItemLuck 7 8011
+LocalMessage "装备附魔成功，靴子最大防御 + 2" FALSE                             	
+Break
+;23，最大魔防 + 2
+#IF
+CheckCalc <$STR(N1)> < 1594
+#ACT
+AddBodyItemLuck 7 10011
+LocalMessage "装备附魔成功，靴子最大魔防 + 2" FALSE                             	
+Break
+;24，最大体力 + 15
+#IF
+CheckCalc <$STR(N1)> < 1750
+#ACT
+AddBodyItemLuck 7 11029
+LocalMessage "装备附魔成功，靴子最大体力 + 15" FALSE                             	
+Break
+;25，最大魔力 + 15
+#IF
+CheckCalc <$STR(N1)> < 1906
+#ACT
+AddBodyItemLuck 7 12015
+LocalMessage "装备附魔成功，靴子最大魔力 + 15" FALSE                             	
+Break
+;26，最小攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 2062
+#ACT
+AddBodyItemLuck 7 1011
+LocalMessage "装备附魔成功，靴子最小攻击 + 2" FALSE                             	
+Break
+;27，最小魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 2219
+#ACT
+AddBodyItemLuck 7 3011
+LocalMessage "装备附魔成功，靴子最小魔法 + 2" FALSE                             	
+Break
+;28，最小刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2375
+#ACT
+AddBodyItemLuck 7 44011
+LocalMessage "装备附魔成功，靴子最小刺术 + 2" FALSE                             	
+Break
+;29，最小弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2531
+#ACT
+AddBodyItemLuck 7 46011
+LocalMessage "装备附魔成功，靴子最小弓术 + 2" FALSE                             	
+Break
+;30，最小道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2687
+#ACT
+AddBodyItemLuck 7 5011
+LocalMessage "装备附魔成功，靴子最小道术 + 2" FALSE                             	
+Break
+;31，最小防御 + 2
+#IF
+CheckCalc <$STR(N1)> < 2844
+#ACT
+AddBodyItemLuck 7 7011
+LocalMessage "装备附魔成功，靴子最小防御 + 2" FALSE                             	
+Break
+;32，最小魔防 + 2
+#IF
+CheckCalc <$STR(N1)> < 3000
+#ACT
+AddBodyItemLuck 7 9011
+LocalMessage "装备附魔成功，靴子最小魔防 + 2" FALSE                             	
+Break
+;33，最大体力 + 10
+#IF
+CheckCalc <$STR(N1)> < 3389
+#ACT
+AddBodyItemLuck 7 11019
+LocalMessage "装备附魔成功，靴子最大体力 + 10" FALSE                             	
+Break
+;34，最大魔力 + 10
+#IF
+CheckCalc <$STR(N1)> < 3778
+#ACT
+AddBodyItemLuck 7 12010
+LocalMessage "装备附魔成功，靴子最大魔力 + 10" FALSE                             	
+Break
+;35，最大攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 4166
+#ACT
+AddBodyItemLuck 7 2001
+LocalMessage "装备附魔成功，靴子最大攻击 + 1" FALSE                             	
+Break
+;36，最大魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 4555
+#ACT
+AddBodyItemLuck 7 4001
+LocalMessage "装备附魔成功，靴子最大魔法 + 1" FALSE                             	
+Break
+;37，最大刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 4944
+#ACT
+AddBodyItemLuck 7 45001
+LocalMessage "装备附魔成功，靴子最大刺术 + 1" FALSE                             	
+Break
+;38，最大弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 5333
+#ACT
+AddBodyItemLuck 7 47001
+LocalMessage "装备附魔成功，靴子最大弓术 + 1" FALSE                             	
+Break
+;39，最大道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 5722
+#ACT
+AddBodyItemLuck 7 6001
+LocalMessage "装备附魔成功，靴子最大道术 + 1" FALSE                             	
+Break
+;40，最小攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 6111
+#ACT
+AddBodyItemLuck 7 1001
+LocalMessage "装备附魔成功，靴子最小攻击 + 1" FALSE                             	
+Break
+;41，最小魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 6500
+#ACT
+AddBodyItemLuck 7 3001
+LocalMessage "装备附魔成功，靴子最小魔法 + 1" FALSE                             	
+Break
+;42，最小刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 6889
+#ACT
+AddBodyItemLuck 7 44001
+LocalMessage "装备附魔成功，靴子最小刺术 + 1" FALSE                             	
+Break
+;43，最小弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 7278
+#ACT
+AddBodyItemLuck 7 46001
+LocalMessage "装备附魔成功，靴子最小弓术 + 1" FALSE                             	
+Break
+;44，最小道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 7666
+#ACT
+AddBodyItemLuck 7 5001
+LocalMessage "装备附魔成功，靴子最小道术 + 1" FALSE                             	
+Break
+;45，最大防御 + 1
+#IF
+CheckCalc <$STR(N1)> < 8055
+#ACT
+AddBodyItemLuck 7 8001
+LocalMessage "装备附魔成功，靴子最大防御 + 1" FALSE                             	
+Break
+;46，最大魔防 + 1
+#IF
+CheckCalc <$STR(N1)> < 8444
+#ACT
+AddBodyItemLuck 7 10001
+LocalMessage "装备附魔成功，靴子最大魔防 + 1" FALSE                             	
+Break
+;47，最小防御 + 1
+#IF
+CheckCalc <$STR(N1)> < 8833
+#ACT
+AddBodyItemLuck 7 7001
+LocalMessage "装备附魔成功，靴子最小防御 + 1" FALSE                             	
+Break
+;48，最小魔防 + 1
+#IF
+CheckCalc <$STR(N1)> < 9222
+#ACT
+AddBodyItemLuck 7 9001
+LocalMessage "装备附魔成功，靴子最小魔防 + 1" FALSE                             	
+Break
+;49，最大体力 + 5
+#IF
+CheckCalc <$STR(N1)> < 9611
+#ACT
+AddBodyItemLuck 7 11009
+LocalMessage "装备附魔成功，靴子最大体力 + 5" FALSE                             	
+Break
+;50，最大魔力 + 5
+#IF
+CheckCalc <$STR(N1)> < 10000
+#ACT
+AddBodyItemLuck 7 12005
+LocalMessage "装备附魔成功，靴子最大魔力 + 5" FALSE                             	
+Break
+}

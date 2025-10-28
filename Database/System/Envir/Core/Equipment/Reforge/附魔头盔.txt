@@ -1,0 +1,384 @@
+[@头盔附魔]
+{
+#ACT
+MOVR N1 10000
+
+;1，最大攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 31
+#ACT
+AddBodyItemLuck 3 2021
+LocalMessage "装备附魔成功，头盔最大攻击 + 3" FALSE                             	
+Break
+;2，最大魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 62
+#ACT
+AddBodyItemLuck 3 4021
+LocalMessage "装备附魔成功，头盔最大魔法 + 3" FALSE                             	
+Break
+;3，最大刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 94
+#ACT
+AddBodyItemLuck 3 45021
+LocalMessage "装备附魔成功，头盔最大刺术 + 3" FALSE                             	
+Break
+;4，最大弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 125
+#ACT
+AddBodyItemLuck 3 47021
+LocalMessage "装备附魔成功，头盔最大弓术 + 3" FALSE                             	
+Break
+;5，最大道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 156
+#ACT
+AddBodyItemLuck 3 6021
+LocalMessage "装备附魔成功，头盔最大道术 + 3" FALSE                             	
+Break
+;6，最大防御 + 4
+#IF
+CheckCalc <$STR(N1)> < 187
+#ACT
+AddBodyItemLuck 3 8031
+LocalMessage "装备附魔成功，头盔最大防御 + 4" FALSE                             	
+Break
+;7，最大魔防 + 4
+#IF
+CheckCalc <$STR(N1)> < 219
+#ACT
+AddBodyItemLuck 3 10031
+LocalMessage "装备附魔成功，头盔最大魔防 + 4" FALSE                             	
+Break
+;8，最大体力 + 20
+#IF
+CheckCalc <$STR(N1)> < 250
+#ACT
+AddBodyItemLuck 3 11039
+LocalMessage "装备附魔成功，头盔最大体力 + 20" FALSE                             	
+Break
+;9，最大魔力 + 20
+#IF
+CheckCalc <$STR(N1)> < 281
+#ACT
+AddBodyItemLuck 3 12020
+LocalMessage "装备附魔成功，头盔最大魔力 + 20" FALSE                             	
+Break
+;10，最小攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 312
+#ACT
+AddBodyItemLuck 3 1021
+LocalMessage "装备附魔成功，头盔最小攻击 + 3" FALSE                             	
+Break
+;11，最小魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 344
+#ACT
+AddBodyItemLuck 3 3021
+LocalMessage "装备附魔成功，头盔最小魔法 + 3" FALSE                             	
+Break
+;12，最小刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 375
+#ACT
+AddBodyItemLuck 3 44021
+LocalMessage "装备附魔成功，头盔最小刺术 + 3" FALSE                             	
+Break
+;13，最小弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 406
+#ACT
+AddBodyItemLuck 3 46021
+LocalMessage "装备附魔成功，头盔最小弓术 + 3" FALSE                             	
+Break
+;14，最小道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 437
+#ACT
+AddBodyItemLuck 3 5021
+LocalMessage "装备附魔成功，头盔最小道术 + 3" FALSE                             	
+Break
+;15，最小防御 + 4
+#IF
+CheckCalc <$STR(N1)> < 469
+#ACT
+AddBodyItemLuck 3 7031
+LocalMessage "装备附魔成功，头盔最小防御 + 4" FALSE                             	
+Break
+;16，最小魔防 + 4
+#IF
+CheckCalc <$STR(N1)> < 500
+#ACT
+AddBodyItemLuck 3 9031
+LocalMessage "装备附魔成功，头盔最小魔防 + 4" FALSE                             	
+Break
+;17，最大体力 + 15
+#IF
+CheckCalc <$STR(N1)> < 625
+#ACT
+AddBodyItemLuck 3 11029
+LocalMessage "装备附魔成功，头盔最大体力 + 15" FALSE                             	
+Break
+;18，最大魔力 + 15
+#IF
+CheckCalc <$STR(N1)> < 750
+#ACT
+AddBodyItemLuck 3 12015
+LocalMessage "装备附魔成功，头盔最大魔力 + 15" FALSE                             	
+Break
+;19，最大攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 875
+#ACT
+AddBodyItemLuck 3 2011
+LocalMessage "装备附魔成功，头盔最大攻击 + 2" FALSE                             	
+Break
+;20，最大魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 1000
+#ACT
+AddBodyItemLuck 3 4011
+LocalMessage "装备附魔成功，头盔最大魔法 + 2" FALSE                             	
+Break
+;21，最大刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1125
+#ACT
+AddBodyItemLuck 3 45011
+LocalMessage "装备附魔成功，头盔最大刺术 + 2" FALSE                             	
+Break
+;22，最大弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1250
+#ACT
+AddBodyItemLuck 3 47011
+LocalMessage "装备附魔成功，头盔最大弓术 + 2" FALSE                             	
+Break
+;23，最大道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1375
+#ACT
+AddBodyItemLuck 3 6011
+LocalMessage "装备附魔成功，头盔最大道术 + 2" FALSE                             	
+Break
+;24，最小防御 + 3
+#IF
+CheckCalc <$STR(N1)> < 1500
+#ACT
+AddBodyItemLuck 3 7021
+LocalMessage "装备附魔成功，头盔最小防御 + 3" FALSE                             	
+Break
+;25，最大防御 + 3
+#IF
+CheckCalc <$STR(N1)> < 1625
+#ACT
+AddBodyItemLuck 3 8021
+LocalMessage "装备附魔成功，头盔最大防御 + 3" FALSE                             	
+Break
+;26，最小魔防 + 3
+#IF
+CheckCalc <$STR(N1)> < 1750
+#ACT
+AddBodyItemLuck 3 9021
+LocalMessage "装备附魔成功，头盔最小魔防 + 3" FALSE                             	
+Break
+;27，最大魔防 + 3
+#IF
+CheckCalc <$STR(N1)> < 1875
+#ACT
+AddBodyItemLuck 3 10021
+LocalMessage "装备附魔成功，头盔最大魔防 + 3" FALSE                             	
+Break
+;28，最小攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 2000
+#ACT
+AddBodyItemLuck 3 1011
+LocalMessage "装备附魔成功，头盔最小攻击 + 2" FALSE                             	
+Break
+;29，最小魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 2125
+#ACT
+AddBodyItemLuck 3 3011
+LocalMessage "装备附魔成功，头盔最小魔法 + 2" FALSE                             	
+Break
+;30，最小刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2250
+#ACT
+AddBodyItemLuck 3 44011
+LocalMessage "装备附魔成功，头盔最小刺术 + 2" FALSE                             	
+Break
+;31，最小弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2375
+#ACT
+AddBodyItemLuck 3 46011
+LocalMessage "装备附魔成功，头盔最小弓术 + 2" FALSE                             	
+Break
+;32，最小道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2500
+#ACT
+AddBodyItemLuck 3 5011
+LocalMessage "装备附魔成功，头盔最小道术 + 2" FALSE                             	
+Break
+;33，最小防御 + 2
+#IF
+CheckCalc <$STR(N1)> < 2625
+#ACT
+AddBodyItemLuck 3 7011
+LocalMessage "装备附魔成功，头盔最小防御 + 2" FALSE                             	
+Break
+;34，最大防御 + 2
+#IF
+CheckCalc <$STR(N1)> < 2750
+#ACT
+AddBodyItemLuck 3 8011
+LocalMessage "装备附魔成功，头盔最大防御 + 2" FALSE                             	
+Break
+;35，最小魔防 + 2
+#IF
+CheckCalc <$STR(N1)> < 2875
+#ACT
+AddBodyItemLuck 3 9011
+LocalMessage "装备附魔成功，头盔最小魔防 + 2" FALSE                             	
+Break
+;36，最大魔防 + 2
+#IF
+CheckCalc <$STR(N1)> < 3000
+#ACT
+AddBodyItemLuck 3 10011
+LocalMessage "装备附魔成功，头盔最大魔防 + 2" FALSE                             	
+Break
+;37，最大体力 + 10
+#IF
+CheckCalc <$STR(N1)> < 3389
+#ACT
+AddBodyItemLuck 3 11019
+LocalMessage "装备附魔成功，头盔最大体力 + 10" FALSE                             	
+Break
+;38，最大魔力 + 10
+#IF
+CheckCalc <$STR(N1)> < 3778
+#ACT
+AddBodyItemLuck 3 12010
+LocalMessage "装备附魔成功，头盔最大魔力 + 10" FALSE                             	
+Break
+;39，最大攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 4166
+#ACT
+AddBodyItemLuck 3 2001
+LocalMessage "装备附魔成功，头盔最大攻击 + 1" FALSE                             	
+Break
+;40，最大魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 4555
+#ACT
+AddBodyItemLuck 3 4001
+LocalMessage "装备附魔成功，头盔最大魔法 + 1" FALSE                             	
+Break
+;41，最大刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 4944
+#ACT
+AddBodyItemLuck 3 45001
+LocalMessage "装备附魔成功，头盔最大刺术 + 1" FALSE                             	
+Break
+;42，最大弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 5333
+#ACT
+AddBodyItemLuck 3 47001
+LocalMessage "装备附魔成功，头盔最大弓术 + 1" FALSE                             	
+Break
+;43，最大道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 5722
+#ACT
+AddBodyItemLuck 3 6001
+LocalMessage "装备附魔成功，头盔最大道术 + 1" FALSE                             	
+Break
+;44，最小攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 6111
+#ACT
+AddBodyItemLuck 3 1001
+LocalMessage "装备附魔成功，头盔最小攻击 + 1" FALSE                             	
+Break
+;45，最小魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 6500
+#ACT
+AddBodyItemLuck 3 3001
+LocalMessage "装备附魔成功，头盔最小魔法 + 1" FALSE                             	
+Break
+;46，最小刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 6889
+#ACT
+AddBodyItemLuck 3 44001
+LocalMessage "装备附魔成功，头盔最小刺术 + 1" FALSE                             	
+Break
+;47，最小弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 7278
+#ACT
+AddBodyItemLuck 3 46001
+LocalMessage "装备附魔成功，头盔最小弓术 + 1" FALSE                             	
+Break
+;48，最小道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 7666
+#ACT
+AddBodyItemLuck 3 5001
+LocalMessage "装备附魔成功，头盔最小道术 + 1" FALSE                             	
+Break
+;49，最大防御 + 1
+#IF
+CheckCalc <$STR(N1)> < 8055
+#ACT
+AddBodyItemLuck 3 8001
+LocalMessage "装备附魔成功，头盔最大防御 + 1" FALSE                             	
+Break
+;50，最大魔防 + 1
+#IF
+CheckCalc <$STR(N1)> < 8444
+#ACT
+AddBodyItemLuck 3 10001
+LocalMessage "装备附魔成功，头盔最大魔防 + 1" FALSE                             	
+Break
+;51，最小防御 + 1
+#IF
+CheckCalc <$STR(N1)> < 8833
+#ACT
+AddBodyItemLuck 3 7001
+LocalMessage "装备附魔成功，头盔最小防御 + 1" FALSE                             	
+Break
+;52，最小魔防 + 1
+#IF
+CheckCalc <$STR(N1)> < 9222
+#ACT
+AddBodyItemLuck 3 9001
+LocalMessage "装备附魔成功，头盔最小魔防 + 1" FALSE                             	
+Break
+;53，最大体力 + 5
+#IF
+CheckCalc <$STR(N1)> < 9611
+#ACT
+AddBodyItemLuck 3 11009
+LocalMessage "装备附魔成功，头盔最大体力 + 5" FALSE                             	
+Break
+;54，最大魔力 + 5
+#IF
+CheckCalc <$STR(N1)> < 10000
+#ACT
+AddBodyItemLuck 3 12005
+LocalMessage "装备附魔成功，头盔最大魔力 + 5" FALSE                             	
+Break
+}

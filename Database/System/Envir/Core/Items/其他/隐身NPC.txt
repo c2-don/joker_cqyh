@@ -1,0 +1,11 @@
+[@_USEITEM(2103)]
+;物品使用召唤NPC功能
+;NPC编号4773=网络文明宣传员
+
+#IF
+
+#ACT
+DelNpcGen 888888
+NpcGenEx 4773 888888 * * 60
+TopMessage "召唤NPC成功！" FALSE
+BREAK

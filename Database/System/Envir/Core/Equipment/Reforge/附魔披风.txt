@@ -1,0 +1,251 @@
+[@披风附魔]
+{
+#ACT
+MOVR N1 10000
+
+;1，最小攻击 + 4
+#IF
+CheckCalc <$STR(N1)> < 50
+#ACT
+AddBodyItemLuck 2 1031
+LocalMessage "装备附魔成功，披风最小攻击 + 4" FALSE                             	
+Break
+;2，最大攻击 + 4
+#IF
+CheckCalc <$STR(N1)> < 100
+#ACT
+AddBodyItemLuck 2 2031
+LocalMessage "装备附魔成功，披风最大攻击 + 4" FALSE                             	
+Break
+;3，最小魔法 + 4
+#IF
+CheckCalc <$STR(N1)> < 150
+#ACT
+AddBodyItemLuck 2 3031
+LocalMessage "装备附魔成功，披风最小魔法 + 4" FALSE                             	
+Break
+;4，最大魔法 + 4
+#IF
+CheckCalc <$STR(N1)> < 200
+#ACT
+AddBodyItemLuck 2 4031
+LocalMessage "装备附魔成功，披风最大魔法 + 4" FALSE                             	
+Break
+;5，最小道术 + 4
+#IF
+CheckCalc <$STR(N1)> < 250
+#ACT
+AddBodyItemLuck 2 5031
+LocalMessage "装备附魔成功，披风最小道术 + 4" FALSE                             	
+Break
+;6，最大道术 + 4
+#IF
+CheckCalc <$STR(N1)> < 300
+#ACT
+AddBodyItemLuck 2 6031
+LocalMessage "装备附魔成功，披风最大道术 + 4" FALSE                             	
+Break
+;7，最小刺术 + 4
+#IF
+CheckCalc <$STR(N1)> < 350
+#ACT
+AddBodyItemLuck 2 44031
+LocalMessage "装备附魔成功，披风最小刺术 + 4" FALSE                             	
+Break
+;8，最大刺术 + 4
+#IF
+CheckCalc <$STR(N1)> < 400
+#ACT
+AddBodyItemLuck 2 45031
+LocalMessage "装备附魔成功，披风最大刺术 + 4" FALSE                             	
+Break
+;9，最小弓术 + 4
+#IF
+CheckCalc <$STR(N1)> < 450
+#ACT
+AddBodyItemLuck 2 46031
+LocalMessage "装备附魔成功，披风最小弓术 + 4" FALSE                             	
+Break
+;10，最大弓术 + 4
+#IF
+CheckCalc <$STR(N1)> < 500
+#ACT
+AddBodyItemLuck 2 47031
+LocalMessage "装备附魔成功，披风最大弓术 + 4" FALSE                             	
+Break
+;11，最小攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 600
+#ACT
+AddBodyItemLuck 2 1021
+LocalMessage "装备附魔成功，披风最小攻击 + 3" FALSE                             	
+Break
+;12，最大攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 700
+#ACT
+AddBodyItemLuck 2 2021
+LocalMessage "装备附魔成功，披风最大攻击 + 3" FALSE                             	
+Break
+;13，最小魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 800
+#ACT
+AddBodyItemLuck 2 3021
+LocalMessage "装备附魔成功，披风最小魔法 + 3" FALSE                             	
+Break
+;14，最大魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 900
+#ACT
+AddBodyItemLuck 2 4021
+LocalMessage "装备附魔成功，披风最大魔法 + 3" FALSE                             	
+Break
+;15，最小道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 1000
+#ACT
+AddBodyItemLuck 2 5021
+LocalMessage "装备附魔成功，披风最小道术 + 3" FALSE                             	
+Break
+;16，最大道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 1100
+#ACT
+AddBodyItemLuck 2 6021
+LocalMessage "装备附魔成功，披风最大道术 + 3" FALSE                             	
+Break
+;17，最小刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 1200
+#ACT
+AddBodyItemLuck 2 44021
+LocalMessage "装备附魔成功，披风最小刺术 + 3" FALSE                             	
+Break
+;18，最大刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 1300
+#ACT
+AddBodyItemLuck 2 45021
+LocalMessage "装备附魔成功，披风最大刺术 + 3" FALSE                             	
+Break
+;19，最小弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 1400
+#ACT
+AddBodyItemLuck 2 46021
+LocalMessage "装备附魔成功，披风最小弓术 + 3" FALSE                             	
+Break
+;20，最大弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 1500
+#ACT
+AddBodyItemLuck 2 47021
+LocalMessage "装备附魔成功，披风最大弓术 + 3" FALSE                             	
+Break
+;21，最小攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 1900
+#ACT
+AddBodyItemLuck 2 1011
+LocalMessage "装备附魔成功，披风最小攻击 + 2" FALSE                             	
+Break
+;22，最大攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 2300
+#ACT
+AddBodyItemLuck 2 2011
+LocalMessage "装备附魔成功，披风最大攻击 + 2" FALSE                             	
+Break
+;23，最小魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 2700
+#ACT
+AddBodyItemLuck 2 3011
+LocalMessage "装备附魔成功，披风最小魔法 + 2" FALSE                             	
+Break
+;24，最大魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 3100
+#ACT
+AddBodyItemLuck 2 4011
+LocalMessage "装备附魔成功，披风最大魔法 + 2" FALSE                             	
+Break
+;25，最小道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 3500
+#ACT
+AddBodyItemLuck 2 5011
+LocalMessage "装备附魔成功，披风最小道术 + 2" FALSE                             	
+Break
+;26，最大道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 3900
+#ACT
+AddBodyItemLuck 2 6011
+LocalMessage "装备附魔成功，披风最大道术 + 2" FALSE                             	
+Break
+;27，最小刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 4300
+#ACT
+AddBodyItemLuck 2 44011
+LocalMessage "装备附魔成功，披风最小刺术 + 2" FALSE                             	
+Break
+;28，最大刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 4700
+#ACT
+AddBodyItemLuck 2 45011
+LocalMessage "装备附魔成功，披风最大刺术 + 2" FALSE                             	
+Break
+;29，最小弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 5100
+#ACT
+AddBodyItemLuck 2 46011
+LocalMessage "装备附魔成功，披风最小弓术 + 2" FALSE                             	
+Break
+;30，最大弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 5500
+#ACT
+AddBodyItemLuck 2 47011
+LocalMessage "装备附魔成功，披风最大弓术 + 2" FALSE                             	
+Break
+;31，最大攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 6400
+#ACT
+AddBodyItemLuck 2 2001
+LocalMessage "装备附魔成功，披风最大攻击 + 1" FALSE                             	
+Break
+;32，最大魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 7300
+#ACT
+AddBodyItemLuck 2 4001
+LocalMessage "装备附魔成功，披风最大魔法 + 1" FALSE                             	
+Break
+;33，最大道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 8200
+#ACT
+AddBodyItemLuck 2 6001
+LocalMessage "装备附魔成功，披风最大道术 + 1" FALSE                             	
+Break
+;34，最大刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 9100
+#ACT
+AddBodyItemLuck 2 45001
+LocalMessage "装备附魔成功，披风最大刺术 + 1" FALSE                             	
+Break
+;35，最大弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 10000
+#ACT
+AddBodyItemLuck 2 47001
+LocalMessage "装备附魔成功，披风最大弓术 + 1" FALSE                             	
+Break
+}

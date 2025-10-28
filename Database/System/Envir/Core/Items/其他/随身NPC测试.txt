@@ -1,0 +1,10 @@
+[@_USEITEM(2102)]
+;随身NPC命令测试
+;使用新的随身NPC命令，更简单可靠
+;格式: 随身NPC NPC编号 存在时间(秒)
+
+#IF
+#ACT
+随身NPC 4773 60
+TopMessage "召唤NPC成功！NPC将在你身边停留60秒。" FALSE
+BREAK

@@ -1,0 +1,455 @@
+; 屠龙
+[@_DeCompose(99900026)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解屠龙，获得70000金币！" FALSE
+Break
+
+; 嗜魂法杖
+[@_DeCompose(99900029)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解嗜魂法杖，获得70000金币！" FALSE
+Break
+
+; 倚天剑
+[@_DeCompose(99900044)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解倚天剑，获得70000金币！" FALSE
+Break
+
+; 黯灭轮
+[@_DeCompose(99900058)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解黯灭轮，获得70000金币！" FALSE
+Break
+
+; 擎龙
+[@_DeCompose(99900079)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解擎龙，获得70000金币！" FALSE
+Break
+
+; 龙炎
+[@_DeCompose(99900108)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解龙炎，获得70000金币！" FALSE
+Break
+
+; 雷霆项链
+[@_DeCompose(99920032)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解雷霆项链，获得50000金币！" FALSE
+Break
+
+; 烈焰项链
+[@_DeCompose(99920033)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解烈焰项链，获得50000金币！" FALSE
+Break
+
+; 光芒项链
+[@_DeCompose(99920034)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解光芒项链，获得50000金币！" FALSE
+Break
+
+; 风行项链
+[@_DeCompose(99920047)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解风行项链，获得50000金币！" FALSE
+Break
+
+; 玄冰项链
+[@_DeCompose(99920076)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解玄冰项链，获得50000金币！" FALSE
+Break
+
+; 天诛凶链
+[@_DeCompose(99920086)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解天诛凶链，获得50000金币！" FALSE
+Break
+
+; 雷霆战戒
+[@_DeCompose(99930038)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解雷霆战戒，获得50000金币！" FALSE
+Break
+
+; 烈焰魔戒
+[@_DeCompose(99930039)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解烈焰魔戒，获得50000金币！" FALSE
+Break
+
+; 光芒道戒
+[@_DeCompose(99930040)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解光芒道戒，获得50000金币！" FALSE
+Break
+
+; 风行暗戒
+[@_DeCompose(99930051)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解风行暗戒，获得50000金币！" FALSE
+Break
+
+; 玄冰指环
+[@_DeCompose(99930077)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解玄冰指环，获得50000金币！" FALSE
+Break
+
+; 天诛血戒
+[@_DeCompose(99930087)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解天诛血戒，获得50000金币！" FALSE
+Break
+
+; 玄冰手镯
+[@_DeCompose(99940075)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解玄冰手镯，获得50000金币！" FALSE
+Break
+
+; 天诛邪镯
+[@_DeCompose(99940085)]
+#IF
+#ACT
+GiveGold 50000
+LocalMessage "分解天诛邪镯，获得50000金币！" FALSE
+Break
+
+; 逐日肩甲
+[@_DeCompose(99990612)]
+#IF
+#ACT
+GiveGold 100000
+LocalMessage "分解逐日肩甲，获得1000金币！" FALSE
+Break
+
+; 雷霆战甲
+[@_DeCompose(99980713)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解雷霆战甲，获得80000金币！" FALSE
+Break
+
+; 雷霆战甲6
+[@_DeCompose(99990713)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解雷霆战甲，获得80000金币！" FALSE
+Break
+
+; 烈焰魔衣
+[@_DeCompose(99980723)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解烈焰魔衣，获得80000金币！" FALSE
+Break
+
+; 烈焰魔衣6
+[@_DeCompose(99990723)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解烈焰魔衣，获得80000金币！" FALSE
+Break
+
+; 光芒道袍
+[@_DeCompose(99980733)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解光芒道袍，获得80000金币！" FALSE
+Break
+
+; 光芒道袍6
+[@_DeCompose(99990733)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解光芒道袍，获得80000金币！" FALSE
+Break
+
+; 风行盾甲
+[@_DeCompose(99980743)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解风行盾甲，获得80000金币！" FALSE
+Break
+
+; 风行盾甲6
+[@_DeCompose(99990743)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解风行盾甲，获得80000金币！" FALSE
+Break
+
+; 玄冰战甲
+[@_DeCompose(99980753)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解玄冰战甲，获得80000金币！" FALSE
+Break
+
+; 玄冰战甲6
+[@_DeCompose(99990753)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解玄冰战甲，获得80000金币！" FALSE
+Break
+
+; 天诛魔甲
+[@_DeCompose(99980763)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解天诛魔甲，获得80000金币！" FALSE
+Break
+
+; 天诛魔甲6
+[@_DeCompose(99990763)]
+#IF
+#ACT
+GiveGold 80000
+LocalMessage "分解天诛魔甲，获得80000金币！" FALSE
+Break
+
+; 雷霆腰带
+[@_DeCompose(99990715)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解雷霆腰带，获得30000金币！" FALSE
+Break
+
+; 烈焰腰带
+[@_DeCompose(99990725)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解烈焰腰带，获得30000金币！" FALSE
+Break
+
+; 光芒腰带
+[@_DeCompose(99990735)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解光芒腰带，获得30000金币！" FALSE
+Break
+
+; 风行腰带
+[@_DeCompose(99990745)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解风行腰带，获得30000金币！" FALSE
+Break
+
+; 玄冰腰带
+[@_DeCompose(99990755)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解玄冰腰带，获得30000金币！" FALSE
+Break
+
+; 天诛腰带
+[@_DeCompose(99990765)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解天诛腰带，获得30000金币！" FALSE
+Break
+
+; 雷霆战靴
+[@_DeCompose(99990717)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解雷霆战靴，获得30000金币！" FALSE
+Break
+
+; 烈焰魔靴
+[@_DeCompose(99990727)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解烈焰魔靴，获得30000金币！" FALSE
+Break
+
+; 光芒道靴
+[@_DeCompose(99990737)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解光芒道靴，获得30000金币！" FALSE
+Break
+
+; 风行灵靴
+[@_DeCompose(99990747)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解风行灵靴，获得30000金币！" FALSE
+Break
+
+; 玄冰猎靴
+[@_DeCompose(99990757)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解玄冰猎靴，获得30000金币！" FALSE
+Break
+
+; 天诛暗靴
+[@_DeCompose(99990767)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解天诛暗靴，获得30000金币！" FALSE
+Break
+
+; 强化·雷霆腰带
+[@_DeCompose(99990815)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·雷霆腰带，获得30000金币！" FALSE
+Break
+
+; 强化·烈焰腰带
+[@_DeCompose(99990825)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·烈焰腰带，获得30000金币！" FALSE
+Break
+
+; 强化·光芒腰带
+[@_DeCompose(99990835)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·光芒腰带，获得30000金币！" FALSE
+Break
+
+; 强化·风行腰带
+[@_DeCompose(99990845)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·风行腰带，获得30000金币！" FALSE
+Break
+
+; 强化·玄冰腰带
+[@_DeCompose(99990855)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·玄冰腰带，获得30000金币！" FALSE
+Break
+
+; 强化·天诛腰带
+[@_DeCompose(99990865)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·天诛腰带，获得30000金币！" FALSE
+Break
+
+; 强化·雷霆战靴
+[@_DeCompose(99990817)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·雷霆战靴，获得30000金币！" FALSE
+Break
+
+; 强化·烈焰魔靴
+[@_DeCompose(99990827)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·烈焰魔靴，获得30000金币！" FALSE
+Break
+
+; 强化·光芒道靴
+[@_DeCompose(99990837)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·光芒道靴，获得30000金币！" FALSE
+Break
+
+; 强化·风行灵靴
+[@_DeCompose(99990847)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·风行灵靴，获得30000金币！" FALSE
+Break
+
+; 强化·玄冰猎靴
+[@_DeCompose(99990857)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·玄冰猎靴，获得30000金币！" FALSE
+Break
+
+; 强化·天诛暗靴
+[@_DeCompose(99990867)]
+#IF
+#ACT
+GiveGold 30000
+LocalMessage "分解强化·天诛暗靴，获得30000金币！" FALSE
+Break

@@ -1,0 +1,216 @@
+[@右戒指附魔]
+{
+#ACT
+MOVR N1 10000
+
+;1，最大攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 50
+#ACT
+AddBodyItemLuck 10 2021
+LocalMessage "装备附魔成功，戒指最大攻击 + 3" FALSE                             	
+Break
+;2，最大魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 100
+#ACT
+AddBodyItemLuck 10 4021
+LocalMessage "装备附魔成功，戒指最大魔法 + 3" FALSE                             	
+Break
+;3，最大刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 150
+#ACT
+AddBodyItemLuck 10 45021
+LocalMessage "装备附魔成功，戒指最大刺术 + 3" FALSE                             	
+Break
+;4，最大弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 200
+#ACT
+AddBodyItemLuck 10 47021
+LocalMessage "装备附魔成功，戒指最大弓术 + 3" FALSE                             	
+Break
+;5，最大道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 250
+#ACT
+AddBodyItemLuck 10 6021
+LocalMessage "装备附魔成功，戒指最大道术 + 3" FALSE                             	
+Break
+;6，最小攻击 + 3
+#IF
+CheckCalc <$STR(N1)> < 300
+#ACT
+AddBodyItemLuck 10 1021
+LocalMessage "装备附魔成功，戒指最小攻击 + 3" FALSE                             	
+Break
+;7，最小魔法 + 3
+#IF
+CheckCalc <$STR(N1)> < 350
+#ACT
+AddBodyItemLuck 10 3021
+LocalMessage "装备附魔成功，戒指最小魔法 + 3" FALSE                             	
+Break
+;8，最小刺术 + 3
+#IF
+CheckCalc <$STR(N1)> < 400
+#ACT
+AddBodyItemLuck 10 44021
+LocalMessage "装备附魔成功，戒指最小刺术 + 3" FALSE                             	
+Break
+;9，最小弓术 + 3
+#IF
+CheckCalc <$STR(N1)> < 450
+#ACT
+AddBodyItemLuck 10 46021
+LocalMessage "装备附魔成功，戒指最小弓术 + 3" FALSE                             	
+Break
+;10，最小道术 + 3
+#IF
+CheckCalc <$STR(N1)> < 500
+#ACT
+AddBodyItemLuck 10 5021
+LocalMessage "装备附魔成功，戒指最小道术 + 3" FALSE                             	
+Break
+;11，最大攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 750
+#ACT
+AddBodyItemLuck 10 2011
+LocalMessage "装备附魔成功，戒指最大攻击 + 2" FALSE                             	
+Break
+;12，最大魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 1000
+#ACT
+AddBodyItemLuck 10 4011
+LocalMessage "装备附魔成功，戒指最大魔法 + 2" FALSE                             	
+Break
+;13，最大刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1250
+#ACT
+AddBodyItemLuck 10 45011
+LocalMessage "装备附魔成功，戒指最大刺术 + 2" FALSE                             	
+Break
+;14，最大弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1500
+#ACT
+AddBodyItemLuck 10 47011
+LocalMessage "装备附魔成功，戒指最大弓术 + 2" FALSE                             	
+Break
+;15，最大道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 1750
+#ACT
+AddBodyItemLuck 10 6011
+LocalMessage "装备附魔成功，戒指最大道术 + 2" FALSE                             	
+Break
+;16，最小攻击 + 2
+#IF
+CheckCalc <$STR(N1)> < 2000
+#ACT
+AddBodyItemLuck 10 1011
+LocalMessage "装备附魔成功，戒指最小攻击 + 2" FALSE                             	
+Break
+;17，最小魔法 + 2
+#IF
+CheckCalc <$STR(N1)> < 2250
+#ACT
+AddBodyItemLuck 10 3011
+LocalMessage "装备附魔成功，戒指最小魔法 + 2" FALSE                             	
+Break
+;18，最小刺术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2500
+#ACT
+AddBodyItemLuck 10 44011
+LocalMessage "装备附魔成功，戒指最小刺术 + 2" FALSE                             	
+Break
+;19，最小弓术 + 2
+#IF
+CheckCalc <$STR(N1)> < 2750
+#ACT
+AddBodyItemLuck 10 46011
+LocalMessage "装备附魔成功，戒指最小弓术 + 2" FALSE                             	
+Break
+;20，最小道术 + 2
+#IF
+CheckCalc <$STR(N1)> < 3000
+#ACT
+AddBodyItemLuck 10 5011
+LocalMessage "装备附魔成功，戒指最小道术 + 2" FALSE                             	
+Break
+;21，最大攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 3700
+#ACT
+AddBodyItemLuck 10 2001
+LocalMessage "装备附魔成功，戒指最大攻击 + 1" FALSE                             	
+Break
+;22，最大魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 4400
+#ACT
+AddBodyItemLuck 10 4001
+LocalMessage "装备附魔成功，戒指最大魔法 + 1" FALSE                             	
+Break
+;23，最大刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 5100
+#ACT
+AddBodyItemLuck 10 45001
+LocalMessage "装备附魔成功，戒指最大刺术 + 1" FALSE                             	
+Break
+;24，最大弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 5800
+#ACT
+AddBodyItemLuck 10 47001
+LocalMessage "装备附魔成功，戒指最大弓术 + 1" FALSE                             	
+Break
+;25，最大道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 6500
+#ACT
+AddBodyItemLuck 10 6001
+LocalMessage "装备附魔成功，戒指最大道术 + 1" FALSE                             	
+Break
+;26，最小攻击 + 1
+#IF
+CheckCalc <$STR(N1)> < 7200
+#ACT
+AddBodyItemLuck 10 1001
+LocalMessage "装备附魔成功，戒指最小攻击 + 1" FALSE                             	
+Break
+;27，最小魔法 + 1
+#IF
+CheckCalc <$STR(N1)> < 7900
+#ACT
+AddBodyItemLuck 10 3001
+LocalMessage "装备附魔成功，戒指最小魔法 + 1" FALSE                             	
+Break
+;28，最小刺术 + 1
+#IF
+CheckCalc <$STR(N1)> < 8600
+#ACT
+AddBodyItemLuck 10 44001
+LocalMessage "装备附魔成功，戒指最小刺术 + 1" FALSE                             	
+Break
+;29，最小弓术 + 1
+#IF
+CheckCalc <$STR(N1)> < 9300
+#ACT
+AddBodyItemLuck 10 46001
+LocalMessage "装备附魔成功，戒指最小弓术 + 1" FALSE                             	
+Break
+;30，最小道术 + 1
+#IF
+CheckCalc <$STR(N1)> < 10000
+#ACT
+AddBodyItemLuck 10 5001
+LocalMessage "装备附魔成功，戒指最小道术 + 1" FALSE                             	
+Break
+}

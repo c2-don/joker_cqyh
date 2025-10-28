@@ -1,0 +1,383 @@
+; 星王项链(圣战)
+[@_DeCompose(99920053)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王项链(圣战)，获得70000金币！" FALSE
+Break
+
+; 星王项链(法神)
+[@_DeCompose(99920054)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王项链(法神)，获得70000金币！" FALSE
+Break
+
+; 星王项链(天尊)
+[@_DeCompose(99920055)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王项链(天尊)，获得70000金币！" FALSE
+Break
+
+; 星王项链(影刺)
+[@_DeCompose(99920056)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王项链(影刺)，获得70000金币！" FALSE
+Break
+
+; 星王项链(箭灵)
+[@_DeCompose(99920080)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王项链(箭灵)，获得70000金币！" FALSE
+Break
+
+; 星王项链(龙枪)
+[@_DeCompose(99920090)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王项链(龙枪)，获得70000金币！" FALSE
+Break
+
+; 星王戒指(圣战)
+[@_DeCompose(99930053)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王戒指(圣战)，获得70000金币！" FALSE
+Break
+
+; 星王戒指(法神)
+[@_DeCompose(99930054)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王戒指(法神)，获得70000金币！" FALSE
+Break
+
+; 星王戒指(天尊)
+[@_DeCompose(99930055)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王戒指(天尊)，获得70000金币！" FALSE
+Break
+
+; 星王戒指(影刺)
+[@_DeCompose(99930056)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王戒指(影刺)，获得70000金币！" FALSE
+Break
+
+; 星王戒指(箭灵)
+[@_DeCompose(99930079)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王戒指(箭灵)，获得70000金币！" FALSE
+Break
+
+; 星王戒指(龙枪)
+[@_DeCompose(99930089)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王戒指(龙枪)，获得70000金币！" FALSE
+Break
+
+; 星王手镯(圣战)
+[@_DeCompose(99940042)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王手镯(圣战)，获得70000金币！" FALSE
+Break
+
+; 星王手镯(法神)
+[@_DeCompose(99940043)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王手镯(法神)，获得70000金币！" FALSE
+Break
+
+; 星王手镯(天尊)
+[@_DeCompose(99940044)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王手镯(天尊)，获得70000金币！" FALSE
+Break
+
+; 星王手镯(影刺)
+[@_DeCompose(99940045)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王手镯(影刺)，获得70000金币！" FALSE
+Break
+
+; 星王手镯(箭灵)
+[@_DeCompose(99940077)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王手镯(箭灵)，获得70000金币！" FALSE
+Break
+
+; 星王手镯(龙枪)
+[@_DeCompose(99940087)]
+#IF
+#ACT
+GiveGold 70000
+LocalMessage "分解星王手镯(龙枪)，获得70000金币！" FALSE
+Break
+
+; 星王战甲
+[@_DeCompose(99980913)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王战甲，获得120000金币！" FALSE
+Break
+
+; 星王战甲6
+[@_DeCompose(99990913)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王战甲，获得120000金币！" FALSE
+Break
+
+; 星王法衣
+[@_DeCompose(99980923)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王法衣，获得120000金币！" FALSE
+Break
+
+; 星王法衣6
+[@_DeCompose(99990923)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王法衣，获得120000金币！" FALSE
+Break
+
+; 星王道袍
+[@_DeCompose(99980933)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王道袍，获得120000金币！" FALSE
+Break
+
+; 星王道袍6
+[@_DeCompose(99990933)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王道袍，获得120000金币！" FALSE
+Break
+
+; 星王暗衣
+[@_DeCompose(99980943)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王暗衣，获得120000金币！" FALSE
+Break
+
+; 星王暗衣6
+[@_DeCompose(99990943)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王暗衣，获得120000金币！" FALSE
+Break
+
+; 星王猎装
+[@_DeCompose(99980953)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王猎装，获得120000金币！" FALSE
+Break
+
+; 星王猎装6
+[@_DeCompose(99990953)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王猎装，获得120000金币！" FALSE
+Break
+
+; 星王将袍
+[@_DeCompose(99980963)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王将袍，获得120000金币！" FALSE
+Break
+
+; 星王将袍6
+[@_DeCompose(99990963)]
+#IF
+#ACT
+GiveGold 120000
+LocalMessage "分解星王将袍，获得120000金币！" FALSE
+Break
+
+; 星王头盔(圣战)
+[@_DeCompose(99990911)]
+#IF
+#ACT
+GiveGold 72000
+LocalMessage "分解星王头盔(圣战)，获得72000金币！" FALSE
+Break
+
+; 星王头盔(法神)
+[@_DeCompose(99990921)]
+#IF
+#ACT
+GiveGold 72000
+LocalMessage "分解星王头盔(法神)，获得72000金币！" FALSE
+Break
+
+; 星王头盔(天尊)
+[@_DeCompose(99990931)]
+#IF
+#ACT
+GiveGold 72000
+LocalMessage "分解星王头盔(天尊)，获得72000金币！" FALSE
+Break
+
+; 星王头盔(影刺)
+[@_DeCompose(99990941)]
+#IF
+#ACT
+GiveGold 72000
+LocalMessage "分解星王头盔(影刺)，获得72000金币！" FALSE
+Break
+
+; 星王头盔(箭灵)
+[@_DeCompose(99990951)]
+#IF
+#ACT
+GiveGold 72000
+LocalMessage "分解星王头盔(箭灵)，获得72000金币！" FALSE
+Break
+
+; 星王头盔(龙枪)
+[@_DeCompose(99990961)]
+#IF
+#ACT
+GiveGold 72000
+LocalMessage "分解星王头盔(龙枪)，获得72000金币！" FALSE
+Break
+
+; 星王靴子(圣战)
+[@_DeCompose(99990917)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王靴子(圣战)，获得57600金币！" FALSE
+Break
+
+; 星王靴子(法神)
+[@_DeCompose(99990927)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王靴子(法神)，获得57600金币！" FALSE
+Break
+
+; 星王靴子(天尊)
+[@_DeCompose(99990937)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王靴子(天尊)，获得57600金币！" FALSE
+Break
+
+; 星王靴子(影刺)
+[@_DeCompose(99990947)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王靴子(影刺)，获得57600金币！" FALSE
+Break
+
+; 星王靴子(箭灵)
+[@_DeCompose(99990957)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王靴子(箭灵)，获得57600金币！" FALSE
+Break
+
+; 星王靴子(龙枪)
+[@_DeCompose(99990967)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王靴子(龙枪)，获得57600金币！" FALSE
+Break
+
+; 星王腰带(圣战)
+[@_DeCompose(99990915)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王腰带(圣战)，获得57600金币！" FALSE
+Break
+
+; 星王腰带(法神)
+[@_DeCompose(99990925)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王腰带(法神)，获得57600金币！" FALSE
+Break
+
+; 星王腰带(天尊)
+[@_DeCompose(99990935)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王腰带(天尊)，获得57600金币！" FALSE
+Break
+
+; 星王腰带(影刺)
+[@_DeCompose(99990945)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王腰带(影刺)，获得57600金币！" FALSE
+Break
+
+; 星王腰带(箭灵)
+[@_DeCompose(99990955)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王腰带(箭灵)，获得57600金币！" FALSE
+Break
+
+; 星王腰带(龙枪)
+[@_DeCompose(99990965)]
+#IF
+#ACT
+GiveGold 57600
+LocalMessage "分解星王腰带(龙枪)，获得57600金币！" FALSE
+Break

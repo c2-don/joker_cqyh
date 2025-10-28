@@ -1,0 +1,5 @@
+[@MAIN]
+#IF
+#ACT
+#SAY
+年轻人，我这里可以兑换各种初级五格装备。<#UI:OpenFilterShop1>兑换商店<#UI/><#SO/>

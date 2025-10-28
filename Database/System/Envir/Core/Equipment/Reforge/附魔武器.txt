@@ -1,0 +1,238 @@
+[@武器附魔]
+{
+
+#ACT
+MOVR N1 10000
+
+#IF
+CheckCalc <$STR(N1)> < 45
+#ACT
+AddBodyItemLuck 0 2021
+LocalMessage "装备附魔成功，武器最大攻击 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 90
+#ACT
+AddBodyItemLuck 0 4021
+LocalMessage "装备附魔成功，武器最大魔法 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 135
+#ACT
+AddBodyItemLuck 0 6021
+LocalMessage "装备附魔成功，武器最大道术 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 180
+#ACT
+AddBodyItemLuck 0 45021
+LocalMessage "装备附魔成功，武器最大刺术 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 225
+#ACT
+AddBodyItemLuck 0 47021
+LocalMessage "装备附魔成功，武器最大弓术 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 270
+#ACT
+AddBodyItemLuck 0 21021
+LocalMessage "装备附魔成功，武器物理准确 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 315
+#ACT
+AddBodyItemLuck 0 1021
+LocalMessage "装备附魔成功，武器最小攻击 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 360
+#ACT
+AddBodyItemLuck 0 3021
+LocalMessage "装备附魔成功，武器最小魔法 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 405
+#ACT
+AddBodyItemLuck 0 5021
+LocalMessage "装备附魔成功，武器最小道术 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 450
+#ACT
+AddBodyItemLuck 0 44021
+LocalMessage "装备附魔成功，武器最小刺术 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 495
+#ACT
+AddBodyItemLuck 0 46021
+LocalMessage "装备附魔成功，武器最小弓术 + 3" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 813
+#ACT
+AddBodyItemLuck 0 2011
+LocalMessage "装备附魔成功，武器最大攻击 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 1131
+#ACT
+AddBodyItemLuck 0 4011
+LocalMessage "装备附魔成功，武器最大魔法 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 1449
+#ACT
+AddBodyItemLuck 0 6011
+LocalMessage "装备附魔成功，武器最大道术 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 1767
+#ACT
+AddBodyItemLuck 0 45011
+LocalMessage "装备附魔成功，武器最大刺术 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 2085
+#ACT
+AddBodyItemLuck 0 47011
+LocalMessage "装备附魔成功，武器最大弓术 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 2403
+#ACT
+AddBodyItemLuck 0 21011
+LocalMessage "装备附魔成功，武器物理准确 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 2721
+#ACT
+AddBodyItemLuck 0 1011
+LocalMessage "装备附魔成功，武器最小攻击 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 3039
+#ACT
+AddBodyItemLuck 0 3011
+LocalMessage "装备附魔成功，武器最小魔法 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 3357
+#ACT
+AddBodyItemLuck 0 5011
+LocalMessage "装备附魔成功，武器最小道术 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 3675
+#ACT
+AddBodyItemLuck 0 44011
+LocalMessage "装备附魔成功，武器最小刺术 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 3993
+#ACT
+AddBodyItemLuck 0 46011
+LocalMessage "装备附魔成功，武器最小弓术 + 2" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 4538
+#ACT
+AddBodyItemLuck 0 2001
+LocalMessage "装备附魔成功，武器最大攻击 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 5083
+#ACT
+AddBodyItemLuck 0 4001
+LocalMessage "装备附魔成功，武器最大魔法 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 5628
+#ACT
+AddBodyItemLuck 0 6001
+LocalMessage "装备附魔成功，武器最大道术 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 6173
+#ACT
+AddBodyItemLuck 0 45001
+LocalMessage "装备附魔成功，武器最大刺术 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 6718
+#ACT
+AddBodyItemLuck 0 47001
+LocalMessage "装备附魔成功，武器最大弓术 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 7263
+#ACT
+AddBodyItemLuck 0 1001
+LocalMessage "装备附魔成功，武器最小攻击 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 7808
+#ACT
+AddBodyItemLuck 0 3001
+LocalMessage "装备附魔成功，武器最小魔法 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 8353
+#ACT
+AddBodyItemLuck 0 5001
+LocalMessage "装备附魔成功，武器最小道术 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 8898
+#ACT
+AddBodyItemLuck 0 44001
+LocalMessage "装备附魔成功，武器最小刺术 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 9443
+#ACT
+AddBodyItemLuck 0 46001
+LocalMessage "装备附魔成功，武器最小弓术 + 1" FALSE
+Break
+
+#IF
+CheckCalc <$STR(N1)> < 10000
+#ACT
+AddBodyItemLuck 0 21001
+LocalMessage "装备附魔成功，武器物理准确 + 1" FALSE
+Break
+
+}
